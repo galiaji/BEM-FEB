@@ -3,7 +3,7 @@
 ![Carepet Logo](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/b7b993cf-3c98-4bef-b478-cb6a12313e74)
 
 </div>
-<h1 align="center" id="title">Carepet ID</h1>
+<h1 align="center" id="title">BEM-FEB</h1>
 
 ## Introduction
 Carepet is a mobile health application used for animal lovers, especially dogs. This carepet application functions to detect dog skin diseases and we also provide medicine recommendations for dog users, not only that, we provide articles regarding the specifications of the dog you have. 
