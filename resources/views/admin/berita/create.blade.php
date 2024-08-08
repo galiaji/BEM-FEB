@@ -1,36 +1,41 @@
-<!DOCTYPE html>
-<html>
+@extends('admin.layout')
 
-<head>
-    <title>Buat Berita Baru</title>
-</head>
+@section('title', 'Create Berita')
 
-<body>
-    <h1>Buat Berita Baru</h1>
-    <form action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div>
-            <label>Judul:</label>
-            <input type="text" name="judul" required>
-        </div>
-        <div>
-            <label>Isi Berita:</label>
-            <textarea name="isi_berita" required></textarea>
-        </div>
-        <div>
-            <label>Gambar:</label>
-            <input type="file" name="input_gambar">
-        </div>
-        <div>
-            <label>Program:</label>
-            <select name="program_id" required>
-                @foreach ($programs as $program)
-                <option value="{{ $program->id }}">{{ $program->nama_program }}</option>
-                @endforeach
-            </select>
-        </div>
-        <button type="submit">Simpan Berita</button>
-    </form>
-</body>
+@section('content')
+<h1>Create Berita</h1>
 
-</html>
+<form action="{{ route('admin.berita.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+
+    <div class="form-group">
+        <label for="judul">Judul:</label>
+        <input type="text" id="judul" name="judul" class="form-control" value="{{ old('judul') }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="isi_berita">Isi Berita:</label>
+        <textarea id="isi_berita" name="isi_berita" class="form-control" required>{{ old('isi_berita') }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="program_id">Program Terkait:</label>
+        <select id="program_id" name="program_id" class="form-control" required>
+            @foreach($programs as $program)
+            <option value="{{ $program->id }}" {{ old('program_id') == $program->id ? 'selected' : '' }}>
+                {{ $program->nama_program }}
+            </option>
+            @endforeach
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="input_gambar">Gambar:</label>
+        <input type="file" id="input_gambar" name="input_gambar" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Simpan Berita</button>
+</form>
+
+<a href="{{ route('admin.berita.index') }}" class="btn btn-secondary">Kembali</a>
+@endsection
