@@ -31,7 +31,10 @@
     </div>
     <div>
         <label for="role">Role:</label>
-        <input type="text" id="role" name="role" value="{{ old('role') }}" required>
+        <select id="role" name="role" required>
+            <option value="">Select a role</option>
+            <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
+        </select>
     </div>
     <div>
         <button type="submit">Create User</button>
