@@ -55,6 +55,7 @@
         <a href="{{ route('admin.program.index') }}">Manage Programs</a>
         <a href="{{ route('admin.berita.index') }}">Manage News</a>
         <a href="{{ route('admin.kegiatan.index') }}">Manage Kegiatan</a>
+        <a href="{{ route('admin.produk_umkm.index') }}">Manage Produk</a>
         <a href="{{ route('admin.user.index') }}">Admin</a>
         <!-- Tambahkan Logout Button -->
         <a href="{{ route('logout') }}" class="logout"

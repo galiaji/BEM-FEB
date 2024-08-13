@@ -110,8 +110,8 @@
         <h1>RUCITA</h1>
         <nav>
             <a href="#">Home</a>
-            <a href="#">Programs</a>
-            <a href="#">News</a>
+            <a href="/programs">Programs</a>
+            <a href="/berita">News</a>
             <a href="#">Contact</a>
         </nav>
     </header>
@@ -119,7 +119,8 @@
     <section class="hero">
         <h2>Explor Desa Kemambang Cerdas dan Berdaya melalui Pendampingan Inovatif</h2>
         <p>Kembangkan, tumbuhkan, dan kelola berbagai sumber daya yang ada dengan RUCITA dalam pengembangan potensi Desa Kemambang</p>
-        <button>Lihat Program</button>
+        <button onclick="window.location.href='/programs'" class="btn btn-primary">Lihat Program</button>
+
         <button>Hubungi Kami</button>
     </section>
 
@@ -127,7 +128,7 @@
         <h2>Program Kami</h2>
         @foreach($programs as $program)
         <div class="program-item">
-            <p>{{ $program->nama_program }}</p>
+            <p>{{ $program->nama }}</p>
             <a href="{{ route('program.show', $program->slug) }}">
                 <button>Lihat Program</button>
             </a>

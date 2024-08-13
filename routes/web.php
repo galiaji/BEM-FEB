@@ -14,10 +14,13 @@ use App\Http\Controllers\Admin\BeritaController as AdminBeritaController;
 use App\Http\Controllers\Admin\ProgramController as AdminProgramController;
 
 // Rute admin dengan middleware AdminMiddleware
+use App\Http\Controllers\Admin\ProdukUMKMController;
+
 Route::prefix('admin')
     ->name('admin.')
     ->middleware(AdminMiddleware::class)
     ->group(function () {
+
         // Program Routes
         Route::get('/program', [AdminProgramController::class, 'index'])->name('program.index');
         Route::get('/program/create', [AdminProgramController::class, 'create'])->name('program.create');
@@ -34,15 +37,15 @@ Route::prefix('admin')
         Route::put('/berita/{id}', [AdminBeritaController::class, 'update'])->name('berita.update');
         Route::delete('/berita/{id}', [AdminBeritaController::class, 'destroy'])->name('berita.destroy');
 
-
-        // Berita User
+        // User Routes
         Route::get('/user', [UserController::class, 'index'])->name('user.index');
         Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
         Route::post('/user', [UserController::class, 'store'])->name('user.store');
-        Route::get('/user/{user}', [UserController::class, 'show'])->name('user.show'); // Add this line
+        Route::get('/user/{user}', [UserController::class, 'show'])->name('user.show');
         Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
         Route::put('/user/{user}', [UserController::class, 'update'])->name('user.update');
         Route::delete('/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+
         // Kegiatan Routes
         Route::get('/kegiatan', [AdminKegiatanController::class, 'index'])->name('kegiatan.index');
         Route::get('/kegiatan/create', [AdminKegiatanController::class, 'create'])->name('kegiatan.create');
@@ -51,6 +54,14 @@ Route::prefix('admin')
         Route::get('/kegiatan/{id}/edit', [AdminKegiatanController::class, 'edit'])->name('kegiatan.edit');
         Route::put('/kegiatan/{id}', [AdminKegiatanController::class, 'update'])->name('kegiatan.update');
         Route::delete('/kegiatan/{id}', [AdminKegiatanController::class, 'destroy'])->name('kegiatan.destroy');
+
+        // Produk UMKM Routes
+        Route::get('/produk_umkm', [ProdukUMKMController::class, 'index'])->name('produk_umkm.index');
+        Route::get('/produk_umkm/create', [ProdukUMKMController::class, 'create'])->name('produk_umkm.create');
+        Route::post('/produk_umkm', [ProdukUMKMController::class, 'store'])->name('produk_umkm.store');
+        Route::get('/produk_umkm/{id}/edit', [ProdukUMKMController::class, 'edit'])->name('produk_umkm.edit');
+        Route::put('/produk_umkm/{id}', [ProdukUMKMController::class, 'update'])->name('produk_umkm.update');
+        Route::delete('/produk_umkm/{id}', [ProdukUMKMController::class, 'destroy'])->name('produk_umkm.destroy');
     });
 
 
@@ -67,5 +78,9 @@ Route::middleware(RedirectIfAuthenticated::class)->group(function () {
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/', [LandingPageController::class, 'index'])->name('landing.page');
+
+Route::get('/programs', [ProgramController::class, 'index'])->name('programs.index');
 Route::get('/program/{slug}', [ProgramController::class, 'show'])->name('program.show');
+
+Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
 Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.show');

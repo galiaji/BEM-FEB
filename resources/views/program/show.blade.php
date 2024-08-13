@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Tampilan Untuk Detail Program -->
+<!-- disini juga ada tampilan untuk berita terkait program -->
+<!-- ada juga panel untuk penjelasan Terkait Program kegiatan-->
 
 <body>
 
     <header>
-        <h1>{{ $program->nama_program }}</h1>
+        <h1>{{ $program->nama }}</h1> <!-- Updated from 'nama_program' to 'nama' -->
         <nav>
             <a href="{{ route('landing.page') }}">Home</a>
             <a href="{{ route('program.show', $program->slug) }}">Programs</a>
@@ -15,9 +17,9 @@
     </header>
 
     <section class="program-details">
-        <h2>{{ $program->nama_program }}</h2>
-        <p>{{ $program->deskripsi_program }}</p>
-        <img src="{{ asset('storage/' . $program->foto_kegiatan) }}" alt="{{ $program->nama_program }}">
+        <h2>{{ $program->nama }}</h2> <!-- Updated from 'nama_program' to 'nama' -->
+        <p>{{ $program->deskripsi }}</p> <!-- Updated from 'deskripsi_program' to 'deskripsi' -->
+        <!-- Removed the image section as 'foto_kegiatan' no longer exists -->
         <!-- Add other program details here -->
     </section>
 
