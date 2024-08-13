@@ -21,10 +21,9 @@
     <div class="form-group">
         <label for="program_id">Program Terkait:</label>
         <select id="program_id" name="program_id" class="form-control" required>
+            <option value="">Select Program</option>
             @foreach($programs as $program)
-            <option value="{{ $program->id }}" {{ old('program_id') == $program->id ? 'selected' : '' }}>
-                {{ $program->nama_program }}
-            </option>
+            <option value="{{ $program->id }}">{{ $program->nama }}</option>
             @endforeach
         </select>
     </div>

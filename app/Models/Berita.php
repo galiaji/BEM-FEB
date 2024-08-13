@@ -11,7 +11,11 @@ class Berita extends Model
     use HasFactory;
 
     protected $fillable = [
-        'judul', 'isi_berita', 'input_gambar', 'program_id', 'slug'
+        'judul',
+        'isi_berita',
+        'input_gambar',
+        'program_id',
+        'slug'
     ];
 
     protected static function boot()
@@ -25,6 +29,6 @@ class Berita extends Model
 
     public function program()
     {
-        return $this->belongsTo(Program::class);
+        return $this->belongsTo(Program::class, 'program_id');
     }
 }

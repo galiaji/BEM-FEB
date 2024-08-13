@@ -11,8 +11,11 @@ class Program extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama_program', 'deskripsi_program', 'foto_kegiatan',
-        'kegiatan_dalam_program', 'jadwal', 'tujuan', 'slug'
+        'nama',  // Updated from 'nama_program'
+        'deskripsi',  // Updated from 'deskripsi_program'
+        'jadwal',
+        'tujuan',
+        'slug',
     ];
 
     protected static function boot()
@@ -20,7 +23,9 @@ class Program extends Model
         parent::boot();
 
         static::creating(function ($program) {
-            $program->slug = Str::slug($program->nama_program);
+            if (empty($program->slug)) {
+                $program->slug = Str::slug($program->nama);
+            }
         });
     }
 }

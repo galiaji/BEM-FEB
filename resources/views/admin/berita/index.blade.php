@@ -22,7 +22,7 @@
             <td>{{ $berita->id }}</td>
             <td>{{ $berita->judul }}</td>
             <td>{{ Str::limit($berita->isi_berita, 100) }}</td> <!-- Limit content preview -->
-            <td>{{ $berita->program->nama_program }}</td> <!-- Assuming program relation is loaded -->
+            <td>{{ $berita->program->nama}}</td> <!-- Assuming program relation is loaded -->
             <td>{{ $berita->slug }}</td>
             <td>
                 @if ($berita->input_gambar)

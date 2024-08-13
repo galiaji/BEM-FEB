@@ -2,8 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\Admin\KegiatanController as AdminKegiatanController;
+
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\Admin\BeritaController as AdminBeritaController;
 use App\Http\Controllers\Admin\ProgramController as AdminProgramController;
@@ -29,6 +34,7 @@ Route::prefix('admin')
         Route::put('/berita/{id}', [AdminBeritaController::class, 'update'])->name('berita.update');
         Route::delete('/berita/{id}', [AdminBeritaController::class, 'destroy'])->name('berita.destroy');
 
+
         // Berita User
         Route::get('/user', [UserController::class, 'index'])->name('user.index');
         Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
@@ -37,6 +43,14 @@ Route::prefix('admin')
         Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
         Route::put('/user/{user}', [UserController::class, 'update'])->name('user.update');
         Route::delete('/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+        // Kegiatan Routes
+        Route::get('/kegiatan', [AdminKegiatanController::class, 'index'])->name('kegiatan.index');
+        Route::get('/kegiatan/create', [AdminKegiatanController::class, 'create'])->name('kegiatan.create');
+        Route::post('/kegiatan', [AdminKegiatanController::class, 'store'])->name('kegiatan.store');
+        Route::get('/kegiatan/{id}', [AdminKegiatanController::class, 'show'])->name('kegiatan.show');
+        Route::get('/kegiatan/{id}/edit', [AdminKegiatanController::class, 'edit'])->name('kegiatan.edit');
+        Route::put('/kegiatan/{id}', [AdminKegiatanController::class, 'update'])->name('kegiatan.update');
+        Route::delete('/kegiatan/{id}', [AdminKegiatanController::class, 'destroy'])->name('kegiatan.destroy');
     });
 
 
@@ -51,3 +65,7 @@ Route::middleware(RedirectIfAuthenticated::class)->group(function () {
 
 // Rute Logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/', [LandingPageController::class, 'index'])->name('landing.page');
+Route::get('/program/{slug}', [ProgramController::class, 'show'])->name('program.show');
+Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.show');

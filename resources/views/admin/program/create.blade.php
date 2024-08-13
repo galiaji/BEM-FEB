@@ -3,32 +3,28 @@
 @section('title', 'Add New Program')
 
 @section('content')
-<form action="{{ route('admin.program.store') }}" method="POST" enctype="multipart/form-data">
-    @csrf
-    <div>
-        <label>Nama Program:</label>
-        <input type="text" name="nama_program" required>
-    </div>
-    <div>
-        <label>Deskripsi Program:</label>
-        <textarea name="deskripsi_program" required></textarea>
-    </div>
-    <div>
-        <label>Foto Kegiatan:</label>
-        <input type="file" name="foto_kegiatan">
-    </div>
-    <div>
-        <label>Kegiatan dalam Program:</label>
-        <textarea name="kegiatan_dalam_program" required></textarea>
-    </div>
-    <div>
-        <label>Jadwal:</label>
-        <input type="datetime-local" name="jadwal" required>
-    </div>
-    <div>
-        <label>Tujuan:</label>
-        <textarea name="tujuan" required></textarea>
-    </div>
-    <button type="submit">Simpan Program</button>
-</form>
+<div class="container">
+    <h1>Add New Program</h1>
+    <form action="{{ route('admin.program.store') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for="nama">Nama Program</label>
+            <input type="text" name="nama" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="deskripsi">Deskripsi Program</label>
+            <textarea name="deskripsi" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="jadwal">Jadwal</label>
+            <input type="datetime-local" name="jadwal" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="tujuan">Tujuan</label>
+            <textarea name="tujuan" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="{{ route('admin.program.index') }}" class="btn btn-secondary">Back</a>
+    </form>
+</div>
 @endsection
