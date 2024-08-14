@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Program;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProgramController extends Controller
 {
@@ -22,28 +23,18 @@ class ProgramController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_program' => 'required|string|max:255',
-            'deskripsi_program' => 'required|string',
-            'foto_kegiatan' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'kegiatan_dalam_program' => 'required|string',
-            'jadwal' => 'required|date',
-            'tujuan' => 'required|string',
+            'nama' => 'required|string|max:255',  // Updated from 'nama_program'
+            'deskripsi' => 'required|string',  // Updated from 'deskripsi_program'
+            'jadwal' => 'nullable|date',
+            'tujuan' => 'nullable|string',
         ]);
 
         $program = new Program;
-        $program->nama_program = $request->nama_program;
-        $program->deskripsi_program = $request->deskripsi_program;
-
-        if ($request->hasFile('foto_kegiatan')) {
-            $imageName = time() . '.' . $request->foto_kegiatan->extension();
-            $request->foto_kegiatan->move(public_path('images'), $imageName);
-            $program->foto_kegiatan = $imageName;
-        }
-
-        $program->kegiatan_dalam_program = $request->kegiatan_dalam_program;
+        $program->nama = $request->nama;  // Updated from 'nama_program'
+        $program->deskripsi = $request->deskripsi;  // Updated from 'deskripsi_program'
         $program->jadwal = $request->jadwal;
         $program->tujuan = $request->tujuan;
-        $program->slug = \Illuminate\Support\Str::slug($request->nama_program);
+        $program->slug = Str::slug($request->nama);  // Generate slug based on 'nama'
         $program->save();
 
         return redirect()->route('admin.program.index')->with('success', 'Program berhasil disimpan.');
@@ -58,28 +49,18 @@ class ProgramController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama_program' => 'required|string|max:255',
-            'deskripsi_program' => 'required|string',
-            'foto_kegiatan' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'kegiatan_dalam_program' => 'required|string',
-            'jadwal' => 'required|date',
-            'tujuan' => 'required|string',
+            'nama' => 'required|string|max:255',  // Updated from 'nama_program'
+            'deskripsi' => 'required|string',  // Updated from 'deskripsi_program'
+            'jadwal' => 'nullable|date',  // Updated to nullable
+            'tujuan' => 'nullable|string',  // Updated to nullable
         ]);
 
         $program = Program::findOrFail($id);
-        $program->nama_program = $request->nama_program;
-        $program->deskripsi_program = $request->deskripsi_program;
-
-        if ($request->hasFile('foto_kegiatan')) {
-            $imageName = time() . '.' . $request->foto_kegiatan->extension();
-            $request->foto_kegiatan->move(public_path('images'), $imageName);
-            $program->foto_kegiatan = $imageName;
-        }
-
-        $program->kegiatan_dalam_program = $request->kegiatan_dalam_program;
+        $program->nama = $request->nama;  // Updated from 'nama_program'
+        $program->deskripsi = $request->deskripsi;  // Updated from 'deskripsi_program'
         $program->jadwal = $request->jadwal;
         $program->tujuan = $request->tujuan;
-        $program->slug = \Illuminate\Support\Str::slug($request->nama_program);
+        $program->slug = Str::slug($request->nama);  // Generate slug based on 'nama'
         $program->save();
 
         return redirect()->route('admin.program.index')->with('success', 'Program berhasil diperbarui.');

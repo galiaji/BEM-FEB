@@ -13,6 +13,6 @@ class AdminMiddleware
             return $next($request);
         }
 
-        return redirect('/login');
+        return redirect('/login')->withErrors('Anda harus login sebagai admin untuk mengakses halaman ini.');
     }
 }

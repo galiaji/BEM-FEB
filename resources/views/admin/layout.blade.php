@@ -29,6 +29,12 @@
             background-color: #575757;
         }
 
+        .logout {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+
         .content {
             margin-left: 220px;
             padding: 20px;
@@ -48,6 +54,17 @@
         <h2>Admin Dashboard</h2>
         <a href="{{ route('admin.program.index') }}">Manage Programs</a>
         <a href="{{ route('admin.berita.index') }}">Manage News</a>
+        <a href="{{ route('admin.kegiatan.index') }}">Manage Kegiatan</a>
+        <a href="{{ route('admin.produk_umkm.index') }}">Manage Produk</a>
+        <a href="{{ route('admin.user.index') }}">Admin</a>
+        <!-- Tambahkan Logout Button -->
+        <a href="{{ route('logout') }}" class="logout"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </div>
     <div class="content">
         <div class="header">
