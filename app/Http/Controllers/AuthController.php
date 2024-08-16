@@ -26,7 +26,7 @@ class AuthController extends Controller
 
             // Redirect berdasarkan role
             if ($user->role == 'admin') {
-                return redirect()->route('admin.program.index');
+                return redirect()->route('admin.program.index')->with('success', 'Anda Berhasil Login.');
             } else {
                 return redirect('/home'); // Redirect ke halaman user biasa jika bukan admin
             }
