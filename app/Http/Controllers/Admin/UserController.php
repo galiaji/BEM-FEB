@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -78,5 +79,15 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect()->route('admin.user.index')->with('success', 'User deleted successfully.');
+    }
+    public function dashboard()
+    {
+        $user = Auth::user();
+        return view('admin.layout', compact('user'));
+        // return view('admin.dashboard', [
+        //     'userName' => $user->name,
+        //     'userEmail' => $user->email,
+        //     'userPhoto' => $user->profile_photo_url ?? 'default-photo-url.jpg'
+        // ]);
     }
 }
