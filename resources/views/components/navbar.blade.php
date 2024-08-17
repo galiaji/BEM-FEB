@@ -41,7 +41,7 @@
                             aria-expanded="false" data-dropdown-toggle="dropdown-user">
                             <span class="sr-only">Open user menu</span>
                             <img class="w-8 h-8 rounded-full"
-                                src="#"
+                                src="assets/user-photo.png"
                                 alt="user photo">
                         </button>
                     </div>
