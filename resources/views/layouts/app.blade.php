@@ -14,7 +14,7 @@
             {{-- <a class="text-lg font-semibold" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a> --}}
-            <div class="flex justify-end">
+            {{-- <div class="flex justify-end">
                 <ul class="flex space-x-4">
                     @guest
                         <li>
@@ -35,7 +35,7 @@
                         </form>
                     @endguest
                 </ul>
-            </div>
+            </div> --}}
         </div>
     </nav>
 

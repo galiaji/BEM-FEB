@@ -34,13 +34,24 @@
         </thead>
         <tbody>
             @foreach ($programs as $program)
-                <tr>
-                    <td>{{ $program->id }}</td>
-                    <td>{{ $program->nama }}</td>
-                    <td>{{ Str::limit($program->deskripsi, 50) }}</td>
-                    <td>{{ $program->jadwal ? $program->jadwal->format('d-m-Y H:i') : 'Tidak ditentukan' }}</td>
-                    <td>{{ $program->tujuan ?? 'Tidak ditentukan' }}</td>
-                    <td>
+                <tr class="dark:hover:bg-gray-700 hover:bg-gray-100">
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        {{ $program->id }}</td>
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        {{ $program->nama }}</td>
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        {{ Str::limit($program->deskripsi, 50) }}</td>
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        {{ $program->jadwal ? $program->jadwal->format('d-m-Y H:i') : 'Tidak ditentukan' }}</td>
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        {{ $program->tujuan ?? 'Tidak ditentukan' }}</td>
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
                         <a href="{{ route('admin.program.edit', $program->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="{{ route('admin.program.destroy', $program->id) }}" method="POST"
                             style="display:inline;">
