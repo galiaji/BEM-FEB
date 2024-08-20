@@ -94,22 +94,49 @@
                         class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
                         {{ $berita->slug }}</td>
                     <td
-                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
-                        @if ($berita->input_gambar)
-                            <img src="{{ url('images/' . $berita->input_gambar) }}" alt="Gambar Berita" width="100">
-                        @else
-                            Tidak ada gambar
-                        @endif
+                        class="py-2 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        <div x-data="{ open: false }">
+                            <!-- Tombol untuk membuka detail tugas -->
+                            <button @click="open = true"
+                                class="flex items-center justify-center bg-blue-500 text-white rounded-full w-6 h-6 mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" class="h-4 w-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                            </button>
+
+                            {{-- Popover untuk detail tugas --}}
+                            <div x-show="open" @click.away="open = false"
+                                class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
+                                <div class="bg-slate-700 p-8 rounded-lg shadow-lg items-left text-left w-148">
+                                    <!-- Tampilkan catatan tugas -->
+                                    <p class="mb-4"><strong>Gambar:</strong>
+                                    </p>
+                                    @if ($berita->input_gambar)
+                                        <img src="{{ url('images/' . $berita->input_gambar) }}" alt="Gambar Berita"
+                                            width="400">
+                                    @else
+                                        Tidak ada gambar
+                                    @endif
+                                    <!-- Tombol untuk menutup detail tugas -->
+                                    <button @click="open = false"
+                                        class="focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg px-4 py-2 dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-900 mt-4">Tutup</button>
+                                </div>
+                            </div>
+                        </div>
+
                     </td>
                     <td
-                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
-                        <a href="{{ route('admin.berita.edit', $berita->id) }}">Edit</a>
+                        class="py-2 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        <a href="{{ route('admin.berita.edit', $berita->id) }}"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</a>
                         <form action="{{ route('admin.berita.destroy', $berita->id) }}" method="POST"
                             style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit"
-                                onclick="return confirm('Apakah Anda yakin ingin menghapus berita ini?')">Delete</button>
+                            <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus berita ini?')"
+                                class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
                         </form>
                     </td>
                 </tr>
@@ -117,3 +144,23 @@
         </tbody>
     </table>
 @endsection
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+<script>
+    var showNavigationBtn = document.getElementById('showNavigationBtn');
+    var drawer = document.getElementById('drawer-navigation');
+
+    showNavigationBtn.addEventListener('click', function() {
+        if (drawer.style.transform === 'translateX(0%)') {
+            drawer.style.transform = 'translateX(-100%)';
+        } else {
+            drawer.style.transform = 'translateX(0%)';
+        }
+    });
+
+    var exitBtn = document.querySelector('#drawer-navigation button[data-drawer-hide="drawer-navigation"]');
+    exitBtn.addEventListener('click', function() {
+        drawer.style.transform = 'translateX(-100%)';
+    });
+</script>
