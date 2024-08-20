@@ -2,7 +2,8 @@
 
 @section('title', 'Manage Berita')
 
-@section('content') <!-- Breadcrumbs Start -->
+@section('content')
+    <!-- Breadcrumbs Start -->
     <nav class="flex" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse mb-2">
             <li class="inline-flex items-center">

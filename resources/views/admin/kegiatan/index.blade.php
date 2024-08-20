@@ -3,7 +3,46 @@
 @section('title', 'Kegiatan List')
 
 @section('content')
-    <div class="d-flex justify-content-between align-items-center mb-4 mt-2">
+    <!-- Breadcrumbs Start -->
+    <nav class="flex" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse mb-2">
+            <li class="inline-flex items-center">
+                <a href="/admin/kegiatan"
+                    class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                    <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        viewBox="0 0 20 20">
+                        <path
+                            d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
+                    </svg>
+                    Home
+                </a>
+            </li>
+            {{-- <li>
+            <div class="flex items-center">
+                <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+                <a href="#"
+                    class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Users</a>
+            </div>
+        </li> --}}
+            <li aria-current="page">
+                <div class="flex items-center">
+                    <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Kegiatan</span>
+                </div>
+            </li>
+        </ol>
+    </nav>
+    <!-- Breadcrumbs End -->
+    <h1 class="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-400">Kegiatan</h1>
+    <div class="d-flex justify-content-between align-items-center mb-6 mt-2">
         {{-- <h1>Kegiatan List</h1> --}}
         <a href="{{ route('admin.kegiatan.create') }}"
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create
@@ -36,23 +75,35 @@
         </thead>
         <tbody>
             @foreach ($kegiatan as $item)
-                <tr>
-                    <td>{{ $item->id }}</td>
-                    <td>{{ $item->nama_kegiatan }}</td>
-                    <td>
+                <tr class="dark:hover:bg-gray-700 hover:bg-gray-100">
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        {{ $item->id }}</td>
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        {{ $item->nama_kegiatan }}</td>
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
                         @if ($item->foto_kegiatan)
                             <img src="{{ asset('storage/' . $item->foto_kegiatan) }}" alt="Foto Kegiatan" width="100">
                         @endif
                     </td>
-                    <td>{{ Str::limit($item->deskripsi_kegiatan, 50) }}</td>
-                    <td>{{ $item->program->nama ?? 'N/A' }}</td>
-                    <td>
-                        <a href="{{ route('admin.kegiatan.edit', $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        {{ Str::limit($item->deskripsi_kegiatan, 50) }}</td>
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        {{ $item->program->nama ?? 'N/A' }}</td>
+                    <td
+                        class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                        <a href="{{ route('admin.kegiatan.edit', $item->id) }}"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</a>
                         <form action="{{ route('admin.kegiatan.destroy', $item->id) }}" method="POST"
                             style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm"
+                            <button type="submit"
+                                class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                                 onclick="return confirm('Are you sure?')">Delete</button>
                         </form>
                     </td>
