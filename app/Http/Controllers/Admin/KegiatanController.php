@@ -80,11 +80,13 @@ class KegiatanController extends Controller
      * @param  \App\Models\Kegiatan  $kegiatan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kegiatan $kegiatan)
+    public function edit($id)
     {
+        $kegiatan = Kegiatan::findOrFail($id); // Mengambil model tunggal berdasarkan ID
         $programs = Program::all();
         return view('admin.kegiatan.edit', compact('kegiatan', 'programs'));
     }
+
 
     /**
      * Update the specified kegiatan in storage.
