@@ -18,7 +18,7 @@
     <section class="program-details">
         <h2>{{ $berita->judul }}</h2>
         <p>{{ $berita->isi_berita }}</p>
-        <img src="{{ url('images/'.$berita->input_gambar) }}" alt="{{ $berita->judul }}">
+        <img src="{{ url('images/' . $berita->input_gambar) }}" alt="{{ $berita->judul }}">
         <!-- Add other program details here -->
     </section>
 
