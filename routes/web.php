@@ -5,16 +5,17 @@ use App\Http\Controllers\AuthController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ProgramController;
-use App\Http\Controllers\Admin\KegiatanController as AdminKegiatanController;
-
 use App\Http\Controllers\Admin\UserController;
+
 use App\Http\Controllers\LandingPageController;
 use App\Http\Middleware\RedirectIfAuthenticated;
+use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\Admin\ProdukUMKMController;
 use App\Http\Controllers\Admin\BeritaController as AdminBeritaController;
-use App\Http\Controllers\Admin\ProgramController as AdminProgramController;
 
 // Rute admin dengan middleware AdminMiddleware
-use App\Http\Controllers\Admin\ProdukUMKMController;
+use App\Http\Controllers\Admin\ProgramController as AdminProgramController;
+use App\Http\Controllers\Admin\KegiatanController as AdminKegiatanController;
 
 Route::prefix('admin')
     ->name('admin.')
@@ -84,3 +85,5 @@ Route::get('/program/{slug}', [ProgramController::class, 'show'])->name('program
 
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
 Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.show');
+// Route for showing individual Kegiatan
+Route::get('/kegiatan/{slug}', [KegiatanController::class, 'show'])->name('acara.show');

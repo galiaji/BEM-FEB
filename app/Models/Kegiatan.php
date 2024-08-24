@@ -18,6 +18,7 @@ class Kegiatan extends Model
         'foto_kegiatan',
         'deskripsi_kegiatan',
         'program_id',
+        'slug',
     ];
 
     protected static function boot()
