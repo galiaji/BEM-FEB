@@ -23,12 +23,12 @@
                                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-30"></div>
                             </div>
                             <div class="p-5">
-                                <span class="block mt-6 text-sm font-semibold tracking-widest text-gray-400 uppercase">
-                                    {{ $berita->created_at->format('F j, Y') }}
-                                </span>
                                 <p class="mt-5 text-2xl font-semibold text-gray-900">
                                     {{ $berita->judul }}
                                 </p>
+                                <span class="block mt-6 text-sm font-semibold tracking-widest text-gray-400 uppercase">
+                                    {{ $berita->created_at->format('F j, Y') }}
+                                </span>
                                 <p class="mt-4 text-base text-gray-700">{{ Str::limit($berita->isi_berita, 100) }}</p>
                                 <span class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
                                     Continue Reading

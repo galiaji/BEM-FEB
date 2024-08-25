@@ -9,6 +9,9 @@
             <!-- Main Content -->
             <div class="lg:w-3/4">
                 <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">{{ $berita->judul }}</h2>
+                <span class="block mt-6 text-sm font-semibold tracking-widest text-gray-400 uppercase">
+                    {{ $berita->created_at->format('F j, Y') }}
+                </span>
                 @if(!empty($berita->input_gambar))
                     <div class="relative w-full h-[300px] overflow-hidden rounded-lg shadow-lg mb-6">
                         <img 

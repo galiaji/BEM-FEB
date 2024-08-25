@@ -15,6 +15,11 @@ class ProgramController extends Controller
         return view('program.index', compact('programs'));
     }
 
+    public function viewprogram()
+    {
+        return view('program.ukcit');
+    }
+
     public function show($slug)
     {
         // Retrieve the program by its slug
@@ -27,5 +32,6 @@ class ProgramController extends Controller
 
         // Pass data to the view
         return view('program.show', compact('program', 'relatedNews', 'relatedKegiatan'));
+        
     }
 }
