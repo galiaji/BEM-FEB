@@ -15,6 +15,11 @@ class ProgramController extends Controller
         return view('program.index', compact('programs'));
     }
 
+    public function viewRumles()
+    {
+        return view('program.rumles');
+    }
+
     public function show($slug)
     {
         // Retrieve the program by its slug

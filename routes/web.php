@@ -83,6 +83,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/', [LandingPageController::class, 'index'])->name('landing.page');
 
 Route::get('/programs', [ProgramController::class, 'index'])->name('programs.index');
+Route::get('/rumles', [ProgramController::class, 'viewRumles'])->name('programs.rumles');
 Route::get('/program/{slug}', [ProgramController::class, 'show'])->name('program.show');
 
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
