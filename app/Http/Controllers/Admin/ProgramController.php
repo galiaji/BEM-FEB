@@ -15,6 +15,12 @@ class ProgramController extends Controller
         return view('admin.program.index', compact('programs'));
     }
 
+    public function indexjawir()
+    {
+        $programs = Program::all();
+        return view('program.Jawir');
+    }
+
     public function create()
     {
         return view('admin.program.create');
