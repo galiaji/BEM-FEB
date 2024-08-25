@@ -90,3 +90,5 @@ Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
 Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.show');
 // Route for showing individual Kegiatan
 Route::get('/kegiatan/{slug}', [KegiatanController::class, 'show'])->name('acara.show');
+
+Route::get('/Jangwis', [ProgramController::class, 'Jangwis'])->name('Program.jangwis');
