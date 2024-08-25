@@ -11,10 +11,11 @@ class Program extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama',  // Updated from 'nama_program'
-        'deskripsi',  // Updated from 'deskripsi_program'
+        'nama',
+        'deskripsi',
         'jadwal',
         'tujuan',
+        'gambar',
         'slug',
     ];
 
