@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
@@ -18,6 +17,13 @@ class BeritaController extends Controller
     public function show($slug)
     {
         $berita = Berita::where('slug', $slug)->firstOrFail();
-        return view('berita.show', compact('berita'));
+        
+        // Ambil 3 berita terbaru selain yang ditampilkan
+        $beritas = Berita::where('slug', '!=', $slug)
+                         ->latest() // Urutkan berita terbaru
+                         ->take(3)  // Batasi hanya 3 berita
+                         ->get();
+
+        return view('berita.show', compact('berita', 'beritas'));
     }
 }
