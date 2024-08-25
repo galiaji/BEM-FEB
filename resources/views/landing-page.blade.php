@@ -73,10 +73,10 @@
                 <h2 class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">
                     About <mark class="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">RUCITA</mark>
                 </h2>
-                <p class="text-lg leading-relaxed text-gray-400 mt-9">Lorem ipsum dolor sit, amet consectetur
+                <p class="text-lg leading-relaxed text-black-400 mt-9">Lorem ipsum dolor sit, amet consectetur
                     adipisicing elit. Dignissimos a libero in velit, explicabo molestias totam deleniti quibusdam
                     odio obcaecati incidunt.</p>
-                <p class="mt-6 text-lg leading-relaxed text-gray-400">Lorem ipsum dolor sit, amet consectetur
+                <p class="mt-6 text-lg leading-relaxed text-black-400">Lorem ipsum dolor sit, amet consectetur
                     adipisicing elit. Dignissimos a libero in velit, explicabo molestias totam deleniti quibusdam
                     odio obcaecati incidunt.</p>
             </div>
@@ -103,7 +103,7 @@
                         </h5>
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
-                        {{ Str::limit($program->deskripsi, 100, '...') }}
+                        {{ Str::limit($program->tujuan, 100, '...') }}
                     </p>
                     <a href="{{route('Program.jangwis') }}"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

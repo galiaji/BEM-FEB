@@ -4,9 +4,9 @@
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="/" class="flex items-center">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
+                    <img src="img/LOGO_PPK_BEM_FEB-removebg-preview 1.png" class="h-8 me-3" alt="FlowBite Logo" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-white">RUCITA</span>
-                </a>
+                </a>                
                 <span class="block mt-4 text-white">Desa Kemambang</span>
                 <span class="block text-white">Tim BEM FEB UNDIP</span>
             </div>
@@ -28,6 +28,9 @@
                         <a href="https://api.whatsapp.com/send/?phone=" target="_blank" class="hover:underline">WhatsApp</a>
                     </li>
                 </ul>
+            </div>
+            <div>
+                <a href="/ukcit" class="text-white">UKCIT</a>
             </div>
             <!-- Footer Links -->
         </div>
