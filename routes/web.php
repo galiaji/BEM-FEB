@@ -92,3 +92,5 @@ Route::get('/kegiatan/{slug}', [KegiatanController::class, 'show'])->name('acara
 
 
 Route::get('/jawir', [AdminProgramController::class, 'indexjawir'])->name('program.jawir');
+
+Route::get('/Jangwis', [ProgramController::class, 'Jangwis'])->name('Program.jangwis');
