@@ -15,12 +15,13 @@ class ProgramController extends Controller
         return view('program.index', compact('programs'));
     }
 
-    public function viewprogram()
+    public function ukcit()
     {
+        $program = Program::where('nama', 'ukcit')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
         $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('program.ukcit', compact('relatedKegiatan', 'relatedNews', 'beritas'));
+        return view('program.ukcit', compact('program', 'relatedKegiatan', 'relatedNews', 'beritas'));
     }
 
     public function show($slug)
@@ -35,19 +36,27 @@ class ProgramController extends Controller
 
         // Pass data to the view
         return view('program.show', compact('program', 'relatedNews', 'relatedKegiatan'));
-        
+    }
+
+    public function rumles()
+    {
+        $relatedKegiatan = Kegiatan::all();
+        $relatedNews = Berita::all();
+        return view('program.rumles', compact('relatedKegiatan', 'relatedNews'));
     }
 
     public function Jangwis()
     {
+        $program = Program::where('nama', 'JangWis')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
-        return view('program.jangwis', compact('relatedKegiatan', 'relatedNews'));
+        return view('program.jangwis', compact('program', 'relatedKegiatan', 'relatedNews'));
     }
     public function Adbud()
     {
+        $program = Program::where('nama', 'AdBud')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
-        return view('program.adbud', compact('relatedKegiatan', 'relatedNews'));
+        return view('program.adbud', compact('program', 'relatedKegiatan', 'relatedNews'));
     }
 }
