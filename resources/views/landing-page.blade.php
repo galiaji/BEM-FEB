@@ -61,7 +61,7 @@
                                 <blockquote class="ml-5">
                                     <p class="text-sm font-medium text-white sm:text-lg">Lorem ipsum dolor sit amet
                                         consectetur adipisicing elit. Aperiam unde sint aliquid reprehenderit culpa
-                                        corrupti ut esse eligendi.
+                                        corrupti .
                                     </p>
                                 </blockquote>
                             </div>

@@ -5,21 +5,22 @@
 @section('content')
 <!-- Hero Section Start -->
 <div class="bg-gradient-to-b from-gray-500 to-gray-100">
-    <section id="About" class="py-10 sm:py-16 lg:py-24 bg-white rounded-lg">
+    <section id="About" class="py-10 sm:py-16 lg:py-5 bg-green-200 rounded-lg">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 bg-yellow-100">
-            <div class="grid grid-cols-12 gap-x-12 bg-green-100">
-                <div class="col-span-7">
+            <div class="grid grid-cols-2 md:col-1 sm:col-1 gap-x-2 bg-green-100">
+                <div class="col-span-1">
                     <h2 class="mb-4 text-4xl font-bold leading-tight tracking-tight text-indigo-600 md:text-5xl lg:text-5xl">
                         Tentang Pojok Lestari
                     </h2>
                     <p class="mt-4 text-lg leading-relaxed text-gray-700 ">
-                        Rumah Cerdas Kita (RUCITA) hadir sebagai sebuah wadah yang bertujuan untuk meningkatkan kualitas sumber daya manusia (SDM) melalui pendidikan formal dan nonformal yang mudah diakses. Website kami mencakup berbagai aspek literasi, mulai dari metode pembelajaran, produk UMKM dari program Srawung Wirausaha, hingga dokumentasi acara budaya dan MoU terkait.
+                        program pembinaan UMKM khususnya di Desa Munding yang ingin mengembangkan dan memajukan usahanya dengan baik dan sesuai dengan perkembangan teknologi
                     </p>
                     <p class="mt-4 text-lg leading-relaxed text-gray-700">
-                        Kami juga memberikan informasi terkait kafe kami, yang menyajikan menu beragam, serta panduan pemesanan homestay atau camping ground untuk kelompok. Selain itu, kami fokus pada edukasi pengelolaan limbah dan kepedulian terhadap lingkungan melalui program RUBIK. Semua upaya ini bertujuan untuk memberikan kontribusi positif dalam memajukan SDM dan menjunjung tinggi prinsip keberlanjutan.
+                        Kegiatan yang akan di selenggarakan diantaranya berupa pelatihan, pengembangan terhadap produk dan hal pendukung usaha seperti pengurusan perizinan usaha dan produk, rebranding produk, desain produk dan branding melalui sosial media.
+                        dikasi space buat masukin foto kegiatan nya
                     </p>
                 </div>
-                <div class="col-span-5 flex justify-center">
+                <div class="flex">
                     <img src="img/gambarvec1.png" alt="Illustration" class="w-full max-w-md rounded-lg">
                 </div>
             </div>
@@ -50,52 +51,224 @@
             </div>
         </div>
     </section>
-
 </div>
 <!-- Hero Section End -->
-
 <!-- About Section Start -->
-<section id="About" class="py-10 bg-transparent sm:py-16 lg:py-24 pt-24 pb-24 rounded-lg bg-red-300">
+<section id="CategorySection" class="py-10 bg-transparent sm:py-16 lg:py-6 pt-24 pb-24 rounded-lg bg-red-200">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-x-12 xl:gap-x-24 gap-y-12">
-            <div class="relative lg:mb-12">
-                <img class="absolute -right-0 -bottom-8 xl:-bottom-12 xl:-right-4"
-                    src="https://cdn.rareblocks.xyz/collection/celebration/images/content/3/dots-pattern.svg"
-                    alt="Dots Pattern" />
-                <div class="pl-24 pr-12">
-                    <img class="relative rounded-xl"
-                        src="https://cdn.rareblocks.xyz/collection/celebration/images/content/3/girl-working-on-laptop.jpg"
-                        alt="Girl Working on Laptop" />
-                </div>
-                <div class="absolute left-0 pr-12 bottom-8 xl:bottom-20">
-                    <div class="max-w-xs bg-blue-600 rounded-lg sm:max-w-md xl:max-w-md">
-                        <div class="px-3 py-4 sm:px-5 sm:py-8">
-                            <div class="flex items-start">
-                                <p class="text-3xl sm:text-4xl">👋</p>
-                                <blockquote class="ml-5">
-                                    <p class="text-sm font-medium text-white sm:text-lg">Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Aperiam unde sint aliquid reprehenderit culpa
-                                        corrupti ut esse eligendi.
-                                    </p>
-                                </blockquote>
-                            </div>
+        <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Produk MAKANAN</h2>
+        <div class="flex justify-center space-x-4 mb-4">
+            <button class="px-6 py-2 bg-gray-100 rounded-lg flex items-center justify-center space-x-2">
+                <i class="fas fa-utensils"></i>
+                <span>Makanan</span>
+            </button>
+            <button class="px-6 py-2 bg-gray-100 rounded-lg flex items-center justify-center space-x-2">
+                <i class="fas fa-tools"></i>
+                <span>Kerajinan</span>
+            </button>
+        </div>
+        <div class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-lg">
+            <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-4">
+        <div class="flex items-end justify-between bg-red-300">
+            <div class="hidden lg:flex lg:items-center lg:space-x-3">
+                <button id="prevBtn" type="button"
+                    class="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <button id="nextBtn" type="button"
+                    class="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="relative">
+            <div id="carousel" class="flex overflow-x-auto max-w-md mx-auto mt-8 lg:mt-1 lg:max-w-full scroll-smooth pb-6 bg-green-400">
+                <div class="flex-none w-full lg:w-1/3 px-4 mb-6">
+                    <div class="overflow-hidden bg-white rounded shadow ">
+                        <div class="p-6">
+                            <p class="mt-5 text-2xl font-semibold">
+                                <a href="#" title="" class="text-black">martabak</a>
+                            </p>
+                            <p class="mt-4 text-base text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aliquam voluptatum possimus, tempora, repudiandae sequi necessitatibus quia dolore repellendus totam aspernatur.</p>
+                            <a href="#" title=""
+                                class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
+                                Continue Reading
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <div class="flex-none w-full lg:w-1/3 px-4 mb-6">
+                    <div class="overflow-hidden bg-white rounded shadow ">
+                        <div class="p-6">
+                            <p class="mt-5 text-2xl font-semibold">
+                                <a href="#" title="" class="text-black">martabak</a>
+                            </p>
+                            <p class="mt-4 text-base text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aliquam voluptatum possimus, tempora, repudiandae sequi necessitatibus quia dolore repellendus totam aspernatur.</p>
+                            <a href="#" title=""
+                                class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
+                                Continue Reading
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-none w-full lg:w-1/3 px-4 mb-6">
+                    <div class="overflow-hidden bg-white rounded shadow ">
+                        <div class="p-6">
+                            <p class="mt-5 text-2xl font-semibold">
+                                <a href="#" title="" class="text-black">martabak</a>
+                            </p>
+                            <p class="mt-4 text-base text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aliquam voluptatum possimus, tempora, repudiandae sequi necessitatibus quia dolore repellendus totam aspernatur.</p>
+                            <a href="#" title=""
+                                class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
+                                Continue Reading
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-none w-full lg:w-1/3 px-4 mb-6">
+                    <div class="overflow-hidden bg-white rounded shadow ">
+                        <div class="p-6">
+                            <p class="mt-5 text-2xl font-semibold">
+                                <a href="#" title="" class="text-black">martabak</a>
+                            </p>
+                            <p class="mt-4 text-base text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aliquam voluptatum possimus, tempora, repudiandae sequi necessitatibus quia dolore repellendus totam aspernatur.</p>
+                            <a href="#" title=""
+                                class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
+                                Continue Reading
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="2xl:pl-16">
-                <h2 class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">
-                    About <mark class="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">RUCITA</mark>
-                </h2>
-                <p class="text-lg leading-relaxed text-gray-400 mt-9">Lorem ipsum dolor sit, amet consectetur
-                    adipisicing elit. Dignissimos a libero in velit, explicabo molestias totam deleniti quibusdam
-                    odio obcaecati incidunt.</p>
-                <p class="mt-6 text-lg leading-relaxed text-gray-400">Lorem ipsum dolor sit, amet consectetur
-                    adipisicing elit. Dignissimos a libero in velit, explicabo molestias totam deleniti quibusdam
-                    odio obcaecati incidunt.</p>
-            </div>
+
+
+        </div>
+
+        <div class="flex items-center justify-center mt-8 space-x-3 lg:hidden">
+            <button id="prevBtnMobile" type="button"
+                class="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+
+            <button id="nextBtnMobile" type="button"
+                class="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
         </div>
     </div>
 </section>
 
+<section class="news py-24 bg-gray-50 dark:bg-gray-900">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold leading-tight dark:text-white text-gray-900 sm:text-4xl xl:text-5xl font-pj">
+                Berita Terbaru
+            </h2>
+        </div>
+
+
+        <div id="carousel" class="flex overflow-x-auto max-w-md mx-auto mt-8 lg:mt-16 lg:max-w-full scroll-smooth pb-6 space-x-6">
+            
+            <div class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                <a href="#">
+                    <img class="w-full h-48 object-cover" src="#" alt="kuda diponegoro" />
+                </a>
+                <div class="p-6">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">kuda diponegoro lepas</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400 mb-4">17 agustus 1945</p>
+                    <a href="#"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Baca Berita
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+<script>
+    const carousel = document.getElementById('carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtnMobile = document.getElementById('prevBtnMobile');
+    const nextBtnMobile = document.getElementById('nextBtnMobile');
+
+    prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: -carousel.clientWidth,
+            behavior: 'smooth'
+        });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: carousel.clientWidth,
+            behavior: 'smooth'
+        });
+    });
+
+    prevBtnMobile.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: -carousel.clientWidth,
+            behavior: 'smooth'
+        });
+    });
+
+    nextBtnMobile.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: carousel.clientWidth,
+            behavior: 'smooth'
+        });
+    });
+</script>
 @endsection
