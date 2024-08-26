@@ -12,6 +12,19 @@
                     deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.</p>
             </div>
 
+            {{-- bagian filter drop down --}}
+            <div class="flex items-center justify-end mt-4">
+                <select id="programFilter" class="w-full lg:w-1/3 p-2 border border-gray-300 rounded">
+                    <option value="">Semua Program</option>
+                    @foreach($programs as $program)
+                        <option value="{{ $program->id }}" {{ request('program_id') == $program->id ? 'selected' : '' }}>
+                            {{ $program->nama }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+            {{-- end section bagian filter drop down --}}
+            
             <div class="hidden lg:flex lg:items-center lg:space-x-3">
                 <button id="prevBtn" type="button"
                     class="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
@@ -129,6 +142,21 @@
             left: carousel.clientWidth,
             behavior: 'smooth'
         });
+    });
+</script>
+
+<script>
+    const programFilter = document.getElementById('programFilter');
+
+    programFilter.addEventListener('change', function() {
+        const selectedProgram = this.value;
+        const url = new URL(window.location.href);
+        if (selectedProgram) {
+            url.searchParams.set('program_id', selectedProgram);
+        } else {
+            url.searchParams.delete('program_id');
+        }
+        window.location.href = url.toString();
     });
 </script>
 @endsection
