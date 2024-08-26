@@ -15,6 +15,14 @@ class ProgramController extends Controller
         return view('program.index', compact('programs'));
     }
 
+    public function viewprogram()
+    {
+        $relatedKegiatan = Kegiatan::all();
+        $relatedNews = Berita::all();
+        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('program.ukcit', compact('relatedKegiatan', 'relatedNews', 'beritas'));
+    }
+
     public function show($slug)
     {
         // Retrieve the program by its slug
@@ -27,6 +35,7 @@ class ProgramController extends Controller
 
         // Pass data to the view
         return view('program.show', compact('program', 'relatedNews', 'relatedKegiatan'));
+        
     }
 
     public function Jangwis()
