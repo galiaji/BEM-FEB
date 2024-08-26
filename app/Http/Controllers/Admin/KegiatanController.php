@@ -104,7 +104,7 @@ class KegiatanController extends Controller
             'program_id' => 'required|exists:programs,id',
         ]);
 
-        $data = $request->all();
+        $data = $request->except('foto_kegiatan');
 
         // Handle file upload
         if ($request->hasFile('foto_kegiatan')) {
@@ -123,6 +123,7 @@ class KegiatanController extends Controller
 
         return redirect()->route('admin.kegiatan.index')->with('success', 'Kegiatan updated successfully.');
     }
+
 
     /**
      * Remove the specified kegiatan from storage.
