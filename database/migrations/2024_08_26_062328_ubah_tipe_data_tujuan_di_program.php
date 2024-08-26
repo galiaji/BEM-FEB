@@ -6,25 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
     {
         Schema::table('programs', function (Blueprint $table) {
-            $table->text('tujuan')->change();
+            // Temporarily allow NULL values to prevent data truncation issues
+            $table->longText('tujuan')->nullable()->change();
+        });
+
+        // After the data is successfully migrated, set it back to not null if needed
+        Schema::table('programs', function (Blueprint $table) {
+            $table->longText('tujuan')->nullable(false)->change();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::table('programs', function (Blueprint $table) {
-            $table->string('tujuan')->change();
+            $table->text('tujuan')->nullable(false)->change(); // Assuming it was not null before
         });
     }
 };

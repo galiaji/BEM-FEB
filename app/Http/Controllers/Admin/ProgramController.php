@@ -7,6 +7,7 @@ use App\Models\Program;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File; // To handle file deletion
+use Illuminate\Support\Facades\Storage;
 
 class ProgramController extends Controller
 {
@@ -16,44 +17,60 @@ class ProgramController extends Controller
         return view('admin.program.index', compact('programs'));
     }
 
-    public function indexjawir()
-    {
-        $programs = Program::all();
-        return view('program.Jawir');
-    }
+
 
     public function create()
     {
         return view('admin.program.create');
     }
 
+
+
     public function store(Request $request)
     {
+        // Validasi input
         $request->validate([
             'nama' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'jadwal' => 'nullable|date',
-            'tujuan' => 'nullable|string|max:255',
+            'tujuan' => 'nullable|string',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+        // Buat instance baru Program
         $program = new Program;
         $program->nama = $request->nama;
         $program->deskripsi = $request->deskripsi;
         $program->jadwal = $request->jadwal;
         $program->tujuan = $request->tujuan;
 
+        // Jika ada gambar yang diunggah, simpan ke storage
         if ($request->hasFile('gambar')) {
+            // Pastikan direktori penyimpanan ada
+            if (!File::exists(public_path('images'))) {
+                File::makeDirectory(public_path('images'), 0755, true);
+            }
+
+            // Generate nama unik untuk file gambar
             $imageName = time() . '.' . $request->gambar->extension();
+
+            // Simpan gambar ke direktori public/images
             $request->gambar->move(public_path('images'), $imageName);
+
+            // Simpan nama file gambar ke dalam database
             $program->gambar = $imageName;
         }
 
+        // Generate slug dari nama program
         $program->slug = Str::slug($request->nama);
+
+        // Simpan data program ke database
         $program->save();
 
+        // Redirect ke halaman index dengan pesan sukses
         return redirect()->route('admin.program.index')->with('success', 'Program berhasil disimpan.');
     }
+
 
     public function edit($id)
     {
@@ -67,8 +84,8 @@ class ProgramController extends Controller
             'nama' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'jadwal' => 'nullable|date',
-            'tujuan' => 'nullable|string|max:255',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'tujuan' => 'nullable|string-',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $program = Program::findOrFail($id);
