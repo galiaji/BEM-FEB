@@ -41,9 +41,11 @@
     </ol>
 </nav>
 <!-- Breadcrumbs End -->
+
 <h1 class="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-400">Tambah Program</h1>
+
 <div class="container">
-    <form action="{{ route('admin.program.store') }}" method="POST">
+    <form action="{{ route('admin.program.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Program</label>
@@ -76,6 +78,14 @@
             <textarea name="tujuan"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"></textarea>
             @error('tujuan')
+            <div class="text-red-500 text-sm">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="gambar" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foto</label>
+            <input type="file" name="gambar"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+            @error('gambar')
             <div class="text-red-500 text-sm">{{ $message }}</div>
             @enderror
         </div>
