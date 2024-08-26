@@ -40,7 +40,7 @@
         <h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white mb-8 relative inline-block kegiatan-title">Kegiatan Terkait</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($relatedKegiatan as $kegiatan)
-                @if($kegiatan->program_id == $programs->id)
+                @if($kegiatan->program->nama == "UKCIT")
                 <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
                     <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $kegiatan->nama_kegiatan }}</h5>
@@ -126,29 +126,34 @@
             </h2>
         </div>
 
-        @if ($beritas->isEmpty())
-        <div class="text-center">
-            <p class="text-lg text-gray-700 dark:text-gray-300">Belum ada berita</p>
-        </div>
-        @else
-        <div id="carousel" class="flex overflow-x-auto max-w-md mx-auto mt-8 lg:mt-16 lg:max-w-full scroll-smooth pb-6 space-x-6">
-            @foreach ($beritas as $berita)
-            <div class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
-                <a href="{{ route('berita.show', $berita->slug) }}">
-                    <img class="w-full h-48 object-cover" src="{{ asset('images/' . $berita->input_gambar) }}" alt="{{ $berita->judul }}" />
-                </a>
-                <div class="p-6">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $berita->judul }}</h5>
-                    <p class="font-normal text-gray-700 dark:text-gray-400 mb-4">{{ $berita->created_at->format('d M Y') }}</p>
-                    <a href="{{ route('berita.show', $berita->slug) }}"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Baca Berita
-                    </a>
-                </div>
+         <!-- Related News Section Start -->
+    @if ($relatedNews->isNotEmpty())
+    <section class="related-news py-10 bg-gray-50 sm:py-16 lg:py-24">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">Berita Rumah Lestari</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                @foreach ($relatedNews as $news)
+                    @if ($news->program->nama == "UKCIT")
+                        <div
+                            class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
+                            <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
+                                class="mb-4 w-full h-48 object-cover rounded-lg">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                {{ $news->judul }}</h5>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
+                                {{ Str::limit($news->isi_berita, 100, '...') }}</p>
+                            <a href="{{ route('berita.show', $news->slug) }}"
+                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Baca Berita
+                            </a>
+                        </div>
+                    @endif
+                @endforeach
             </div>
-            @endforeach
         </div>
-        @endif
+    </section>
+    @endif
+    <!-- Related News Section End -->
     </div>
 </section>
 <!-- News Section End -->
