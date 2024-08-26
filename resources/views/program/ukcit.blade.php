@@ -14,7 +14,7 @@
                 </div>
                 <div class="md:w-1/2 md:pl-6">
                     <h2 class="text-4xl font-bold leading-tight text-gray-900 dark:text-white mb-10 mt-20">Tentang Ukir Cita</h2>
-                    <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">Ukir Cita merupakan fasilitas yang diberikan oleh Tim PPK Ormawa BEM FEB Undip yang didalamnya terdapat kegiatan belajar bersama dengan Anak-anak di Desa Munding. Kegiatan belajar bersama ini diselenggarakan untuk siswa-siswi SMP yang kami sesuaikan dengan kebutuhan dari anak-anak dan diterapkan di dalam kurikulum. dikasih space buat naruh foto kegiatannya</p>
+                    <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{{ $program->deskripsi }}</p>
                 </div>
             </div>
         </div>
@@ -93,20 +93,20 @@
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">Tujuan Kegiatan</h3>
         <div class="mt-8">
-            <div class="flex flex-col md:flex-row items-center mb-8">
+            {{-- <div class="flex flex-col md:flex-row items-center mb-8">
                 <div class="md:w-1/2 mb-4 md:mb-0">
                     <img src="{{ asset('img/tujuan-1.png') }}" alt="Gambar Tujuan 1" class="w-full h-auto rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2 md:pl-6 text-gray-700 dark:text-gray-300">
-                    <p class="text-lg leading-relaxed">Kegiatan Ukir Cita ini diharapkan dapat memberikan semangat kepada anak-anak untuk meraih cita-cita terutama dalam hal pendidikan dengan adanya menabung pribadi. Fasilitas yang disediakan dalam kegiatan Ukir Cita harapannya mampu membantu mengoptimalisasi pendidikan anak-anak di Desa Munding. </p>
+                    <p class="text-lg leading-relaxed">{{ $program->tujuan }} </p>
                 </div>
-            </div>
+            </div> --}}
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-4 md:mb-0 md:order-2">
                     <img src="{{ asset('img/tujuan-2.png') }}" alt="Gambar Tujuan 2" class="w-full h-auto rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2 md:pr-6 text-gray-700 dark:text-gray-300 md:order-1">
-                    <p class="text-lg leading-relaxed">[Masukkan teks deskripsi tujuan kedua di sini]</p>
+                    <p class="text-lg leading-relaxed">{{ $program->tujuan }}</p>
                 </div>
             </div>
         </div>

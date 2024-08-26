@@ -17,10 +17,11 @@ class ProgramController extends Controller
 
     public function ukcit()
     {
+        $program = Program::where('nama', 'ukcit')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
         $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('program.ukcit', compact('relatedKegiatan', 'relatedNews', 'beritas'));
+        return view('program.ukcit', compact('program', 'relatedKegiatan', 'relatedNews', 'beritas'));
     }
 
     public function show($slug)
