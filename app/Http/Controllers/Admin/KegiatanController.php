@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage; // Importing the Storage facade
 class KegiatanController extends Controller
 {
     /**
-     * Display a listing of the admin.kegiatan.
+     * Display a listing of the kegiatan.
      *
      * @return \Illuminate\Http\Response
      */
@@ -23,7 +23,7 @@ class KegiatanController extends Controller
     }
 
     /**
-     * Show the form for creating a new admin.kegiatan.
+     * Show the form for creating a new kegiatan.
      *
      * @return \Illuminate\Http\Response
      */
@@ -46,7 +46,6 @@ class KegiatanController extends Controller
             'foto_kegiatan' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'deskripsi_kegiatan' => 'required|string',
             'program_id' => 'required|exists:programs,id',
-
         ]);
 
         $data = $request->all();
@@ -55,7 +54,9 @@ class KegiatanController extends Controller
 
         // Handle file upload
         if ($request->hasFile('foto_kegiatan')) {
-            $data['foto_kegiatan'] = $request->file('foto_kegiatan')->store('images/kegiatan', 'public');
+            $imageName = time() . '.' . $request->foto_kegiatan->extension();
+            $request->foto_kegiatan->storeAs('public/images', $imageName);
+            $data['foto_kegiatan'] = $imageName;
         }
 
         Kegiatan::create($data);
@@ -64,7 +65,7 @@ class KegiatanController extends Controller
     }
 
     /**
-     * Display the specified admin.kegiatan.
+     * Display the specified kegiatan.
      *
      * @param  \App\Models\Kegiatan  $kegiatan
      * @return \Illuminate\Http\Response
@@ -75,18 +76,17 @@ class KegiatanController extends Controller
     }
 
     /**
-     * Show the form for editing the specified admin.kegiatan.
+     * Show the form for editing the specified kegiatan.
      *
-     * @param  \App\Models\Kegiatan  $kegiatan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $kegiatan = Kegiatan::findOrFail($id); // Mengambil model tunggal berdasarkan ID
+        $kegiatan = Kegiatan::findOrFail($id); // Retrieve the model by ID
         $programs = Program::all();
         return view('admin.kegiatan.edit', compact('kegiatan', 'programs'));
     }
-
 
     /**
      * Update the specified kegiatan in storage.
@@ -109,11 +109,14 @@ class KegiatanController extends Controller
         // Handle file upload
         if ($request->hasFile('foto_kegiatan')) {
             // Delete the old image
-            if ($kegiatan->foto_kegiatan && Storage::exists('public/' . $kegiatan->foto_kegiatan)) {
-                Storage::delete('public/' . $kegiatan->foto_kegiatan);
+            if ($kegiatan->foto_kegiatan && Storage::exists('public/images/' . $kegiatan->foto_kegiatan)) {
+                Storage::delete('public/images/' . $kegiatan->foto_kegiatan);
             }
 
-            $data['foto_kegiatan'] = $request->file('foto_kegiatan')->store('images/kegiatan', 'public');
+            // Upload the new image
+            $imageName = time() . '.' . $request->foto_kegiatan->extension();
+            $request->foto_kegiatan->storeAs('public/images', $imageName);
+            $data['foto_kegiatan'] = $imageName;
         }
 
         $kegiatan->update($data);
@@ -129,8 +132,8 @@ class KegiatanController extends Controller
      */
     public function destroy(Kegiatan $kegiatan)
     {
-        if ($kegiatan->foto_kegiatan && Storage::exists('public/' . $kegiatan->foto_kegiatan)) {
-            Storage::delete('public/' . $kegiatan->foto_kegiatan);
+        if ($kegiatan->foto_kegiatan && Storage::exists('public/images/' . $kegiatan->foto_kegiatan)) {
+            Storage::delete('public/images/' . $kegiatan->foto_kegiatan);
         }
 
         $kegiatan->delete();
