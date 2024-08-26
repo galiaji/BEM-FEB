@@ -71,9 +71,10 @@ class ProgramController extends Controller
     public function indexjawir()
     {
         $program = Program::where('nama', 'JAWIR')->firstOrFail();
+        $programs = Program::where('nama', 'UKCIT')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
         $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('program.Jawir', compact('program', 'relatedKegiatan', 'relatedNews', 'beritas'), compact('programs'));
+        return view('program.Jawir', compact('programs', 'program', 'relatedKegiatan', 'relatedNews', 'beritas'), compact('programs'));
     }
 }
