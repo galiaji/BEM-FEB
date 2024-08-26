@@ -73,10 +73,10 @@
                 <h2 class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">
                     About <mark class="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">RUCITA</mark>
                 </h2>
-                <p class="text-lg leading-relaxed text-gray-400 mt-9">Lorem ipsum dolor sit, amet consectetur
+                <p class="text-lg leading-relaxed text-black-400 mt-9">Lorem ipsum dolor sit, amet consectetur
                     adipisicing elit. Dignissimos a libero in velit, explicabo molestias totam deleniti quibusdam
                     odio obcaecati incidunt.</p>
-                <p class="mt-6 text-lg leading-relaxed text-gray-400">Lorem ipsum dolor sit, amet consectetur
+                <p class="mt-6 text-lg leading-relaxed text-black-400">Lorem ipsum dolor sit, amet consectetur
                     adipisicing elit. Dignissimos a libero in velit, explicabo molestias totam deleniti quibusdam
                     odio obcaecati incidunt.</p>
             </div>
@@ -94,6 +94,29 @@
             </h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <!-- @foreach ($programs as $program)
+            <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
+                <div class="mt-2">
+                    <a href="{{route('Program.jangwis') }}">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            {{ $program->nama }}
+                        </h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
+                        {{ Str::limit($program->tujuan, 100, '...') }}
+                    </p>
+                    <a href="{{route('Program.jangwis') }}"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Lihat Program
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            @endforeach -->
             <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
                 <div class="mt-2">
                     <a href="{{route('Program.jangwis') }}">
@@ -140,7 +163,7 @@
 
             <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
                 <div class="mt-2">
-                    <a href="{{route('Program.jangwis') }}">
+                    <a href="{{route('Program.adbud) }}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             ADBUD
                         </h5>

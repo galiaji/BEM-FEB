@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Program;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File; // To handle file deletion
 
 class ProgramController extends Controller
 {
@@ -29,18 +30,26 @@ class ProgramController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required|string|max:255',  // Updated from 'nama_program'
-            'deskripsi' => 'required|string',  // Updated from 'deskripsi_program'
+            'nama' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
             'jadwal' => 'nullable|date',
             'tujuan' => 'nullable|string',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $program = new Program;
-        $program->nama = $request->nama;  // Updated from 'nama_program'
-        $program->deskripsi = $request->deskripsi;  // Updated from 'deskripsi_program'
+        $program->nama = $request->nama;
+        $program->deskripsi = $request->deskripsi;
         $program->jadwal = $request->jadwal;
         $program->tujuan = $request->tujuan;
-        $program->slug = Str::slug($request->nama);  // Generate slug based on 'nama'
+
+        if ($request->hasFile('gambar')) {
+            $imageName = time() . '.' . $request->gambar->extension();
+            $request->gambar->move(public_path('images'), $imageName);
+            $program->gambar = $imageName;
+        }
+
+        $program->slug = Str::slug($request->nama);
         $program->save();
 
         return redirect()->route('admin.program.index')->with('success', 'Program berhasil disimpan.');
@@ -55,18 +64,31 @@ class ProgramController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama' => 'required|string|max:255',  // Updated from 'nama_program'
-            'deskripsi' => 'required|string',  // Updated from 'deskripsi_program'
-            'jadwal' => 'nullable|date',  // Updated to nullable
-            'tujuan' => 'nullable|string',  // Updated to nullable
+            'nama' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'jadwal' => 'nullable|date',
+            'tujuan' => 'nullable|string',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $program = Program::findOrFail($id);
-        $program->nama = $request->nama;  // Updated from 'nama_program'
-        $program->deskripsi = $request->deskripsi;  // Updated from 'deskripsi_program'
+        $program->nama = $request->nama;
+        $program->deskripsi = $request->deskripsi;
         $program->jadwal = $request->jadwal;
         $program->tujuan = $request->tujuan;
-        $program->slug = Str::slug($request->nama);  // Generate slug based on 'nama'
+
+        if ($request->hasFile('gambar')) {
+            // Delete the old image if it exists
+            if ($program->gambar && File::exists(public_path('images/' . $program->gambar))) {
+                File::delete(public_path('images/' . $program->gambar));
+            }
+
+            $imageName = time() . '.' . $request->gambar->extension();
+            $request->gambar->move(public_path('images'), $imageName);
+            $program->gambar = $imageName;
+        }
+
+        $program->slug = Str::slug($request->nama);
         $program->save();
 
         return redirect()->route('admin.program.index')->with('success', 'Program berhasil diperbarui.');
@@ -75,6 +97,12 @@ class ProgramController extends Controller
     public function destroy($id)
     {
         $program = Program::findOrFail($id);
+
+        // Delete the associated image if it exists
+        if ($program->gambar && File::exists(public_path('images/' . $program->gambar))) {
+            File::delete(public_path('images/' . $program->gambar));
+        }
+
         $program->delete();
         return redirect()->route('admin.program.index')->with('success', 'Program berhasil dihapus.');
     }

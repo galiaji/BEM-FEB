@@ -83,6 +83,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/', [LandingPageController::class, 'index'])->name('landing.page');
 
 Route::get('/programs', [ProgramController::class, 'index'])->name('programs.index');
+Route::get('/ukcit', [ProgramController::class, 'viewprogram'])->name('ukcit.viewprogram');
 Route::get('/program/{slug}', [ProgramController::class, 'show'])->name('program.show');
 
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
@@ -94,3 +95,4 @@ Route::get('/kegiatan/{slug}', [KegiatanController::class, 'show'])->name('acara
 Route::get('/jawir', [AdminProgramController::class, 'indexjawir'])->name('program.jawir');
 
 Route::get('/Jangwis', [ProgramController::class, 'Jangwis'])->name('Program.jangwis');
+Route::get('/Adbud', [ProgramController::class, 'adbud'])->name('Program.adbud');

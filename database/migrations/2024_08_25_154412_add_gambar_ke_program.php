@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('kegiatan', function (Blueprint $table) {
-            $table->string('slug')->unique()->after('nama_kegiatan'); // Adding the slug column after nama_kegiatan
+        Schema::table('programs', function (Blueprint $table) {
+            $table->string('gambar')->nullable();
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('kegiatan', function (Blueprint $table) {
-            $table->dropColumn('slug'); // Remove the slug column on rollback
+        Schema::table('programs', function (Blueprint $table) {
+            $table->dropColumn('gambar');
         });
     }
 };

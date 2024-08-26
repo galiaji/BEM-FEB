@@ -4,9 +4,33 @@
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="/" class="flex items-center">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
+                    <img src="img/LOGO_PPK_BEM_FEB-removebg-preview 1.png" class="h-8 me-3" alt="FlowBite Logo" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-white">RUCITA</span>
-                </a>
+                </a>                
+                <span class="block mt-4 text-white">Desa Kemambang</span>
+                <span class="block text-white">Tim BEM FEB UNDIP</span>
+            </div>
+            <ul class="text-white">
+                {{-- @foreach ($programs as $program)
+                    <a href="{{ route('program.show', $program->slug) }}">
+                        <h5 class="block mt-4 text-white">
+                            {{ $program->nama }}
+                        </h5>
+                    </a>
+                @endforeach --}}
+            </ul>
+            <div class="md:w-1/4 link-item">
+                <ul class="text-white">
+                    <li class="mb-2">
+                        <a href="https://www.instagram.com/" target="_blank" class="hover:underline">Instagram</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="https://api.whatsapp.com/send/?phone=" target="_blank" class="hover:underline">WhatsApp</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <a href="/ukcit" class="text-white">UKCIT</a>
             </div>
             <!-- Footer Links -->
         </div>
