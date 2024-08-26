@@ -27,27 +27,27 @@
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 bg-green-100">
             <!-- Container Baru -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="img/Q73HytZ_d.png" alt="">
-        </div>
-    </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="img/Q73HytZ_d.png" alt="">
-        </div>
-    </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="img/Q73HytZ_d.png" alt="">
-        </div>
-    </div>
-    <div class="grid gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="img/Q73HytZ_d.png" alt="">
-        </div>
-    </div>
-</div>
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="img/Q73HytZ_d.png" alt="">
+                    </div>
+                </div>
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="img/Q73HytZ_d.png" alt="">
+                    </div>
+                </div>
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="img/Q73HytZ_d.png" alt="">
+                    </div>
+                </div>
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="img/Q73HytZ_d.png" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
