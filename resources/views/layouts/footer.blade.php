@@ -1,43 +1,34 @@
 <!-- resources/views/partials/footer.blade.php -->
-<footer id="Contact" class="bg-gray-800 dark:bg-gray-900">
-    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-        <div class="md:flex md:justify-between">
-            <div class="mb-6 md:mb-0">
-                <a href="/" class="flex items-center">
-                    <img src="img/LOGO_PPK_BEM_FEB-removebg-preview 1.png" class="h-8 me-3" alt="FlowBite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-white">RUCITA</span>
-                </a>                
-                <span class="block mt-4 text-white">Desa Kemambang</span>
-                <span class="block text-white">Tim BEM FEB UNDIP</span>
-            </div>
-            <ul class="text-white">
-                {{-- @foreach ($programs as $program)
-                    <a href="{{ route('program.show', $program->slug) }}">
-                        <h5 class="block mt-4 text-white">
-                            {{ $program->nama }}
-                        </h5>
-                    </a>
-                @endforeach --}}
+<footer class="bg-gray-800 shadow dark:bg-gray-900">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="https://flowbite.com/" class="flex flex-col items-center mb-4 sm:mb-0 space-y-4 rtl:space-y-reverse">
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">RUCITA</span>
+                </div>
+                <div class="text-center">
+                    <span class="block text-white font-semibold">Desa Kemambang</span>
+                    <span class="block text-white mt-2 font-semibold">Tim BEM FEB UNDIP</span>
+                </div>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/" class="hover:underline me-4 md:me-6">Instagram</a>
+                </li>
+                <li>
+                    <a href="https://api.whatsapp.com/send/?phone=" class="hover:underline">WhatsApp</a>
+                </li>
             </ul>
-            <div class="md:w-1/4 link-item">
-                <ul class="text-white">
-                    <li class="mb-2">
-                        <a href="https://www.instagram.com/" target="_blank" class="hover:underline">Instagram</a>
-                    </li>
-                    <li class="mb-2">
-                        <a href="https://api.whatsapp.com/send/?phone=" target="_blank" class="hover:underline">WhatsApp</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <a href="/ukcit" class="text-white">UKCIT</a>
-            </div>
-            <!-- Footer Links -->
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; 2024 RUCITA. All Rights Reserved.</span>
-            <!-- Social Media Links -->
-        </div>
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; 2024 RUCITA. All Rights
+            Reserved.</span>
     </div>
 </footer>
