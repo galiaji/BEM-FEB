@@ -95,7 +95,7 @@ class KegiatanController extends Controller
      * @param  \App\Models\Kegiatan  $kegiatan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kegiatan $kegiatan)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nama_kegiatan' => 'required|string|max:255',
@@ -104,25 +104,33 @@ class KegiatanController extends Controller
             'program_id' => 'required|exists:programs,id',
         ]);
 
-        $data = $request->except('foto_kegiatan');
+        // Retrieve the Kegiatan model or fail if not found
+        $kegiatan = Kegiatan::findOrFail($id);
+
+        // Update the attributes
+        $kegiatan->nama_kegiatan = $request->nama_kegiatan;
+        $kegiatan->deskripsi_kegiatan = $request->deskripsi_kegiatan;
+        $kegiatan->program_id = $request->program_id;
 
         // Handle file upload
         if ($request->hasFile('foto_kegiatan')) {
             // Delete the old image
-            if ($kegiatan->foto_kegiatan && Storage::exists('public/images/' . $kegiatan->foto_kegiatan)) {
-                Storage::delete('public/images/' . $kegiatan->foto_kegiatan);
+            if ($kegiatan->foto_kegiatan && file_exists(public_path('storage/images/' . $kegiatan->foto_kegiatan))) {
+                unlink(public_path('storage/images/' . $kegiatan->foto_kegiatan));
             }
 
             // Upload the new image
             $imageName = time() . '.' . $request->foto_kegiatan->extension();
-            $request->foto_kegiatan->storeAs('public/images', $imageName);
-            $data['foto_kegiatan'] = $imageName;
+            $request->foto_kegiatan->move(public_path('storage/images'), $imageName);
+            $kegiatan->foto_kegiatan = $imageName;
         }
 
-        $kegiatan->update($data);
+        $kegiatan->save();
 
-        return redirect()->route('admin.kegiatan.index')->with('success', 'Kegiatan updated successfully.');
+        return redirect()->route('admin.kegiatan.index')
+            ->with('success', 'Kegiatan updated successfully.');
     }
+
 
 
     /**

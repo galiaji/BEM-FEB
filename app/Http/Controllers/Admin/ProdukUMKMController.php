@@ -28,16 +28,25 @@ class ProdukUMKMController extends Controller
             'foto_produk' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $data = $request->all();
+        // Create a new instance of ProdukUMKM
+        $produk = new ProdukUMKM();
+        $produk->nama_produk = $request->nama_produk;
+        $produk->deskripsi_produk = $request->deskripsi_produk;
 
+        // Handle file upload
         if ($request->hasFile('foto_produk')) {
-            $data['foto_produk'] = $request->file('foto_produk')->store('images/produk_umkm', 'public');
+            $file = $request->file('foto_produk');
+            $filePath = $file->store('images/', 'public');
+            $produk->foto_produk = $filePath;
         }
 
-        ProdukUMKM::create($data);
+        // Save the new produk to the database
+        $produk->save();
 
-        return redirect()->route('admin.produk_umkm.index')->with('success', 'Produk UMKM berhasil disimpan.');
+        return redirect()->route('admin.produk_umkm.index')
+            ->with('success', 'Produk UMKM berhasil disimpan.');
     }
+
 
     public function edit($id)
     {
