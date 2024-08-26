@@ -16,11 +16,7 @@ class ProgramController extends Controller
         return view('admin.program.index', compact('programs'));
     }
 
-    public function indexjawir()
-    {
-        $programs = Program::all();
-        return view('program.Jawir');
-    }
+
 
     public function create()
     {
@@ -33,7 +29,7 @@ class ProgramController extends Controller
             'nama' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'jadwal' => 'nullable|date',
-            'tujuan' => 'nullable|string|max:255',
+            'tujuan' => 'nullable|string',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -67,7 +63,7 @@ class ProgramController extends Controller
             'nama' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'jadwal' => 'nullable|date',
-            'tujuan' => 'nullable|string|max:255',
+            'tujuan' => 'nullable|string-',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 

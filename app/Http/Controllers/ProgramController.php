@@ -15,15 +15,6 @@ class ProgramController extends Controller
         return view('program.index', compact('programs'));
     }
 
-    public function ukcit()
-    {
-        $program = Program::where('nama', 'ukcit')->firstOrFail();
-        $relatedKegiatan = Kegiatan::all();
-        $relatedNews = Berita::all();
-        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('program.ukcit', compact('program', 'relatedKegiatan', 'relatedNews', 'beritas'));
-    }
-
     public function show($slug)
     {
         // Retrieve the program by its slug
@@ -40,6 +31,7 @@ class ProgramController extends Controller
 
     public function rumles()
     {
+        $program = Program::where('nama', 'RUMLES')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
         return view('program.rumles', compact('relatedKegiatan', 'relatedNews'));
@@ -47,16 +39,29 @@ class ProgramController extends Controller
 
     public function Jangwis()
     {
-        $program = Program::where('nama', 'JangWis')->firstOrFail();
+        $program = Program::where('nama', 'JANGWIS')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
         return view('program.jangwis', compact('program', 'relatedKegiatan', 'relatedNews'));
     }
     public function Adbud()
     {
-        $program = Program::where('nama', 'AdBud')->firstOrFail();
+        $program = Program::where('nama', 'ADBUD')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
         return view('program.adbud', compact('program', 'relatedKegiatan', 'relatedNews'));
+    }
+    public function ukcit()
+    {
+        $program = Program::where('nama', 'UKCIT')->firstOrFail();
+        $relatedKegiatan = Kegiatan::all();
+        $relatedNews = Berita::all();
+        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('program.ukcit', compact('program', 'relatedKegiatan', 'relatedNews', 'beritas'));
+    }
+    public function indexjawir()
+    {
+        $programs = Program::where('nama', 'JAWIR')->firstOrFail();
+        return view('program.Jawir');
     }
 }
