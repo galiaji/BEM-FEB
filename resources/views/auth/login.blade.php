@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('auth.layout')
 
 @section('content')
     <div class="flex">
@@ -17,8 +17,8 @@
         </button>
     </div>
 
-    <body class="bg-gray-50 dark:bg-gray-900">
-        <div class="text-center bg-gray-50 dark:bg-gray-900">
+    <body class="bg-gray-200 dark:bg-gray-800">
+        <div class="text-center bg-gray-200 dark:bg-gray-800">
             <section class="align-content-center px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mt-4 mb-12">
                 <div class="max-w-2xl mx-auto text-center">
                     <h2 class="text-3xl font-bold leading-tight text-gray-700 dark:text-gray-200 sm:text-4xl lg:text-5xl">
