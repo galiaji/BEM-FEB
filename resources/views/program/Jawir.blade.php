@@ -54,9 +54,9 @@
 </div>
 <!-- Hero Section End -->
 <!-- About Section Start -->
-<section id="CategorySection" class="py-10 bg-transparent sm:py-16 lg:py-24 pt-24 pb-24 rounded-lg bg-red-200">
+<section id="CategorySection" class="py-10 bg-transparent sm:py-16 lg:py-6 pt-24 pb-24 rounded-lg bg-red-200">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">KATEGORI MAKANAN</h2>
+        <h2 class="text-3xl font-semibold text-center text-gray-800 mb-8">Produk MAKANAN</h2>
         <div class="flex justify-center space-x-4 mb-4">
             <button class="px-6 py-2 bg-gray-100 rounded-lg flex items-center justify-center space-x-2">
                 <i class="fas fa-utensils"></i>
@@ -201,6 +201,37 @@
         </div>
     </div>
 </section>
+
+<section class="news py-24 bg-gray-50 dark:bg-gray-900">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold leading-tight dark:text-white text-gray-900 sm:text-4xl xl:text-5xl font-pj">
+                Berita Terbaru
+            </h2>
+        </div>
+
+
+        <div id="carousel" class="flex overflow-x-auto max-w-md mx-auto mt-8 lg:mt-16 lg:max-w-full scroll-smooth pb-6 space-x-6">
+            
+            <div class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                <a href="#">
+                    <img class="w-full h-48 object-cover" src="#" alt="kuda diponegoro" />
+                </a>
+                <div class="p-6">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">kuda diponegoro lepas</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400 mb-4">17 agustus 1945</p>
+                    <a href="#"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Baca Berita
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+
 
 
 
