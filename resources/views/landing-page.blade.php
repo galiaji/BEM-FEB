@@ -61,7 +61,7 @@
                                 <blockquote class="ml-5">
                                     <p class="text-sm font-medium text-white sm:text-lg">Lorem ipsum dolor sit amet
                                         consectetur adipisicing elit. Aperiam unde sint aliquid reprehenderit culpa
-                                        corrupti ut esse eligendi.
+                                        corrupti .
                                     </p>
                                 </blockquote>
                             </div>
@@ -163,7 +163,7 @@
 
             <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
                 <div class="mt-2">
-                    <a href="{{route('Program.adbud) }}">
+                    <a href="{{route('Program.adbud') }}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             ADBUD
                         </h5>
