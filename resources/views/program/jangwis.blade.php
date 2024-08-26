@@ -67,5 +67,15 @@
 </section>
 @endif
 
+<h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">Curuk Tirto Wening</h3>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.414809517203!2d110.37379551132543!3d-7.193420392781872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70871d08b3ed03%3A0x28b1ccd395dae5f8!2sTirto%20Wening%20Waterfall!5e0!3m2!1sen!2sid!4v1724645591169!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">gardu pandang</h3>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.4398327179456!2d110.37007361132552!3d-7.19055009278467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7087bedc9bd1a7%3A0x706242a99cd471d2!2sGardu%20Pandang!5e0!3m2!1sen!2sid!4v1724645735605!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">wisata pertanian</h3>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.4331147509865!2d110.37367371132542!3d-7.191320792783944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7087ae0cc5d73d%3A0xe36b02a71d6e54d!2sWisata%20Pertanian%20Cemanggal!5e0!3m2!1sen!2sid!4v1724645840803!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
 <!-- Related News Section End -->
 @endsection

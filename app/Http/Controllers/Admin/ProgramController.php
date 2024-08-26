@@ -16,6 +16,12 @@ class ProgramController extends Controller
         return view('admin.program.index', compact('programs'));
     }
 
+    public function indexjawir()
+    {
+        $programs = Program::all();
+        return view('program.Jawir');
+    }
+
     public function create()
     {
         return view('admin.program.create');
@@ -62,7 +68,7 @@ class ProgramController extends Controller
             'deskripsi' => 'required|string',
             'jadwal' => 'nullable|date',
             'tujuan' => 'nullable|string',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $program = Program::findOrFail($id);
@@ -72,21 +78,23 @@ class ProgramController extends Controller
         $program->tujuan = $request->tujuan;
 
         if ($request->hasFile('gambar')) {
-            // Delete the old image if it exists
-            if ($program->gambar && File::exists(public_path('images/' . $program->gambar))) {
-                File::delete(public_path('images/' . $program->gambar));
+            // Delete the old image
+            if ($program->gambar && file_exists(public_path('images/' . $program->gambar))) {
+                unlink(public_path('images/' . $program->gambar));
             }
 
+            // Upload the new image
             $imageName = time() . '.' . $request->gambar->extension();
             $request->gambar->move(public_path('images'), $imageName);
             $program->gambar = $imageName;
         }
 
-        $program->slug = Str::slug($request->nama);
         $program->save();
 
-        return redirect()->route('admin.program.index')->with('success', 'Program berhasil diperbarui.');
+        return redirect()->route('admin.program.index')
+            ->with('success', 'Program updated successfully.');
     }
+
 
     public function destroy($id)
     {

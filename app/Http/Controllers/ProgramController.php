@@ -44,4 +44,10 @@ class ProgramController extends Controller
         $relatedNews = Berita::all();
         return view('program.jangwis', compact('relatedKegiatan', 'relatedNews'));
     }
+    public function Adbud()
+    {
+        $relatedKegiatan = Kegiatan::all();
+        $relatedNews = Berita::all();
+        return view('program.adbud', compact('relatedKegiatan', 'relatedNews'));
+    }
 }
