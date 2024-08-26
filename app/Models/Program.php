@@ -18,7 +18,9 @@ class Program extends Model
         'gambar',
         'slug',
     ];
-
+    protected $casts = [
+        'gambar' => 'array', // Cast gambar as an array to handle multiple images
+    ];
     protected static function boot()
     {
         parent::boot();

@@ -163,7 +163,7 @@
 
             <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
                 <div class="mt-2">
-                    <a href="{{route('Program.jangwis') }}">
+                    <a href="{{route('Program.adbud) }}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             ADBUD
                         </h5>
