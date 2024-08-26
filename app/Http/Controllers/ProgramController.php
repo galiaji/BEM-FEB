@@ -32,36 +32,40 @@ class ProgramController extends Controller
     public function rumles()
     {
         $program = Program::where('nama', 'RUMLES')->firstOrFail();
+        $programs = Program::where('nama', 'RUMLES')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
-        return view('program.rumles', compact('relatedKegiatan', 'relatedNews'));
+        return view('program.rumles', compact('programs', 'relatedKegiatan', 'relatedNews'));
     }
 
     public function Jangwis()
     {
         $program = Program::where('nama', 'JANGWIS')->firstOrFail();
+        $programs = Program::where('nama', 'JANGWIS')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
-        return view('program.jangwis', compact('program', 'relatedKegiatan', 'relatedNews'));
+        return view('program.jangwis', compact('programs', 'program', 'relatedKegiatan', 'relatedNews'));
     }
     public function Adbud()
     {
         $program = Program::where('nama', 'ADBUD')->firstOrFail();
+        $programs = Program::where('nama', 'ADBUD')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
-        return view('program.adbud', compact('program', 'relatedKegiatan', 'relatedNews'));
+        return view('program.adbud', compact('programs', 'program', 'relatedKegiatan', 'relatedNews'));
     }
     public function ukcit()
     {
         $program = Program::where('nama', 'UKCIT')->firstOrFail();
+        $programs = Program::where('nama', 'UKCIT')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
         $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('program.ukcit', compact('program', 'relatedKegiatan', 'relatedNews', 'beritas'));
+        return view('program.ukcit', compact('programs', 'program', 'relatedKegiatan', 'relatedNews', 'beritas'));
     }
     public function indexjawir()
     {
         $programs = Program::where('nama', 'JAWIR')->firstOrFail();
-        return view('program.Jawir');
+        return view('program.Jawir', compact('programs'));
     }
 }
