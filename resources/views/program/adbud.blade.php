@@ -56,7 +56,64 @@
 
 <!-- Related Activities Section End -->
 
-
+<!-- Sasaran Kegiatan Section Start -->
+<section id="SasaranKegiatan" class="py-10 bg-gray-100 sm:py-16 lg:py-24">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white mb-8">
+            SASARAN KEGIATAN
+        </h2>
+        <p class="mb-8 text-lg text-gray-600">
+            Sasaran kegiatan program Khazanah Budaya adalah masyarakat desa baik dikalangan anak-anak maupun orang tua.
+            Tujuannya adalah :
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
+                <div class="flex items-center mb-4">
+                    <div class="bg-gray-100 p-4 rounded-full">
+                        <span class="text-xl font-bold text-gray-800">01</span>
+                    </div>
+                </div>
+                <p class="text-gray-600">
+                    Memelihara dan melestarikan kekayaan budaya Desa Kemambang, seperti gamelan, tari keprajuritan, dan
+                    berbagai ekspresi seni lainnya.
+                </p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
+                <div class="flex items-center mb-4">
+                    <div class="bg-gray-100 p-4 rounded-full">
+                        <span class="text-xl font-bold text-gray-800">02</span>
+                    </div>
+                </div>
+                <p class="text-gray-600">
+                    Mempromosikan dan mendukung keragaman seni dan budaya di setiap dusun Desa Kemambang yang memiliki
+                    ciri khas yang unik.
+                </p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
+                <div class="flex items-center mb-4">
+                    <div class="bg-gray-100 p-4 rounded-full">
+                        <span class="text-xl font-bold text-gray-800">03</span>
+                    </div>
+                </div>
+                <p class="text-gray-600">
+                    Mengedukasi dan meningkatkan kesadaran masyarakat tentang pentingnya menjaga dan menghargai warisan
+                    budaya mereka.
+                </p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
+                <div class="flex items-center mb-4">
+                    <div class="bg-gray-100 p-4 rounded-full">
+                        <span class="text-xl font-bold text-gray-800">04</span>
+                    </div>
+                </div>
+                <p class="text-gray-600">
+                    Meningkatkan partisipasi masyarakat dalam upaya melestarikan budaya Desa Kemambang.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Sasaran Kegiatan Section End -->
 
 <!-- Related News Section Start -->
 @if ($relatedNews->isNotEmpty())
