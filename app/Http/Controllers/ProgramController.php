@@ -35,14 +35,14 @@ class ProgramController extends Controller
 
         // Pass data to the view
         return view('program.show', compact('program', 'relatedNews', 'relatedKegiatan'));
-        
     }
 
     public function Jangwis()
     {
+        $program = Program::where('nama', 'JangWis')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
-        return view('program.jangwis', compact('relatedKegiatan', 'relatedNews'));
+        return view('program.jangwis', compact('program', 'relatedKegiatan', 'relatedNews'));
     }
     public function Adbud()
     {
