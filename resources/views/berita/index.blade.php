@@ -50,7 +50,7 @@
                             </div>
                             <div class="p-5">
                                 <p class="mt-5 text-2xl font-semibold text-gray-900">
-                                    {{ Str::limit($berita->judul, 100) }}
+                                    {{ Str::limit($berita->judul, 50) }}
                                 </p>
                                 <span
                                     class="block mt-6 text-sm font-semibold tracking-widest text-gray-400 uppercase">
