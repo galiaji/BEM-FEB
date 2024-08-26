@@ -61,7 +61,7 @@
                                 <blockquote class="ml-5">
                                     <p class="text-sm font-medium text-white sm:text-lg">Lorem ipsum dolor sit amet
                                         consectetur adipisicing elit. Aperiam unde sint aliquid reprehenderit culpa
-                                        corrupti .
+                                        corrupti ut esse eligendi.
                                     </p>
                                 </blockquote>
                             </div>
@@ -70,7 +70,8 @@
                 </div>
             </div>
             <div class="2xl:pl-16">
-                <h2 class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">
+                <h2
+                    class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">
                     About <mark class="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">RUCITA</mark>
                 </h2>
                 <p class="text-lg leading-relaxed text-black-400 mt-9">Lorem ipsum dolor sit, amet consectetur
@@ -95,31 +96,32 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             <!-- @foreach ($programs as $program)
-            <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
+    <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
+                                        <div class="mt-2">
+                                            <a href="{{ route('Program.jangwis') }}">
+                                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                                    {{ $program->nama }}
+                                                </h5>
+                                            </a>
+                                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
+                                                {{ Str::limit($program->tujuan, 100, '...') }}
+                                            </p>
+                                            <a href="{{ route('Program.jangwis') }}"
+                                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                Lihat Program
+                                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+    @endforeach -->
+            <div
+                class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
                 <div class="mt-2">
-                    <a href="{{route('Program.jangwis') }}">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {{ $program->nama }}
-                        </h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
-                        {{ Str::limit($program->tujuan, 100, '...') }}
-                    </p>
-                    <a href="{{route('Program.jangwis') }}"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Lihat Program
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            @endforeach -->
-            <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
-                <div class="mt-2">
-                    <a href="{{route('Program.jangwis') }}">
+                    <a href="{{ route('Program.jangwis') }}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             JAWIR
                         </h5>
@@ -132,16 +134,17 @@
                         Lihat Program
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
                 </div>
             </div>
 
-            <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
+            <div
+                class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
                 <div class="mt-2">
-                    <a href="{{route('program.ukcit') }}">
+                    <a href="{{ route('Program.jangwis') }}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             UKCIT
                         </h5>
@@ -149,21 +152,22 @@
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
                         Ini deskripsi panjang
                     </p>
-                    <a href="{{ route('program.ukcit') }}"
+                    <a href="{{ route('Program.jangwis') }}"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Lihat Program
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
                     </a>
                 </div>
             </div>
 
-            <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
+            <div
+                class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
                 <div class="mt-2">
-                    <a href="{{route('Program.adbud') }}">
+                    <a href="{{ route('Program.adbud') }}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             ADBUD
                         </h5>
@@ -171,7 +175,7 @@
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
                         Ini deskripsi panjang
                     </p>
-                    <a href="{{route('Program.adbud') }}"
+                    <a href="{{ route('Program.adbud') }}"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Lihat Program
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
@@ -183,9 +187,10 @@
                 </div>
             </div>
 
-            <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
+            <div
+                class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
                 <div class="mt-2">
-                    <a href="{{route('program.rumles') }}">
+                    <a href="{{ route('Program.jangwis') }}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             RUMLES
                         </h5>
@@ -193,7 +198,7 @@
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
                         Ini deskripsi panjang
                     </p>
-                    <a href="{{ route('program.rumles') }}"
+                    <a href="{{ route('Program.jangwis') }}"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Lihat Program
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
@@ -205,9 +210,10 @@
                 </div>
             </div>
 
-            <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
+            <div
+                class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
                 <div class="mt-2">
-                    <a href="{{route('Program.jangwis') }}">
+                    <a href="{{ route('Program.jangwis') }}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             JANGWIS
                         </h5>
@@ -245,15 +251,22 @@
             <p class="text-lg text-gray-700 dark:text-gray-300">Belum ada berita</p>
         </div>
         @else
-        <div id="carousel" class="flex overflow-x-auto max-w-md mx-auto mt-8 lg:mt-16 lg:max-w-full scroll-smooth pb-6 space-x-6">
+        <div id="carousel"
+            class="flex overflow-x-auto max-w-md mx-auto mt-8 lg:mt-16 lg:max-w-full scroll-smooth pb-6 space-x-6">
             @foreach ($beritas as $berita)
-            <div class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+            <div
+                class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden p-4">
                 <a href="{{ route('berita.show', $berita->slug) }}">
-                    <img class="w-full h-48 object-cover" src="{{ asset('images/' . $berita->input_gambar) }}" alt="{{ $berita->judul }}" />
+                    <img class="w-full h-48 object-cover "
+                        src="{{ asset('images/' . $berita->input_gambar) }}" alt="{{ $berita->judul }}" />
                 </a>
-                <div class="p-6">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $berita->judul }}</h5>
-                    <p class="font-normal text-gray-700 dark:text-gray-400 mb-4">{{ $berita->created_at->format('d M Y') }}</p>
+                <div class="mt-2">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        {{ $berita->judul }}
+                    </h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400 mb-4">
+                        {{ $berita->created_at->format('d M Y') }}
+                    </p>
                     <a href="{{ route('berita.show', $berita->slug) }}"
                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Baca Berita
