@@ -79,6 +79,72 @@
                     </div>
                 </div>
 
+                <div class="flex-none w-full lg:w-1/3 mb-6 px-4 py-4">
+                    <div class="overflow-hidden bg-white rounded shadow">
+                        <!-- Menambahkan gambar -->
+                        <div class="p-6">
+                            <img class=" rounded-lg w-full" src="{{ asset('images/' . $program3->gambar) }}" alt="{{ $program3->nama }}" class="w-full h-48 object-cover">
+                            <p class="mt-5 text-2xl font-semibold">
+                                <a href="#" title="" class="text-black">{{ $program3->nama }}</a>
+                            </p>
+                            <p class="mt-4 text-base text-gray-600">{{ Str::limit($program3->deskripsi, 100) }}</p>
+                            <a href="{{ route('Program.adbud', $program3->slug) }}" title=""
+                                class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
+                                Continue Reading
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-none w-full lg:w-1/3 mb-6 px-4 py-4">
+                    <div class="overflow-hidden bg-white rounded shadow">
+                        <!-- Menambahkan gambar -->
+                        <div class="p-6">
+                            <img class=" rounded-lg w-full" src="{{ asset('images/' . $program4->gambar) }}" alt="{{ $program4->nama }}" class="w-full h-48 object-cover">
+                            <p class="mt-5 text-2xl font-semibold">
+                                <a href="#" title="" class="text-black">{{ $program4->nama }}</a>
+                            </p>
+                            <p class="mt-4 text-base text-gray-600">{{ Str::limit($program4->deskripsi, 100) }}</p>
+                            <a href="{{ route('program.ukcit', $program4->slug) }}" title=""
+                                class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
+                                Continue Reading
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-none w-full lg:w-1/3 mb-6 px-4 py-4">
+                    <div class="overflow-hidden bg-white rounded shadow">
+                        <!-- Menambahkan gambar -->
+                        <div class="p-6">
+                            <img class=" rounded-lg w-full" src="{{ asset('images/' . $program5->gambar) }}" alt="{{ $program5->nama }}" class="w-full h-48 object-cover">
+                            <p class="mt-5 text-2xl font-semibold">
+                                <a href="#" title="" class="text-black">{{ $program5->nama }}</a>
+                            </p>
+                            <p class="mt-4 text-base text-gray-600">{{ Str::limit($program5->deskripsi, 100) }}</p>
+                            <a href="{{ route('program.jawir', $program5->slug) }}" title=""
+                                class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
+                                Continue Reading
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div class="flex items-center justify-center mt-8 space-x-3 lg:hidden">
