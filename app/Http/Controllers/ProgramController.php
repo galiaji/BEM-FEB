@@ -17,7 +17,10 @@ class ProgramController extends Controller
 
     public function viewprogram()
     {
-        return view('program.ukcit');
+        $relatedKegiatan = Kegiatan::all();
+        $relatedNews = Berita::all();
+        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('program.ukcit', compact('relatedKegiatan', 'relatedNews', 'beritas'));
     }
 
     public function show($slug)
