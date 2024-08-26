@@ -9,6 +9,7 @@
         <li class="inline-flex items-center">
             <a href="/admin/program"
                 class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                <!-- SVG for Home icon -->
                 <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                     viewBox="0 0 20 20">
                     <path
@@ -43,12 +44,11 @@
 <!-- Breadcrumbs End -->
 <h1 class="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-400">Edit Program</h1>
 <div class="container">
-    <form action="{{ route('admin.program.update', $program->id) }}" method="POST">
+    <form action="{{ route('admin.program.update', $program->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">
-            <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
-                Program</label>
+            <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Program</label>
             <input type="text" name="nama"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"
                 value="{{ $program->nama }}" required>
@@ -64,24 +64,23 @@
             <label for="jadwal" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jadwal</label>
             <input type="datetime-local" name="jadwal"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"
-                value="{{ $program->jadwal ?? '' }}">
+                value="{{ $program->jadwal ? \Carbon\Carbon::parse($program->jadwal)->format('Y-m-d\TH:i') : '' }}">
         </div>
         <div class="form-group">
             <label for="tujuan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tujuan</label>
             <textarea name="tujuan"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">{{ $program->tujuan }}
-            </textarea>
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">{{ $program->tujuan }}</textarea>
         </div>
         <div class="form-group">
-            <label for="gambar" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar:</label>
+            <label for="gambar" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar</label>
             @if ($program->gambar)
             <div>
-                <img src="{{ url('images/' . $program->gambar) }}" alt="Gambar Program" width="150">
+                <img src="{{ asset('images/' . $program->gambar) }}" alt="Gambar Program" width="150">
                 <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar saat ini</p>
             </div>
             @endif
             <input type="file" id="gambar" name="gambar"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"
                 accept="image/*">
         </div>
 
