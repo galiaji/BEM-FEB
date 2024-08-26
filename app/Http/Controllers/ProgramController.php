@@ -38,6 +38,13 @@ class ProgramController extends Controller
         return view('program.show', compact('program', 'relatedNews', 'relatedKegiatan'));
     }
 
+    public function rumles()
+    {
+        $relatedKegiatan = Kegiatan::all();
+        $relatedNews = Berita::all();
+        return view('program.rumles', compact('relatedKegiatan', 'relatedNews'));
+    }
+
     public function Jangwis()
     {
         $program = Program::where('nama', 'JangWis')->firstOrFail();

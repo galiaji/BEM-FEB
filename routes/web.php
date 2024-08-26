@@ -84,6 +84,7 @@ Route::get('/', [LandingPageController::class, 'index'])->name('landing.page');
 
 Route::get('/programs', [ProgramController::class, 'index'])->name('programs.index');
 Route::get('/ukcit', [ProgramController::class, 'ukcit'])->name('program.ukcit');
+Route::get('/rumles', [ProgramController::class, 'rumles'])->name('program.rumles');
 Route::get('/program/{slug}', [ProgramController::class, 'show'])->name('program.show');
 
 Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');

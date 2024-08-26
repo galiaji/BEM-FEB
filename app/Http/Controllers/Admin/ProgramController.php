@@ -33,7 +33,7 @@ class ProgramController extends Controller
             'nama' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'jadwal' => 'nullable|date',
-            'tujuan' => 'nullable|string',
+            'tujuan' => 'nullable|string|max:255',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -67,7 +67,7 @@ class ProgramController extends Controller
             'nama' => 'required|string|max:255',
             'deskripsi' => 'required|string',
             'jadwal' => 'nullable|date',
-            'tujuan' => 'nullable|string',
+            'tujuan' => 'nullable|string|max:255',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
