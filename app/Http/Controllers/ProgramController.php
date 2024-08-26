@@ -46,8 +46,9 @@ class ProgramController extends Controller
     }
     public function Adbud()
     {
+        $program = Program::where('nama', 'AdBud')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
-        return view('program.adbud', compact('relatedKegiatan', 'relatedNews'));
+        return view('program.adbud', compact('program', 'relatedKegiatan', 'relatedNews'));
     }
 }
