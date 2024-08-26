@@ -15,11 +15,6 @@ class ProgramController extends Controller
         return view('program.index', compact('programs'));
     }
 
-    public function viewRumles()
-    {
-        return view('program.rumles');
-    }
-
     public function show($slug)
     {
         // Retrieve the program by its slug
@@ -32,6 +27,13 @@ class ProgramController extends Controller
 
         // Pass data to the view
         return view('program.show', compact('program', 'relatedNews', 'relatedKegiatan'));
+    }
+
+    public function rumles()
+    {
+        $relatedKegiatan = Kegiatan::all();
+        $relatedNews = Berita::all();
+        return view('program.rumles', compact('relatedKegiatan', 'relatedNews'));
     }
 
     public function Jangwis()

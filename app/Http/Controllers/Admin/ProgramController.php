@@ -26,7 +26,7 @@ class ProgramController extends Controller
             'nama' => 'required|string|max:255',  // Updated from 'nama_program'
             'deskripsi' => 'required|string',  // Updated from 'deskripsi_program'
             'jadwal' => 'nullable|date',
-            'tujuan' => 'nullable|string',
+            'tujuan' => 'nullable|string|max:255',
         ]);
 
         $program = new Program;
@@ -52,7 +52,7 @@ class ProgramController extends Controller
             'nama' => 'required|string|max:255',  // Updated from 'nama_program'
             'deskripsi' => 'required|string',  // Updated from 'deskripsi_program'
             'jadwal' => 'nullable|date',  // Updated to nullable
-            'tujuan' => 'nullable|string',  // Updated to nullable
+            'tujuan' => 'nullable|string|max:255',  // Updated to nullable
         ]);
 
         $program = Program::findOrFail($id);
