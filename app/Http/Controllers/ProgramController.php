@@ -11,8 +11,13 @@ class ProgramController extends Controller
 {
     public function index()
     {
-        $programs = Program::all();
-        return view('program.index', compact('programs'));
+        $program = Program::all();
+        $program1 = Program::where('nama', 'RUMLES')->firstOrFail();
+        $program2 = Program::where('nama', 'JANGWIS')->firstOrFail();
+        $program3 = Program::where('nama', 'ADBUD')->firstOrFail();
+        $program4 = Program::where('nama', 'UKCIT')->firstOrFail();
+        $program5 = Program::where('nama', 'JAWIR')->firstOrFail();
+        return view('program.index', compact('program1', 'program2', 'program3', 'program4', 'program5'));
     }
 
     public function show($slug)

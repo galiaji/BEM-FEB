@@ -34,39 +34,17 @@
         <div class="relative">
             <div id="carousel"
                 class="flex overflow-x-auto max-w-md mx-auto mt-8 lg:mt-16 lg:max-w-full scroll-smooth pb-6">
-                <!-- @foreach ($programs as $program)
-                        <div class="flex-none w-full lg:w-1/3 mb-6 px-4 py-4">
-                            <div class="overflow-hidden bg-white rounded shadow">
-                                <div class="p-6">
-                                    <p class="mt-5 text-2xl font-semibold">
-                                        <a href="#" title="" class="text-black">{{ $program->nama }}</a>
-                                    </p>
-                                    <p class="mt-4 text-base text-gray-600">{{ Str::limit($program->deskripsi, 100) }}</p>
-                                    <a href="{{ route('program.show', $program->slug) }}" title=""
-                                        class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
-                                        Continue Reading
-                                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                            fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach -->
+
                 <div class="flex-none w-full lg:w-1/3 mb-6 px-4 py-4">
                     <div class="overflow-hidden bg-white rounded shadow">
                         <!-- Menambahkan gambar -->
-                        <img src="{{ asset('storage/images/'. $program->gambar) }}" alt="{{ $program->nama }}" class="w-full h-48 object-cover">
-
                         <div class="p-6">
+                            <img class=" rounded-lg w-full" src="{{ asset('images/' . $program1->gambar) }}" alt="{{ $program1->nama }}" class="w-full h-48 object-cover">
                             <p class="mt-5 text-2xl font-semibold">
-                                <a href="#" title="" class="text-black">{{ $program->nama }}</a>
+                                <a href="#" title="" class="text-black">{{ $program1->nama }}</a>
                             </p>
-                            <p class="mt-4 text-base text-gray-600">{{ Str::limit($program->deskripsi, 100) }}</p>
-                            <a href="{{ route('program.show', $program->slug) }}" title=""
+                            <p class="mt-4 text-base text-gray-600">{{ Str::limit($program1->deskripsi, 100) }}</p>
+                            <a href="{{ route('program.rumles', $program1->slug) }}" title=""
                                 class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
                                 Continue Reading
                                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -79,6 +57,27 @@
                     </div>
                 </div>
 
+                <div class="flex-none w-full lg:w-1/3 mb-6 px-4 py-4">
+                    <div class="overflow-hidden bg-white rounded shadow">
+                        <!-- Menambahkan gambar -->
+                        <div class="p-6">
+                            <img class=" rounded-lg w-full" src="{{ asset('images/' . $program2->gambar) }}" alt="{{ $program2->nama }}" class="w-full h-48 object-cover">
+                            <p class="mt-5 text-2xl font-semibold">
+                                <a href="#" title="" class="text-black">{{ $program2->nama }}</a>
+                            </p>
+                            <p class="mt-4 text-base text-gray-600">{{ Str::limit($program2->deskripsi, 100) }}</p>
+                            <a href="{{ route('Program.jangwis', $program2->slug) }}" title=""
+                                class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
+                                Continue Reading
+                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
