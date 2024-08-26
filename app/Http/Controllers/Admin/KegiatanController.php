@@ -8,6 +8,8 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage; // Importing the Storage facade
+use Illuminate\Support\Facades\Log;
+
 
 class KegiatanController extends Controller
 {
@@ -139,14 +141,21 @@ class KegiatanController extends Controller
      * @param  \App\Models\Kegiatan  $kegiatan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kegiatan $kegiatan)
+    public function destroy($id)
     {
+        // Temukan entri Kegiatan berdasarkan ID
+        $kegiatan = Kegiatan::findOrFail($id);
+
+        // Hapus foto kegiatan jika ada
         if ($kegiatan->foto_kegiatan && Storage::exists('public/images/' . $kegiatan->foto_kegiatan)) {
             Storage::delete('public/images/' . $kegiatan->foto_kegiatan);
         }
 
+        // Hapus entri Kegiatan
         $kegiatan->delete();
 
+        // Redirect dengan pesan sukses
         return redirect()->route('admin.kegiatan.index')->with('success', 'Kegiatan deleted successfully.');
     }
+
 }

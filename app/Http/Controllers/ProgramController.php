@@ -15,7 +15,7 @@ class ProgramController extends Controller
         return view('program.index', compact('programs'));
     }
 
-    public function viewprogram()
+    public function ukcit()
     {
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
