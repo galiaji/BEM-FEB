@@ -17,7 +17,7 @@
 
                     </p>
                     <p class="mt-4 text-lg leading-relaxed text-gray-700">
-                        {{ $program->deskripsi }}
+                        {!! $program->deskripsi !!}
                     </p>
                 </div>
                 <div class="flex">
@@ -48,7 +48,7 @@
             <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
                 <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $kegiatan->nama_kegiatan }}</h5>
-                <p class="text-gray-600 text-justify">{{ Str::limit($kegiatan->deskripsi_kegiatan) }}</p>
+                <p class="text-gray-600 text-justify">{!! Str::limit($kegiatan->deskripsi_kegiatan) !!}</p>
             </div>
             @endif
             @endforeach
@@ -160,7 +160,7 @@
                             {{ $news->judul }}
                         </h5>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
-                            {{ Str::limit($news->isi_berita, 100, '...') }}
+                            {!! Str::limit($news->isi_berita, 100, '...') !!}
                         </p>
                         <a href="{{ route('berita.show', $news->slug) }}"
                             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

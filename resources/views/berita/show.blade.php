@@ -24,7 +24,7 @@
                         </div>
                     @endif
                     <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-8 text-justify">
-                        {{ $berita->isi_berita }}
+                        {!! $berita->isi_berita !!}
                     </p>
                 </div>
                 <!-- Sidebar or Additional Content -->
