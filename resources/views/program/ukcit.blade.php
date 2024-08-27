@@ -38,20 +38,35 @@
 <section class="py-10 bg-gray-50 sm:py-16 lg:py-24">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white mb-8 relative inline-block kegiatan-title">Kegiatan Terkait</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            @foreach($relatedKegiatan as $kegiatan)
+        <div class="space-y-8">
+            @foreach($relatedKegiatan as $index => $kegiatan)
                 @if($kegiatan->program->nama == "UKCIT")
-                <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
-                    <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $kegiatan->nama_kegiatan }}</h5>
-                    <p class="text-gray-600 text-justify">{{ Str::limit($kegiatan->deskripsi_kegiatan) }}</p>
-                </div>
+                    @php
+                        $isImageLeft = $index % 2 == 0;
+                    @endphp
+                    <div class="relative flex flex-col md:flex-row {{ $isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse' }} bg-white rounded-lg shadow-md p-6" style="background-color:rgb(255, 234, 197)">
+                        <!-- Numbering -->
+                        <div class="absolute top-2 {{ $isImageLeft ? 'left-2' : 'right-2' }} bg-gray-900 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold">
+                            {{ $index + 1 }}
+                        </div>
+                        
+                        <div class="md:w-1/2 {{ $isImageLeft ? 'mb-4 md:mb-0' : 'md:mb-0' }}">
+                            <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <div class="md:w-1/2 {{ $isImageLeft ? 'md:pl-6' : 'md:pr-6' }}">
+                            <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-2">{{ $kegiatan->nama_kegiatan }}</h5>
+                            <p class="text-gray-600 text-justify">{{ Str::limit($kegiatan->deskripsi_kegiatan, 150) }}</p>
+                        </div>
+                    </div>
                 @endif
             @endforeach
         </div>
     </div>
 </section>
 @endif
+
+
+
 
 
  
@@ -95,28 +110,26 @@
 <!-- Tujuan Kegiatan Section Start -->
 <section class="goals-section py-10 bg-gray-100 sm:py-16 lg:py-24">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">Tujuan Kegiatan</h3>
-        <div class="mt-8">
-            {{-- <div class="flex flex-col md:flex-row items-center mb-8">
-                <div class="md:w-1/2 mb-4 md:mb-0">
-                    <img src="{{ asset('img/tujuan-1.png') }}" alt="Gambar Tujuan 1" class="w-full h-auto rounded-lg shadow-lg">
-                </div>
-                <div class="md:w-1/2 md:pl-6 text-gray-700 dark:text-gray-300">
-                    <p class="text-lg leading-relaxed">{{ $program->tujuan }} </p>
-                </div>
-            </div> --}}
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-4 md:mb-0 md:order-2">
-                    <img src="{{ asset('img/tujuan-2.png') }}" alt="Gambar Tujuan 2" class="w-full h-auto rounded-lg shadow-lg">
-                </div>
-                <div class="md:w-1/2 md:pr-6 text-gray-700 dark:text-gray-300 md:order-1">
-                    <p class="text-lg leading-relaxed">{{ $program->tujuan }}</p>
-                </div>
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2">
+                <!-- Heading for Tujuan Kegiatan -->
+                <h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white mb-4">
+                    Tujuan Kegiatan
+                </h3>
+
+                <!-- Content for Tujuan -->
+                <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                    {{ $program->tujuan }}
+                </p>
+            </div>
+            <div class="md:w-1/2 mb-4 md:mb-0 md:pr-6">
+                <img src="{{ asset('img/tujuan-2.png') }}" alt="Gambar Tujuan 2" class="w-full h-auto rounded-lg shadow-lg">
             </div>
         </div>
     </div>
 </section>
 <!-- Tujuan Kegiatan Section End -->
+
 <!-- News Section Start -->
 <section class="news py-24 bg-gray-50 dark:bg-gray-900">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
