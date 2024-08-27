@@ -16,7 +16,7 @@
                 <!-- Wrapper for text and circle background -->
                 <div class="relative">
                     <img src="img/Vector.png" alt="Background Vector"
-                        class="absolute w-[100%] h-[250%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-10 ml-20">
+                        class="absolute w-[250%] h-[180%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-10 ml-20">
                     <h2
                         class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white z-50">
                         About Rumah Lestari

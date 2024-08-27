@@ -12,9 +12,15 @@ class BeritaController extends Controller
     {
         $beritas = Berita::when($request->program_id, function ($query) use ($request) {
             return $query->where('program_id', $request->program_id);
-        })->get();
+        })
+        ->paginate(9);
         $programs = Program::all(); // Mendapatkan semua program
+        $query = Berita::query();
+        if ($request->has('program_id')) {
+            $query->where('program_id', $request->get('program_id'));
+        }
         return view('berita.index', compact('beritas', 'programs'));
+        
     }
 
     // Method to display a single news article by its slug
