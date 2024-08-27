@@ -44,13 +44,13 @@
         <h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white mb-8 relative inline-block kegiatan-title">Kegiatan Terkait</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($relatedKegiatan as $kegiatan)
-                @if($kegiatan->program->nama == "JAWIR")
-                <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
-                    <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $kegiatan->nama_kegiatan }}</h5>
-                    <p class="text-gray-600 text-justify">{{ Str::limit($kegiatan->deskripsi_kegiatan) }}</p>
-                </div>
-                @endif
+            @if($kegiatan->program->nama == "JAWIR")
+            <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
+                <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $kegiatan->nama_kegiatan }}</h5>
+                <p class="text-gray-600 text-justify">{{ Str::limit($kegiatan->deskripsi_kegiatan) }}</p>
+            </div>
+            @endif
             @endforeach
         </div>
     </div>
@@ -95,24 +95,24 @@
                     <div id="carousel" class="max-w-md mx-auto mt-8 lg:mt-1 lg:max-w-full bg-green-400">
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4 mb-6">
                             @foreach($products as $product)
-                                <div class="overflow-hidden bg-white rounded shadow">
-                                    <div class="p-6">
-                                        <!-- Display product image -->
-                                        <img src="{{ asset('storage/' . $product->foto_produk) }}" alt="{{ $product->nama_produk }}" class="w-full h-48 object-cover rounded">
-                                        
-                                        <!-- Product name -->
-                                        <p class="mt-5 text-2xl font-semibold">
-                                            <a href="#" title="" class="text-black">{{ $product->nama_produk }}</a>
-                                        </p>
-                                        
-                                        <!-- Product description -->
-                                        <p class="mt-4 text-base text-gray-600">{{ $product->deskripsi_produk }}</p>
-                                    </div>
+                            <div class="overflow-hidden bg-white rounded shadow">
+                                <div class="p-6">
+                                    <!-- Display product image -->
+                                    <img src="{{ asset('storage/' . $product->foto_produk) }}" alt="{{ $product->nama_produk }}" class="w-full h-48 object-cover rounded">
+
+                                    <!-- Product name -->
+                                    <p class="mt-5 text-2xl font-semibold">
+                                        <a href="#" title="" class="text-black">{{ $product->nama_produk }}</a>
+                                    </p>
+
+                                    <!-- Product description -->
+                                    <p class="mt-4 text-base text-gray-600">{{ $product->deskripsi_produk }}</p>
                                 </div>
+                            </div>
                             @endforeach
                         </div>
                     </div>
-                </div>                
+                </div>
 
                 <div class="flex items-center justify-center mt-8 space-x-3 lg:hidden">
                     <button id="prevBtnMobile" type="button"
@@ -145,69 +145,71 @@
                 Berita Terbaru
             </h2>
         </div>
- <!-- Related News Section Start -->
- @if ($relatedNews->isNotEmpty())
- <section class="related-news py-10 bg-gray-50 sm:py-16 lg:py-24">
-     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-             @foreach ($relatedNews as $news)
-                 @if ($news->program->nama == "UKCIT")
-                     <div
-                         class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
-                         <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
-                             class="mb-4 w-full h-48 object-cover rounded-lg">
-                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                             {{ $news->judul }}</h5>
-                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
-                             {{ Str::limit($news->isi_berita, 100, '...') }}</p>
-                         <a href="{{ route('berita.show', $news->slug) }}"
-                             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                             Baca Berita
-                         </a>
-                     </div>
-                 @endif
-             @endforeach
-         </div>
-     </div>
- </section>
- @endif
- <!-- Related News Section End -->
+        <!-- Related News Section Start -->
+        @if ($relatedNews->isNotEmpty())
+        <section class="related-news py-10 bg-gray-50 sm:py-16 lg:py-24">
+            <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                    @foreach ($relatedNews as $news)
+                    @if ($news->program->nama == "JAWIR")
+                    <div
+                        class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
+                        <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
+                            class="mb-4 w-full h-48 object-cover rounded-lg">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            {{ $news->judul }}
+                        </h5>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
+                            {{ Str::limit($news->isi_berita, 100, '...') }}
+                        </p>
+                        <a href="{{ route('berita.show', $news->slug) }}"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Baca Berita
+                        </a>
+                    </div>
+                    @endif
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        @endif
+        <!-- Related News Section End -->
 
 
 
-<script>
-    const carousel = document.getElementById('carousel');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtnMobile = document.getElementById('prevBtnMobile');
-    const nextBtnMobile = document.getElementById('nextBtnMobile');
+        <script>
+            const carousel = document.getElementById('carousel');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtnMobile = document.getElementById('prevBtnMobile');
+            const nextBtnMobile = document.getElementById('nextBtnMobile');
 
-    prevBtn.addEventListener('click', () => {
-        carousel.scrollBy({
-            left: -carousel.clientWidth,
-            behavior: 'smooth'
-        });
-    });
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: -carousel.clientWidth,
+                    behavior: 'smooth'
+                });
+            });
 
-    nextBtn.addEventListener('click', () => {
-        carousel.scrollBy({
-            left: carousel.clientWidth,
-            behavior: 'smooth'
-        });
-    });
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: carousel.clientWidth,
+                    behavior: 'smooth'
+                });
+            });
 
-    prevBtnMobile.addEventListener('click', () => {
-        carousel.scrollBy({
-            left: -carousel.clientWidth,
-            behavior: 'smooth'
-        });
-    });
+            prevBtnMobile.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: -carousel.clientWidth,
+                    behavior: 'smooth'
+                });
+            });
 
-    nextBtnMobile.addEventListener('click', () => {
-        carousel.scrollBy({
-            left: carousel.clientWidth,
-            behavior: 'smooth'
-        });
-    });
-</script>
-@endsection
+            nextBtnMobile.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: carousel.clientWidth,
+                    behavior: 'smooth'
+                });
+            });
+        </script>
+        @endsection
