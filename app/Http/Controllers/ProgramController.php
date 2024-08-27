@@ -40,7 +40,8 @@ class ProgramController extends Controller
         $programs = Program::where('nama', 'RUMLES')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
-        return view('program.rumles', compact('programs', 'relatedKegiatan', 'relatedNews'));
+        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('program.rumles', compact('programs', 'program', 'relatedKegiatan', 'relatedNews', 'beritas'));
     }
 
     public function Jangwis()
