@@ -130,7 +130,6 @@
     @if ($relatedNews->isNotEmpty())
     <section class="related-news py-10 bg-gray-50 sm:py-16 lg:py-24">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">Berita Rumah Lestari</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
                 @foreach ($relatedNews as $news)
                     @if ($news->program->nama == "UKCIT")
