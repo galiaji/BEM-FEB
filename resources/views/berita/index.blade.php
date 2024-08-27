@@ -15,10 +15,10 @@
                     Semua Program
                 </button>
                 @foreach($programs as $program)
-                    <button id="programBtn{{ $program->id }}" onclick="filterByProgram({{ $program->id }})" 
-                            class="p-2 bg-blue-500 hover:bg-blue-600 text-white rounded">
-                        {{ $program->nama }}
-                    </button>
+                <button id="programBtn{{ $program->id }}" onclick="filterByProgram" ({{ $program->id }})"
+                    class="p-2 bg-blue-500 hover:bg-blue-600 text-white rounded">
+                    {{ $program->nama }}
+                </button>
                 @endforeach
             </div>
             {{-- End Bagian filter button --}}
@@ -128,7 +128,7 @@
     function setActiveButton() {
         const urlParams = new URLSearchParams(window.location.search);
         const programId = urlParams.get('program_id');
-        
+
         if (!programId) {
             document.getElementById('allProgramBtn').classList.add('bg-gray-400');
             document.getElementById('allProgramBtn').classList.remove('bg-gray-300');
