@@ -20,14 +20,14 @@
                         <img src="img/Vector.png" alt="Background Vector"
                             class="absolute w-[200%] h-[150%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
                         <h2
-                            class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white z-50">
+                            class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">
                             About Rumah Lestari
                         </h2>
-                        <p class="text-lg leading-relaxed text-gray-400 mt-9 z-50">
+                        <p class="text-lg leading-relaxed text-gray-400 mt-9">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos a libero in velit,
                             explicabo molestias totam deleniti quibusdam odio obcaecati incidunt.
                         </p>
-                        <p class="mt-6 text-lg leading-relaxed text-gray-400 z-50">
+                        <p class="mt-6 text-lg leading-relaxed text-gray-400">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos a libero in velit,
                             explicabo molestias totam deleniti quibusdam odio obcaecati incidunt.
                         </p>
