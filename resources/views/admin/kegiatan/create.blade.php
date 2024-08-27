@@ -47,24 +47,20 @@
     <form action="{{ route('admin.kegiatan.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="nama_kegiatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
-                Kegiatan</label>
+            <label for="nama_kegiatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Kegiatan</label>
             <input type="text" name="nama_kegiatan"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"
                 required>
         </div>
         <div class="form-group">
-            <label for="foto_kegiatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foto
-                Kegiatan</label>
+            <label for="foto_kegiatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foto Kegiatan</label>
             <input type="file" name="foto_kegiatan"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full     dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
         </div>
         <div class="form-group">
-            <label for="deskripsi_kegiatan"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi Kegiatan</label>
+            <label for="deskripsi_kegiatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi Kegiatan</label>
             <textarea name="deskripsi_kegiatan" id="deskripsi_kegiatan"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"
-                required></textarea>
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"></textarea>
         </div>
         <div class="form-group">
             <label for="program_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Program</label>
@@ -85,9 +81,11 @@
         </div>
     </form>
 </div>
-<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
+<!-- Include CKEditor 5 script -->
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
 <script>
+    // Initialize CKEditor 5 for deskripsi_kegiatan
     ClassicEditor
         .create(document.querySelector('#deskripsi_kegiatan'))
         .catch(error => {
