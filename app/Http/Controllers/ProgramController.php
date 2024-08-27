@@ -18,7 +18,7 @@ class ProgramController extends Controller
         $program3 = Program::where('nama', 'ADBUD')->firstOrFail();
         $program4 = Program::where('nama', 'UKCIT')->firstOrFail();
         $program5 = Program::where('nama', 'JAWIR')->firstOrFail();
-        return view('program.index', compact('program1', 'program2', 'program3', 'program4', 'program5'));
+        return view('program.Index', compact('program1', 'program2', 'program3', 'program4', 'program5'));
     }
 
     public function show($slug)
@@ -78,7 +78,7 @@ class ProgramController extends Controller
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
         $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
-        
+
         return view('program.Jawir', compact('products', 'programs', 'program', 'relatedKegiatan', 'relatedNews', 'beritas'));
     }
 }
