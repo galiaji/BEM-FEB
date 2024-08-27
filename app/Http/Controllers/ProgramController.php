@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\Program;
 use App\Models\Kegiatan;
+use App\Models\ProdukUMKM;
 use Illuminate\Http\Request;
 
 class ProgramController extends Controller
@@ -71,10 +72,12 @@ class ProgramController extends Controller
     public function indexjawir()
     {
         $program = Program::where('nama', 'JAWIR')->firstOrFail();
-        $programs = Program::where('nama', 'UKCIT')->firstOrFail();
+        $programs = Program::where('nama', 'JAWIR')->firstOrFail();
+        $products = ProdukUMKM::all();  // Fetch all products
         $relatedKegiatan = Kegiatan::all();
         $relatedNews = Berita::all();
         $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('program.Jawir', compact('programs', 'program', 'relatedKegiatan', 'relatedNews', 'beritas'), compact('programs'));
+        
+        return view('program.Jawir', compact('products', 'programs', 'program', 'relatedKegiatan', 'relatedNews', 'beritas'));
     }
 }
