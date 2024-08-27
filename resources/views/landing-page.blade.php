@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div>
-                        <img class="w-full rounded-full" src="img/landing.jpg" alt="Hero Image" />
+                        <img class="w-full rounded-full" src="public/img/landing.jpg" alt="Hero Image" />
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                         src="https://cdn.rareblocks.xyz/collection/celebration/images/content/3/dots-pattern.svg"
                         alt="Dots Pattern" />
                     <div class="pl-12 pr-12">
-                        <img class="relative rounded-xl" src="img/about.jpg" alt="bem" />
+                        <img class="relative rounded-xl" src="public/img/about.jpg" alt="bem" />
                     </div>
                 </div>
                 <div class="2xl:pl-16 lg:col-span-3">
@@ -92,7 +92,8 @@
                     class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5 text-center animate-fade-right animate-once animate-duration-1000 animate-delay-[100ms] animate-ease-linear">
                     <div class="mt-2">
                         <!-- Tambahkan gambar di sini -->
-                        <img src="img/about.jpg" alt="Deskripsi Gambar" class="w-24 h-24 mx-auto rounded-full object-cover">
+                        <img src="public/img/about.jpg" alt="Deskripsi Gambar"
+                            class="w-24 h-24 mx-auto rounded-full object-cover">
 
                         <a href="{{ route('Program.jangwis') }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
@@ -119,7 +120,8 @@
                     class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5 text-center animate-fade-right animate-once animate-duration-1000 animate-delay-[500ms] animate-ease-linear">
                     <div class="mt-2">
                         <!-- Tambahkan gambar di sini -->
-                        <img src="img/about.jpg" alt="Deskripsi Gambar" class="w-24 h-24 mx-auto rounded-full object-cover">
+                        <img src="public/img/about.jpg" alt="Deskripsi Gambar"
+                            class="w-24 h-24 mx-auto rounded-full object-cover">
                         <a href="{{ route('program.ukcit') }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
                                 UKCIT
@@ -144,7 +146,8 @@
                     class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5 text-center animate-fade-right animate-once animate-duration-1000 animate-delay-[1000ms] animate-ease-linear">
                     <div class="mt-2">
                         <!-- Tambahkan gambar di sini -->
-                        <img src="img/about.jpg" alt="Deskripsi Gambar" class="w-24 h-24 mx-auto rounded-full object-cover">
+                        <img src="public/img/about.jpg" alt="Deskripsi Gambar"
+                            class="w-24 h-24 mx-auto rounded-full object-cover">
                         <a href="{{ route('Program.adbud') }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 ADBUD
@@ -169,7 +172,8 @@
                     class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5 text-center animate-fade-right animate-once animate-duration-1000 animate-delay-[1500ms] animate-ease-linear">
                     <div class="mt-2">
                         <!-- Tambahkan gambar di sini -->
-                        <img src="img/about.jpg" alt="Deskripsi Gambar" class="w-24 h-24 mx-auto rounded-full object-cover">
+                        <img src="public/img/about.jpg" alt="Deskripsi Gambar"
+                            class="w-24 h-24 mx-auto rounded-full object-cover">
                         <a href="{{ route('program.rumles') }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 RUMLES
@@ -194,7 +198,7 @@
                     class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5 text-center animate-fade-right animate-once animate-duration-1000 animate-delay-[2000ms] animate-ease-linear">
                     <div class="mt-2">
                         <!-- Tambahkan gambar di sini -->
-                        <img src="img/about.jpg" alt="Deskripsi Gambar"
+                        <img src="public/img/about.jpg" alt="Deskripsi Gambar"
                             class="w-24 h-24 mx-auto rounded-full object-cover">
                         <a href="{{ route('Program.jangwis') }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
