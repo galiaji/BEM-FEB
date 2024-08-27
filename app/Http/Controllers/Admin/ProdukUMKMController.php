@@ -70,7 +70,7 @@ class ProdukUMKMController extends Controller
             if ($produk_umkm->foto_produk && Storage::exists('public/' . $produk_umkm->foto_produk)) {
                 Storage::delete('public/' . $produk_umkm->foto_produk);
             }
-            $data['foto_produk'] = $request->file('foto_produk')->store('images/produk_umkm', 'public');
+            $data['foto_produk'] = $request->file('foto_produk')->store('images/', 'public');
         }
 
         $produk_umkm->update($data);
