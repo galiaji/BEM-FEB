@@ -7,10 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Landing Page')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    <style>
+        .animate {
+            animation-name: fade-right;
+            animation-duration: 1s;
+            animation-timing-function: ease-linear;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-white">
     @include('layouts.header')
 
     <!-- Content Section -->
@@ -56,6 +62,7 @@
             }
         });
     </script>
+
 </body>
 
 </html>
