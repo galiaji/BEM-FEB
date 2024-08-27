@@ -46,12 +46,12 @@
     <label for="nama_produk" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Produk:</label>
     <input type="text" name="nama_produk" id="nama_produk"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"
-        required>
+        >
     <label for="deskripsi_produk" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi
         Produk:</label>
     <textarea name="deskripsi_produk" id="deskripsi_produk"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"
-        required></textarea>
+        ></textarea>
     <label for="foto_produk" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foto Produk:</label>
     <input type="file" name="foto_produk" id="foto_produk"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
@@ -60,10 +60,13 @@
 </form>
 <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
     ClassicEditor
         .create(document.querySelector('#deskripsi_produk'))
         .catch(error => {
             console.error(error);
         });
+});
 </script>
+
 @endsection

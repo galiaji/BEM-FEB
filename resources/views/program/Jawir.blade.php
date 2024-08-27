@@ -106,7 +106,7 @@
                                     </p>
 
                                     <!-- Product description -->
-                                    <p class="mt-4 text-base text-gray-600">{{ $product->deskripsi_produk }}</p>
+                                    <p class="mt-4 text-base text-gray-600">{!! $product->deskripsi_produk !!}</p>
                                 </div>
                             </div>
                             @endforeach

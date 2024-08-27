@@ -141,4 +141,5 @@
     // Set active button on page load
     window.onload = setActiveButton;
 </script>
+
 @endsection
