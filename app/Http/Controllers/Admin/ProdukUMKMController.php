@@ -34,9 +34,6 @@ class ProdukUMKMController extends Controller
         $produk->deskripsi_produk = $request->deskripsi_produk;
 
         // Handle file upload
-        // $file = $request->file('foto_produk');
-        // $filePath = $file->store('images', 'public');
-        // $produk->foto_produk = $filePath;
         if ($request->hasFile('foto_produk')) {
 
 
@@ -74,15 +71,22 @@ class ProdukUMKMController extends Controller
 
         $produk_umkm = ProdukUMKM::findOrFail($id);
 
-        $data = $request->all();
+        // Get all input data except 'foto_produk'
+        $data = $request->except('foto_produk');
 
         if ($request->hasFile('foto_produk')) {
-            if ($produk_umkm->foto_produk && Storage::exists('public/' . $produk_umkm->foto_produk)) {
-                Storage::delete('public/' . $produk_umkm->foto_produk);
+            // Check if there's an existing image and delete it
+            if ($produk_umkm->foto_produk && file_exists(public_path('images/' . $produk_umkm->foto_produk))) {
+                unlink(public_path('images/' . $produk_umkm->foto_produk));
             }
-            $data['foto_produk'] = $request->file('foto_produk')->store('images', 'public');
+
+            // Upload the new image
+            $imageName = time() . '.' . $request->foto_produk->extension();
+            $request->foto_produk->move(public_path('images'), $imageName);
+            $data['foto_produk'] = $imageName; // Update the image in the data array
         }
 
+        // Update the record with the new data
         $produk_umkm->update($data);
 
         return redirect()->route('admin.produk_umkm.index')->with('success', 'Produk UMKM berhasil diperbarui.');
