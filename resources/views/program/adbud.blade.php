@@ -10,7 +10,7 @@
 
             <div class="relative lg:mb-12">
                 <div class="pl-24 pr-12">
-                    <img class="relative rounded-xl" src="img/srawung-wirausaha.png" alt="Ukcit" />
+                    <img class="relative rounded-xl" src="public/img/srawung-wirausaha.png" alt="Ukcit" />
                 </div>
             </div>
 

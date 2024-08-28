@@ -21,7 +21,7 @@
                     </p>
                 </div>
                 <div class="flex">
-                    <img src="img/gambarvec1.png" alt="Illustration" class="w-full max-w-md rounded-lg">
+                    <img src="public/img/gambarvec1.png" alt="Illustration" class="w-full max-w-md rounded-lg">
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="grid gap-4">
                     <div>
-                        <img class="h-auto max-w-full rounded-lg" src="{{ asset('images/' . $program->gambar) }}" alt="{{ $program->gambar }}">
+                        <img class="h-auto max-w-full rounded-lg" src="{{ asset('public/images/' . $program->gambar) }}" alt="{{ $program->gambar }}">
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
             @foreach($relatedKegiatan as $kegiatan)
             @if($kegiatan->program->nama == "JAWIR")
             <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
-                <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
+                <img src="{{ asset('public/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $kegiatan->nama_kegiatan }}</h5>
                 <p class="text-gray-600 text-justify">{!! Str::limit($kegiatan->deskripsi_kegiatan) !!}</p>
             </div>
@@ -98,7 +98,7 @@
                             <div class="overflow-hidden bg-white rounded shadow">
                                 <div class="p-6">
                                     <!-- Display product image -->
-                                    <img src="{{ asset('storage/' . $product->foto_produk) }}" alt="{{ $product->nama_produk }}" class="w-full h-48 object-cover rounded">
+                                    <img src="{{ asset('public/' . $product->foto_produk) }}" alt="{{ $product->nama_produk }}" class="w-full h-48 object-cover rounded">
 
                                     <!-- Product name -->
                                     <p class="mt-5 text-2xl font-semibold">
@@ -154,7 +154,7 @@
                     @if ($news->program->nama == "JAWIR")
                     <div
                         class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
-                        <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
+                        <img src="{{ asset('public/images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
                             class="mb-4 w-full h-48 object-cover rounded-lg">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {{ $news->judul }}

@@ -30,7 +30,7 @@
             @foreach ($relatedKegiatan as $kegiatan)
             @if ($kegiatan->program->nama == 'JANGWIS')
             <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
-                <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
+                <img src="{{ asset('public/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $kegiatan->nama_kegiatan }}</h5>
                 <p class="text-gray-600 text-justify">{!! ($kegiatan->deskripsi_kegiatan) !!}</p>
             </div>
@@ -105,7 +105,7 @@
             @if ($news->program->nama == 'JANGWIS')
             <div
                 class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
-                <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
+                <img src="{{ asset('public/images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
                     class="mb-4 w-full h-48 object-cover rounded-lg">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {{ $news->judul }}
