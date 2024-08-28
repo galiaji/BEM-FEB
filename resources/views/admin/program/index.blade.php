@@ -120,17 +120,17 @@
                 class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
                 {{ $program->nama }}
             </td>
-            <td
-                class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
-                {{ Str::limit($program->deskripsi, 50) }}
+            <td class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                {!! Str::limit(($program->deskripsi), 50) ?? 'Tidak ditentukan' !!}
+                
             </td>
             <td
                 class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
                 {{ $program->jadwal ?? 'Tidak ditentukan' }}
             </td>
-            <td
-                class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
-                {{ $program->tujuan ?? 'Tidak ditentukan' }}
+
+            <td class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                {!! Str::limit(($program->tujuan),50) ?? 'Tidak ditentukan' !!}
             </td>
             <td
                 class="py-2 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">

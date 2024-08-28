@@ -21,9 +21,9 @@
             @foreach($relatedKegiatan as $kegiatan)
             <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
                 @if(!empty($kegiatan->foto_kegiatan))
-                <img src="{{ asset('storage/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
+                <img src="{{ asset('public/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
                 @else
-                <img src="{{ asset('images/placeholder.png') }}" alt="Placeholder Image" class="mb-4 w-full h-48 object-cover rounded-lg">
+                <img src="{{ asset('public/images/placeholder.png') }}" alt="Placeholder Image" class="mb-4 w-full h-48 object-cover rounded-lg">
                 @endif
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $kegiatan->nama_kegiatan }}</h5>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">{{ Str::limit($kegiatan->deskripsi, 100, '...') }}</p>
@@ -49,9 +49,9 @@
             @foreach($relatedNews as $news)
             <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
                 @if(!empty($news->input_gambar))
-                <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}" class="mb-4 w-full h-48 object-cover rounded-lg">
+                <img src="{{ asset('public/images/' . $news->input_gambar) }}" alt="{{ $news->judul }}" class="mb-4 w-full h-48 object-cover rounded-lg">
                 @else
-                <img src="{{ asset('images/placeholder.png') }}" alt="Placeholder Image" class="mb-4 w-full h-48 object-cover rounded-lg">
+                <img src="{{ asset('public/images/placeholder.png') }}" alt="Placeholder Image" class="mb-4 w-full h-48 object-cover rounded-lg">
                 @endif
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $news->judul }}</h5>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">{{ Str::limit($news->isi_berita, 100, '...') }}</p>
