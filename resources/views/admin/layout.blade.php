@@ -4,50 +4,10 @@
 <head>
     <title>@yield('title') - Admin Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="public/favicon.ico">
+    <link rel="icon" href="/favicon.ico"> <!-- Perbaikan path favicon -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .sidebar {
-            width: 200px;
-            float: left;
-            background-color: #333;
-            height: 100vh;
-            color: white;
-            padding-top: 20px;
-        }
-
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-        }
-
-        .sidebar a:hover {
-            background-color: #575757;
-        }
-
-        .logout {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-        }
-
-        .content {
-            margin-left: 220px;
-            padding: 20px;
-        }
-
-        .header {
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            text-align: center;
-        }
+        /* Style lama yang tidak digunakan lagi telah dikomentari */
     </style> --}}
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
