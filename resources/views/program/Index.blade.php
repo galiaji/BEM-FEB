@@ -34,7 +34,6 @@
                     <!-- Tambahkan gambar di sini -->
                     <img src="public/img/about.jpg" alt="Deskripsi Gambar" class="w-24 h-24 mx-auto rounded-full object-cover">
                 </div>
-                <a href="{{ route('program.ukcit') }}">
                     <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                         UKCIT
                     </h5>
@@ -52,7 +51,6 @@
                     <!-- Tambahkan gambar di sini -->
                     <img src="public/img/about.jpg" alt="Deskripsi Gambar" class="w-24 h-24 mx-auto rounded-full object-cover">
                 </div>
-                <a href="{{ route('Program.adbud') }}">
                     <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                         ADBUD
                     </h5>
@@ -70,7 +68,6 @@
                     <!-- Tambahkan gambar di sini -->
                     <img src="public/img/about.jpg" alt="Deskripsi Gambar" class="w-24 h-24 mx-auto rounded-full object-cover">
                 </div>
-                <a href="{{ route('program.rumles') }}">
                     <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                         RUMLES
                     </h5>
@@ -88,7 +85,6 @@
                     <!-- Tambahkan gambar di sini -->
                     <img src="public/img/about.jpg" alt="Deskripsi Gambar" class="w-24 h-24 mx-auto rounded-full object-cover">
                 </div>
-                <a href="{{ route('Program.jangwis') }}">
                     <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                         JANGWIS
                     </h5>
