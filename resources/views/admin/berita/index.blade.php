@@ -100,9 +100,9 @@
             <th
                 class="py-4 px-4 border-b dark:border-gray-500 border-gray-400 dark:bg-gray-700 bg-gray-100 dark:text-gray-400 text-gray-700">
                 Program</th>
-            <th
+            <!-- <th
                 class="py-4 px-4 border-b dark:border-gray-500 border-gray-400 dark:bg-gray-700 bg-gray-100 dark:text-gray-400 text-gray-700">
-                Slug</th>
+                Slug</th> -->
             <th
                 class="py-4 px-4 border-b dark:border-gray-500 border-gray-400 dark:bg-gray-700 bg-gray-100 dark:text-gray-400 text-gray-700">
                 Gambar</th>
@@ -130,10 +130,10 @@
                 class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
                 {{ $berita->program->nama }}
             </td> <!-- Assuming program relation is loaded -->
-            <td
+            <!-- <td
                 class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
                 {{ $berita->slug }}
-            </td>
+            </td> -->
             <td
                 class="py-2 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
                 <div x-data="{ open: false }">
