@@ -44,7 +44,7 @@
                             <p class="mt-5 text-2xl font-semibold">
                                 <a href="#" title="" class="text-black">{{ $program1->nama }}</a>
                             </p>
-                            <p class="mt-4 text-base text-gray-600">{{ Str::limit($program1->deskripsi, 100) }}</p>
+                            <p class="mt-4 text-base text-gray-600">{!! Str::limit($program1->deskripsi, 100) !!}</p>
                             <a href="{{ route('program.rumles', $program1->slug) }}" title=""
                                 class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
                                 Continue Reading
