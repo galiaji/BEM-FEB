@@ -80,7 +80,7 @@
         <label for="input_gambar" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar:</label>
         @if ($berita->input_gambar)
         <div>
-            <img src="{{ url('public/images' . $berita->input_gambar) }}" alt="Gambar Berita" width="150">
+            <img src="{{ url('public/images/' . $berita->input_gambar) }}" alt="Gambar Berita" width="150">
             <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar saat ini</p>
         </div>
         @endif
