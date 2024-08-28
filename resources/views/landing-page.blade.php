@@ -27,10 +27,10 @@
                             Kemambang.</p>
                         <div class="mt-10 sm:flex sm:items-center sm:space-x-2">
                             <button onclick="window.location.href='/programs'"
-                                class="text-white bg-violet-400 hover:bg-violet-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3.5 me-2 mb-2 focus:outline-none transition-transform transform hover:scale-105 duration-200">
+                                class="text-white bg-violet-400 hover:bg-violet-500 focus:ring-4 focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-3.5 me-2 mb-2 focus:outline-none transition-transform transform hover:scale-105 duration-200">
                                 Lihat Program</button>
                             <button
-                                class="text-white bg-violet-400 hover:bg-violet-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3.5 me-2 mb-2 focus:outline-none transition-transform transform hover:scale-105 duration-200">
+                                class="text-white bg-violet-400 hover:bg-violet-500 focus:ring-4 focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-3.5 me-2 mb-2 focus:outline-none transition-transform transform hover:scale-105 duration-200">
                                 Hubungi Kami</button>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                 <div
                     class="w-full bg-white border border-gray-200 rounded-lg shadow p-5 text-center transition-transform transform hover:scale-105 duration-300 hover:bg-gray-100 hover:drop-shadow-xl">
                     <div class="mt-2">
-                        <img src="public/img/about.jpg" alt="Deskripsi Gambar"
+                        <img src="public/img/JAWIR 1.png" alt="Deskripsi Gambar"
                             class="w-24 h-24 mx-auto rounded-full object-cover transition-transform transform hover:scale-105 duration-300">
                         <a href="{{ route('Program.jangwis') }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center">
@@ -116,7 +116,7 @@
                 <div
                     class="w-full bg-white border border-gray-200 rounded-lg shadow p-5 text-center transition-transform transform hover:scale-105 duration-300 hover:bg-gray-100 hover:drop-shadow-xl">
                     <div class="mt-2">
-                        <img src="public/img/about.jpg" alt="Deskripsi Gambar"
+                        <img src="public/img/Ukcit 1.png" alt="Deskripsi Gambar"
                             class="w-24 h-24 mx-auto rounded-full object-cover transition-transform transform hover:scale-105 duration-300">
                         <a href="{{ route('program.ukcit') }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center">
@@ -141,7 +141,7 @@
                 <div
                     class="w-full bg-white border border-gray-200 rounded-lg shadow p-5 text-center transition-transform transform hover:scale-105 duration-300 hover:bg-gray-100 hover:drop-shadow-xl">
                     <div class="mt-2">
-                        <img src="public/img/about.jpg" alt="Deskripsi Gambar"
+                        <img src="public/img/Adbud 1.jpg" alt="Deskripsi Gambar"
                             class="w-24 h-24 mx-auto rounded-full object-cover transition-transform transform hover:scale-105 duration-300">
                         <a href="{{ route('Program.adbud') }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
@@ -166,7 +166,7 @@
                 <div
                     class="w-full bg-white border border-gray-200 rounded-lg shadow p-5 text-center transition-transform transform hover:scale-105 duration-300 hover:bg-gray-100 hover:drop-shadow-xl">
                     <div class="mt-2">
-                        <img src="public/img/about.jpg" alt="Deskripsi Gambar"
+                        <img src="public/img/Rumles 1.jpg" alt="Deskripsi Gambar"
                             class="w-24 h-24 mx-auto rounded-full object-cover transition-transform transform hover:scale-105 duration-300">
                         <a href="{{ route('program.rumles') }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
@@ -191,7 +191,7 @@
                 <div
                     class="w-full bg-white border border-gray-200 rounded-lg shadow p-5 text-center transition-transform transform hover:scale-105 duration-300 hover:bg-gray-100 hover:drop-shadow-xl">
                     <div class="mt-2">
-                        <img src="public/img/about.jpg" alt="Deskripsi Gambar"
+                        <img src="public/img/Jangwis 1.jpg" alt="Deskripsi Gambar"
                             class="w-24 h-24 mx-auto rounded-full object-cover transition-transform transform hover:scale-105 duration-300">
                         <a href="{{ route('Program.jangwis') }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
