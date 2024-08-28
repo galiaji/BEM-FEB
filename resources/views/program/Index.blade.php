@@ -68,7 +68,7 @@
                             <p class="mt-5 text-2xl font-semibold">
                                 <a href="#" title="" class="text-black">{{ $program2->nama }}</a>
                             </p>
-                            <p class="mt-4 text-base text-gray-600">{{ Str::limit($program2->deskripsi, 100) }}</p>
+                            <p class="mt-4 text-base text-gray-600">{!! Str::limit($program2->deskripsi, 100) !!}</p>
                             <a href="{{ route('Program.jangwis', $program2->slug) }}" title=""
                                 class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
                                 Continue Reading
@@ -92,7 +92,7 @@
                             <p class="mt-5 text-2xl font-semibold">
                                 <a href="#" title="" class="text-black">{{ $program3->nama }}</a>
                             </p>
-                            <p class="mt-4 text-base text-gray-600">{{ Str::limit($program3->deskripsi, 100) }}</p>
+                            <p class="mt-4 text-base text-gray-600">{!! Str::limit($program3->deskripsi, 100) !!}</p>
                             <a href="{{ route('Program.adbud', $program3->slug) }}" title=""
                                 class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
                                 Continue Reading
@@ -116,7 +116,7 @@
                             <p class="mt-5 text-2xl font-semibold">
                                 <a href="#" title="" class="text-black">{{ $program4->nama }}</a>
                             </p>
-                            <p class="mt-4 text-base text-gray-600"> {!! Str::limit(1program4->deskripsi, 100) !!}</p>
+                            <p class="mt-4 text-base text-gray-600"> {!! Str::limit($program4->deskripsi, 100) !!}</p>
                             <a href="{{ route('program.ukcit', $program4->slug) }}" title=""
                                 class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
                                 Continue Reading
@@ -140,7 +140,7 @@
                             <p class="mt-5 text-2xl font-semibold">
                                 <a href="#" title="" class="text-black">{{ $program5->nama }}</a>
                             </p>
-                            <p class="mt-4 text-base text-gray-600">{{ Str::limit($program5->deskripsi, 100) }}</p>
+                            <p class="mt-4 text-base text-gray-600">{!! Str::limit($program5->deskripsi, 100) !!}</p>
                             <a href="{{ route('program.jawir', $program5->slug) }}" title=""
                                 class="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-blue-600 transition-all duration-200 border-b-2 border-transparent hover:border-blue-600 focus:border-blue-600">
                                 Continue Reading
