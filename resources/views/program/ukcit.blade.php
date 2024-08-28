@@ -18,7 +18,7 @@
             <div class="flex-1 lg:w-2/3 relative">
                 <!-- Wrapper for text and circle background -->
                 <div class="relative">
-                    <img src="img/Vector.png" alt="Background Vector"
+                    <img src="public/img/Vector.png" alt="Background Vector"
                         class="absolute w-[150%] h-[100%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
 
                     <!-- Heading -->
