@@ -23,9 +23,14 @@
                         class="absolute inset-0 w-full h-full object-contain">
                 </div>
                 @endif
-                <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-8 text-justify">
-                    {!! $berita->isi_berita !!}
-                </p>
+                <<<<<<< HEAD
+                    <p class="text-lg leading-relaxed text-gray-700 mb-8 text-justify">
+                    {{ $berita->isi_berita }}
+                    =======
+                    <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-8 text-justify">
+                        {!! $berita->isi_berita !!}
+                        >>>>>>> fcf624b20811f093edab49d3bedf4396d41f4cec
+                    </p>
             </div>
             <!-- Sidebar or Additional Content -->
             <div class="lg:w-1/4 lg:pl-8">
