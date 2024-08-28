@@ -110,18 +110,19 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($programs as $program)
+        @foreach ($programs as $index => $program)
         <tr class="dark:hover:bg-gray-700 hover:bg-gray-100">
             <td
                 class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
-                {{ $program->id }}
+                {{ $index + 1 }}
             </td>
             <td
                 class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
                 {{ $program->nama }}
             </td>
-            <td class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
-                {!! Str::limit(($program->deskripsi), 50) ?? 'Tidak ditentukan' !!}
+            <td
+                class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                {!! Str::limit($program->deskripsi, 50) ?? 'Tidak ditentukan' !!}
 
             </td>
             <td
@@ -129,8 +130,9 @@
                 {{ $program->jadwal ?? 'Tidak ditentukan' }}
             </td>
 
-            <td class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
-                {!! Str::limit(($program->tujuan),50) ?? 'Tidak ditentukan' !!}
+            <td
+                class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
+                {!! Str::limit($program->tujuan, 50) ?? 'Tidak ditentukan' !!}
             </td>
             <td
                 class="py-2 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
@@ -153,7 +155,7 @@
                             <p class="mb-4"><strong>Gambar:</strong>
                             </p>
                             @if ($program->gambar)
-                            <img src="{{ url('public/images/' . $program->gambar) }}" alt="{{ url('images/' . $program->gambar) }}"
+                            <img src="{{ url('images/' . $program->gambar) }}" alt="Gambar Berita"
                                 width="400">
                             @else
                             Tidak ada gambar
@@ -168,15 +170,25 @@
 
             <td
                 class="py-2 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
-                <a href="{{ route('admin.program.edit', $program->id) }}"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</a>
+                <a href="{{ route('admin.program.edit', $program->id) }}" class="inline-block mr-2 text-blue-500">
+                    <svg class="w-6 h-6 inline align-middle" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m14.3 4.8 2.9 2.9M7 7H4a1 1 0 0 0-1 1v10c0 .6.4 1 1 1h11c.6 0 1-.4 1-1v-4.5m2.4-10a2 2 0 0 1 0 3l-6.8 6.8L8 14l.7-3.6 6.9-6.8a2 2 0 0 1 2.8 0Z" />
+                    </svg>
+                </a>
                 <form action="{{ route('admin.program.destroy', $program->id) }}" method="POST"
                     style="display:inline;">
                     @csrf
                     @method('DELETE')
-                    <button type="submit"
-                        class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-                        onclick="return confirm('Apakah Anda yakin ingin menghapus program ini?')">Delete</button>
+                    <button type="submit" class="text-red-500"
+                        onclick="return confirm('Apakah Anda yakin ingin menghapus program ini?')"><svg
+                            class="w-6 h-6 inline align-middle" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
+                        </svg></button>
                 </form>
             </td>
         </tr>
