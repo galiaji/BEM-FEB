@@ -11,7 +11,7 @@
 
             <!-- Image Section -->
             <div class="flex-shrink-0 lg:w-1/3 relative lg:mb-12">
-                <img class="w-full h-auto object-cover rounded-xl" src="img/srawung-wirausaha.png" alt="Ukcit" />
+                <img class="w-full h-auto object-cover rounded-xl" src="public/img/srawung-wirausaha.png" alt="Ukcit" />
             </div>
 
             <!-- Text Section -->
@@ -161,7 +161,7 @@
                     @foreach ($relatedNews as $news)
                     @if ($news->program->nama == 'UKCIT')
                     <div class="w-full bg-white border border-gray-200 rounded-lg shadow p-5">
-                        <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
+                        <img src="{{ asset('public/images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
                             class="mb-4 w-full h-48 object-cover rounded-lg">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                             {{ $news->judul }}
