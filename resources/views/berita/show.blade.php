@@ -8,7 +8,7 @@
             <div class="flex flex-col lg:flex-row">
                 <!-- Main Content -->
                 <div class="lg:w-3/4">
-                    <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">{{ $berita->judul }}</h2>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">{{ $berita->judul }}</h2>
                     <span class="block mt-6 text-sm font-semibold tracking-widest text-gray-400 uppercase">
                         {{ $berita->created_at->format('F j, Y') }}
                     </span>
@@ -23,29 +23,29 @@
                                 class="absolute inset-0 w-full h-full object-contain">
                         </div>
                     @endif
-                    <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-8 text-justify">
+                    <p class="text-lg leading-relaxed text-gray-700 mb-8 text-justify">
                         {{ $berita->isi_berita }}
                     </p>
                 </div>
                 <!-- Sidebar or Additional Content -->
                 <div class="lg:w-1/4 lg:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Berita Lainnya</h3>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Berita Lainnya</h3>
                     @if ($beritas->isEmpty())
-                        <p class="text-lg text-gray-700 dark:text-gray-300">Belum ada berita</p>
+                        <p class="text-lg text-gray-700">Belum ada berita</p>
                     @else
                         <div class="space-y-6">
                             @foreach ($beritas as $beritaItem)
                                 <a href="{{ route('berita.show', $beritaItem->slug) }}"
-                                    class="block bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
-                                    <div class="relative w-full h-40 overflow-hidden">
+                                    class="block bg-white border border-gray-200 rounded-lg shadow overflow-hidden hover:bg-gray-100 transition-colors duration-300 transition-transform transform hover:scale-105 hover:drop-shadow-xl duration-300">
+                                    <div class="relative w-full h-40 overflow-hidden rounded-md">
                                         <img class="absolute inset-0 w-full h-full object-contain"
                                             src="{{ asset('images/' . $beritaItem->input_gambar) }}"
                                             alt="{{ $beritaItem->judul }}" />
                                     </div>
                                     <div class="p-4">
-                                        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
                                             {{ $beritaItem->judul }}</h5>
-                                        <p class="font-normal text-gray-700 dark:text-gray-400 mb-4">
+                                        <p class="font-normal text-gray-700 mb-4">
                                             {{ $beritaItem->created_at->format('d M Y') }}</p>
                                     </div>
                                 </a>
