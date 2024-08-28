@@ -20,7 +20,7 @@
                 <div class="relative">
                     <img src="img/Vector.png" alt="Background Vector"
                         class="absolute w-[150%] h-[100%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
-                    
+
                     <!-- Heading -->
                     <h2
                         class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white z-50 animate-fade-up animate-delay-[100ms]">
@@ -32,9 +32,9 @@
                         {!! $program->deskripsi !!}
                     </p>
                 </div>
-                
+
                 <!-- Additional Image -->
-                <img src="{{ asset('images/' . $program->gambar) }}" alt="{{ $program->gambar }}" class="w-full h-48 object-cover rounded-lg mt-6">
+                <img src="{{ asset('public/images/' . $program->gambar) }}" alt="{{ $program->gambar }}" class="w-full h-48 object-cover rounded-lg mt-6">
             </div>
 
         </div>
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="w-full h-60">
-                    <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }} - {{ $kegiatan->deskripsi_kegiatan }}" class="w-full h-full object-cover rounded-t-xl border-b border-gray-200 dark:border-gray-700">
+                    <img src="{{ asset('storage/public/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }} - {{ $kegiatan->deskripsi_kegiatan }}" class="w-full h-full object-cover rounded-t-xl border-b border-gray-200 dark:border-gray-700">
                 </div>
                 <div class="p-6">
                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
@@ -75,7 +75,7 @@
             @endforeach
         </div>
     </div>
-</section>  
+</section>
 @endif
 
 
@@ -162,7 +162,7 @@
                     @if ($news->program->nama == "UKCIT")
                     <div
                         class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
-                        <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
+                        <img src="{{ asset('public/images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
                             class="mb-4 w-full h-48 object-cover rounded-lg">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {{ $news->judul }}
