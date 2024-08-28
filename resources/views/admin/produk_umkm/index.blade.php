@@ -141,7 +141,7 @@
                             <p class="mb-4"><strong>Gambar:</strong>
                             </p>
                             @if ($produk->foto_produk)
-                            <img src="{{ asset('public/storage/images' . $produk->foto_produk) }}" alt="Gambar Berita"
+                            <img src="{{ asset('public/storage/' . $produk->foto_produk) }}" alt="Gambar Berita"
                                 width="400">
                             @else
                             Tidak ada gambar
