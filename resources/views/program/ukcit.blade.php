@@ -18,7 +18,7 @@
                 <div class="flex-1 lg:w-2/3 relative">
                     <!-- Wrapper for text and circle background -->
                     <div class="relative">
-                        <img src="img/Vector.png" alt="Background Vector"
+                        <img src="public/img/Vector.png" alt="Background Vector"
                             class="absolute w-[150%] h-[100%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
 
                         <!-- Heading -->
@@ -34,7 +34,7 @@
                     </div>
 
                     <!-- Additional Image -->
-                    <img src="{{ asset('images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
+                    <img src="{{ asset('public/images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
                         class="w-full h-48 object-cover rounded-lg mt-6">
                 </div>
 
@@ -62,7 +62,7 @@
                                 </div>
 
                                 <div class="w-full h-60">
-                                    <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}"
+                                    <img src="{{ asset('public/storage/images/' . $kegiatan->foto_kegiatan) }}"
                                         alt="{{ $kegiatan->nama_kegiatan }} - {{ $kegiatan->deskripsi_kegiatan }}"
                                         class="w-full h-full object-cover rounded-t-xl border-b border-gray-200">
                                 </div>
@@ -90,7 +90,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                 <div class="info-item bg-gray-50 border border-gray-200 rounded-lg p-6 flex">
                     <div class="col-3 left mr-4 flex items-center justify-center">
-                        <img src="{{ asset('img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
+                        <img src="{{ asset('public/img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
                     </div>
                     <div>
                         <h4 class="text-xl font-semibold text-gray-900">Kegiatan</h4>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="info-item bg-gray-50 border border-gray-200 rounded-lg p-6 flex">
                     <div class="col-3 left mr-4 flex items-center justify-center">
-                        <img src="{{ asset('img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
+                        <img src="{{ asset('public/img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
                     </div>
                     <div>
                         <h4 class="text-xl font-semibold text-gray-900">Tempat</h4>
@@ -108,7 +108,7 @@
                 </div>
                 <div class="info-item bg-gray-50 border border-gray-200 rounded-lg p-6 flex">
                     <div class="col-3 left mr-4 flex items-center justify-center">
-                        <img src="{{ asset('img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
+                        <img src="{{ asset('public/img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
                     </div>
                     <div>
                         <h4 class="text-xl font-semibold text-gray-900">Waktu</h4>
@@ -136,7 +136,7 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 mb-4 md:mb-0 md:pr-6">
-                    <img src="{{ asset('img/tujuan-2.png') }}" alt="Gambar Tujuan 2"
+                    <img src="{{ asset('public/img/tujuan-2.png') }}" alt="Gambar Tujuan 2"
                         class="w-full h-auto rounded-lg shadow-lg">
                 </div>
             </div>
