@@ -153,7 +153,7 @@
                             <p class="mb-4"><strong>Gambar:</strong>
                             </p>
                             @if ($program->gambar)
-                            <img src="{{ url('public/images/' . $program->gambar) }}" alt="Gambar Berita"
+                            <img src="{{ url('public/images/' . $program->gambar) }}" alt="{{ url('images/' . $program->gambar) }}"
                                 width="400">
                             @else
                             Tidak ada gambar
