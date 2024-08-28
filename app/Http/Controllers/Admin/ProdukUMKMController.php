@@ -36,7 +36,7 @@ class ProdukUMKMController extends Controller
         // Handle file upload
         if ($request->hasFile('foto_produk')) {
             $file = $request->file('foto_produk');
-            $filePath = $file->store('images/', 'public');
+            $filePath = $file->store('images', 'public');
             $produk->foto_produk = $filePath;
         }
 
@@ -70,7 +70,7 @@ class ProdukUMKMController extends Controller
             if ($produk_umkm->foto_produk && Storage::exists('public/' . $produk_umkm->foto_produk)) {
                 Storage::delete('public/' . $produk_umkm->foto_produk);
             }
-            $data['foto_produk'] = $request->file('foto_produk')->store('images/', 'public');
+            $data['foto_produk'] = $request->file('foto_produk')->store('images', 'public');
         }
 
         $produk_umkm->update($data);
