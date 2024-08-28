@@ -17,7 +17,7 @@
             <div class="relative 2xl:pl-16">
                 <!-- Wrapper for text and circle background -->
                 <div class="relative">
-                    <img src="img/Vector.png" alt="Background Vector"
+                    <img src="public/img/Vector.png" alt="Background Vector"
                         class="absolute w-[200%] h-[150%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
                     <h2
                         class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white z-50">
@@ -43,7 +43,7 @@
             @foreach($relatedKegiatan as $kegiatan)
             @if($kegiatan->program->nama == "ADBUD")
             <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
-                <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
+                <img src="{{ asset('public/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $kegiatan->nama_kegiatan }}</h5>
                 <p class="text-gray-600 text-justify">{!! Str::limit($kegiatan->deskripsi_kegiatan) !!}</p>
             </div>
