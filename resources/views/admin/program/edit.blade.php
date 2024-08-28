@@ -75,7 +75,7 @@
             <label for="gambar" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar</label>
             @if ($program->gambar)
             <div>
-                <img src="{{ asset('images/' . $program->gambar) }}" alt="Gambar Program" width="150">
+                <img src="{{ asset('public/images/' . $program->gambar) }}" alt="Gambar Program" width="150">
                 <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar saat ini</p>
             </div>
             @endif

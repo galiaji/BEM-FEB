@@ -56,7 +56,7 @@
             <label for="foto_kegiatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foto Kegiatan:</label>
             @if ($kegiatan->foto_kegiatan)
             <div>
-                <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="Foto Kegiatan" width="150">
+                <img src="{{ asset('public/images/' . $kegiatan->foto_kegiatan) }}" alt="Foto Kegiatan" width="150">
                 <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar saat ini</p>
             </div>
             @endif

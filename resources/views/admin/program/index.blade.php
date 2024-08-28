@@ -122,7 +122,7 @@
             </td>
             <td class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
                 {!! Str::limit(($program->deskripsi), 50) ?? 'Tidak ditentukan' !!}
-                
+
             </td>
             <td
                 class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
@@ -153,7 +153,7 @@
                             <p class="mb-4"><strong>Gambar:</strong>
                             </p>
                             @if ($program->gambar)
-                            <img src="{{ url('images/' . $program->gambar) }}" alt="Gambar Berita"
+                            <img src="{{ url('public/images/' . $program->gambar) }}" alt="Gambar Berita"
                                 width="400">
                             @else
                             Tidak ada gambar
