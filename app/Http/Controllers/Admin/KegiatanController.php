@@ -51,16 +51,26 @@ class KegiatanController extends Controller
         ]);
 
         $data = $request->all();
+
         // Generate slug from 'nama_kegiatan'
         $data['slug'] = Str::slug($request->nama_kegiatan);
 
         // Handle file upload
         if ($request->hasFile('foto_kegiatan')) {
+            // Check if there's an old image and delete it if exists
+            if (isset($data['foto_kegiatan']) && file_exists(public_path('storage/images/' . $data['foto_kegiatan']))) {
+                unlink(public_path('storage/images/' . $data['foto_kegiatan']));
+            }
+
+            // Upload the new image
             $imageName = time() . '.' . $request->foto_kegiatan->extension();
-            $request->foto_kegiatan->storeAs('public/images', $imageName);
+            $request->foto_kegiatan->move(public_path('storage/images'), $imageName);
+
+            // Save the image name to the data array
             $data['foto_kegiatan'] = $imageName;
         }
 
+        // Create the new record in the database
         Kegiatan::create($data);
 
         return redirect()->route('admin.kegiatan.index')->with('success', 'Kegiatan created successfully.');
@@ -157,5 +167,4 @@ class KegiatanController extends Controller
         // Redirect dengan pesan sukses
         return redirect()->route('admin.kegiatan.index')->with('success', 'Kegiatan deleted successfully.');
     }
-
 }
