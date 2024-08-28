@@ -141,7 +141,7 @@
             <div
                 class="w-full bg-white border border-gray-200 rounded-lg shadow p-5 text-center transition-transform transform hover:scale-105 duration-300 hover:bg-gray-100 hover:drop-shadow-xl">
                 <div class="mt-2">
-                    <img src="public/img/Adbud 1.jpg" alt="Deskripsi Gambar"
+                    <img src="public/img/Adbud 1.png" alt="Deskripsi Gambar"
                         class="w-24 h-24 mx-auto rounded-full object-cover transition-transform transform hover:scale-105 duration-300">
                     <a href="{{ route('Program.adbud') }}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
@@ -166,7 +166,7 @@
             <div
                 class="w-full bg-white border border-gray-200 rounded-lg shadow p-5 text-center transition-transform transform hover:scale-105 duration-300 hover:bg-gray-100 hover:drop-shadow-xl">
                 <div class="mt-2">
-                    <img src="public/img/Rumles 1.jpg" alt="Deskripsi Gambar"
+                    <img src="public/img/Rumles 1.png" alt="Deskripsi Gambar"
                         class="w-24 h-24 mx-auto rounded-full object-cover transition-transform transform hover:scale-105 duration-300">
                     <a href="{{ route('program.rumles') }}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
@@ -191,7 +191,7 @@
             <div
                 class="w-full bg-white border border-gray-200 rounded-lg shadow p-5 text-center transition-transform transform hover:scale-105 duration-300 hover:bg-gray-100 hover:drop-shadow-xl">
                 <div class="mt-2">
-                    <img src="public/img/Jangwis 1.jpg" alt="Deskripsi Gambar"
+                    <img src="public/img/Jangwis 1.png" alt="Deskripsi Gambar"
                         class="w-24 h-24 mx-auto rounded-full object-cover transition-transform transform hover:scale-105 duration-300">
                     <a href="{{ route('Program.jangwis') }}">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
