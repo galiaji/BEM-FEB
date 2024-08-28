@@ -78,7 +78,7 @@
                                 <div class="space-y-5">
                                     <!-- Logo and Title Section -->
                                     <div class="text-center">
-                                        <img src="/img/BEM FEB.jpeg" alt="Logo" class="mx-auto w-30 h-20" />
+                                        <img src="public/img/BEM FEB.jpeg" alt="Logo" class="mx-auto w-30 h-20" />
                                         <h1 class="mt-4 text-2xl font-bold text-gray-500">
                                             Website BEM FEB
                                         </h1>
