@@ -12,6 +12,7 @@
         <p class="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             {!! $program->deskripsi !!}
         </p>
+        <img src="{{ asset('storage/images/' . $program->foto_kegiatan) }}" alt="{{ $program->gambar }}" class="mb-4 w-full h-48 object-cover rounded-lg">
         <p class="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             <strong>Tujuan:</strong> {!! $program->tujuan !!}
         </p>
@@ -30,7 +31,7 @@
             @foreach ($relatedKegiatan as $kegiatan)
             @if ($kegiatan->program->nama == 'JANGWIS')
             <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
-                <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
+                <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->foto_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $kegiatan->nama_kegiatan }}</h5>
                 <p class="text-gray-600 text-justify">{!! ($kegiatan->deskripsi_kegiatan) !!}</p>
             </div>
