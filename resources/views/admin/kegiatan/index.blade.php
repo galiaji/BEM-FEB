@@ -142,7 +142,7 @@
 
                             <!-- Display image if available -->
                             @if ($item->foto_kegiatan)
-                            <img src="{{ asset('storage/images/' . $item->foto_kegiatan) }}"
+                            <img src="{{ asset('public/storage/images/' . $item->foto_kegiatan) }}"
                                 alt="Gambar Kegiatan" width="400">
                             @else
                             <p>Tidak ada gambar</p>
