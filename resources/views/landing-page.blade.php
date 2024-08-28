@@ -11,7 +11,7 @@
                 <div>
                     <h1
                         class="text-4xl font-bold text-black sm:text-5xl lg:text-5xl animate-fade-up animate-delay-[100ms]">
-                        Explor Desa Kemambang Cerdas dan Berdaya melalui
+                        Explor Desa Munding Cerdas dan Berdaya melalui
                         <div class="relative inline-flex">
                             <span
                                 class="absolute inset-x-0 bottom-0 border-b-[30px] border-[#b785cc] animate-fade-up animate-delay-[200ms]"></span>
@@ -24,7 +24,7 @@
                     <p class="mt-8 text-base text-black sm:text-xl animate-fade-right animate-delay-[600ms]">Kembangkan,
                         tumbuhkan, dan kelola berbagai sumber daya yang ada dengan RUCITA dalam pengembangan potensi
                         Desa
-                        Kemambang.</p>
+                        Munding.</p>
                     <div class="mt-10 sm:flex sm:items-center sm:space-x-2">
                         <button onclick="window.location.href='/programs'"
                             class="text-white bg-violet-400 hover:bg-violet-500 focus:ring-4 focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-3.5 me-2 mb-2 focus:outline-none transition-transform transform hover:scale-105 duration-200">
