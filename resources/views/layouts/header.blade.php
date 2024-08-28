@@ -1,7 +1,5 @@
 <!-- resources/views/partials/header.blade.php -->
 <header>
-    <link rel="icon" href="public/favicon.ico">
-
     <nav class="bg-white border-gray-200 drop-shadow-md z-50">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">

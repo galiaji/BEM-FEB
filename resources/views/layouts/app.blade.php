@@ -8,6 +8,7 @@
     <title>@yield('title', 'Landing Page')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="public/favicon.ico">
     <style>
         .animate {
             animation-name: fade-right;
