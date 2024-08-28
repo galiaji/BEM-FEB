@@ -239,7 +239,8 @@
                 class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow overflow-hidden p-4 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:drop-shadow-xl duration-300">
                 <a href="{{ route('berita.show', $berita->slug) }}">
                     <img class="w-full h-48 object-cover rounded-lg"
-                        src="{{ asset('images/' . $berita->input_gambar) }}" alt="{{ $berita->judul }}" />
+                        src="{{ asset('public/images/' . $berita->input_gambar) }}"
+                        alt="{{ $berita->judul }}" />
                 </a>
                 <div class="mt-2">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
