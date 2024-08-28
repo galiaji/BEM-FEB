@@ -12,6 +12,7 @@
         <p class="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             {!! $program->deskripsi !!}
         </p>
+        <img src="{{ asset('storage/images/' . $program->foto_kegiatan) }}" alt="{{ $program->gambar }}" class="mb-4 w-full h-48 object-cover rounded-lg">
         <p class="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             <strong>Tujuan:</strong> {!! $program->tujuan !!}
         </p>
