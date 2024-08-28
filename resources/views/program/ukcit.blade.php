@@ -11,7 +11,7 @@
 
             <!-- Image Section -->
             <div class="flex-shrink-0 lg:w-1/3 relative lg:mb-12">
-                <img class="w-full h-auto object-cover rounded-xl" src="img/srawung-wirausaha.png" alt="Ukcit" />
+                <img class="w-full h-auto object-cover rounded-xl" src="public/img/srawung-wirausaha.png" alt="Ukcit" />
             </div>
 
             <!-- Text Section -->
@@ -137,7 +137,7 @@
                 </p>
             </div>
             <div class="md:w-1/2 mb-4 md:mb-0 md:pr-6">
-                <img src="{{ asset('img/tujuan-2.png') }}" alt="Gambar Tujuan 2" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="{{ asset('public/img/tujuan-2.png') }}" alt="Gambar Tujuan 2" class="w-full h-auto rounded-lg shadow-lg">
             </div>
         </div>
     </div>
