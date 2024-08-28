@@ -34,10 +34,20 @@ class ProdukUMKMController extends Controller
         $produk->deskripsi_produk = $request->deskripsi_produk;
 
         // Handle file upload
+        // $file = $request->file('foto_produk');
+        // $filePath = $file->store('images', 'public');
+        // $produk->foto_produk = $filePath;
         if ($request->hasFile('foto_produk')) {
-            $file = $request->file('foto_produk');
-            $filePath = $file->store('images', 'public');
-            $produk->foto_produk = $filePath;
+
+
+            if ($produk->foto_produk && file_exists(public_path('images/' . $produk->foto_produk))) {
+                unlink(public_path('images/' . $produk->foto_produk));
+            }
+
+            // Upload the new image
+            $imageName = time() . '.' . $request->foto_produk->extension();
+            $request->foto_produk->move(public_path('images'), $imageName);
+            $produk->foto_produk = $imageName;
         }
 
         // Save the new produk to the database
