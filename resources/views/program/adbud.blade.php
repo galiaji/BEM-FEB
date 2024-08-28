@@ -125,7 +125,7 @@
             @if ($news->program->nama == "ADBUD")
             <div
                 class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
-                <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
+                <img src="{{ asset('public/images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
                     class="mb-4 w-full h-48 object-cover rounded-lg">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {{ $news->judul }}
