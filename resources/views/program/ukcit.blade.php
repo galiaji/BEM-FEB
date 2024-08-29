@@ -11,14 +11,15 @@
 
                 <!-- Image Section -->
                 <div class="lg:w-2/5 w-full flex justify-center lg:justify-start">
-                    <img class="w-full max-w-lg h-auto object-cover rounded-xl" src="img/UKCIT new.png" alt="Ukcit" />
+                    <img class="w-full max-w-lg h-auto object-cover rounded-xl" src="public/img/UKCIT new.png"
+                        alt="Ukcit" />
                 </div>
 
                 <!-- Text Section -->
                 <div class="flex-1 lg:w-3/5 relative">
                     <!-- Wrapper for text and circle background -->
                     <div class="relative">
-                        <img src="img/Vector.png" alt="Background Vector"
+                        <img src="public/img/Vector.png" alt="Background Vector"
                             class="absolute w-[150%] h-[100%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
 
                         <!-- Heading -->
@@ -34,7 +35,7 @@
                     </div>
 
                     <!-- Additional Image -->
-                    <img src="{{ asset('images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
+                    <img src="{{ asset('public/images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
                         class="w-full h-48 object-cover rounded-lg mt-6">
                 </div>
 
