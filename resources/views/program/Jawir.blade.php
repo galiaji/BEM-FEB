@@ -98,7 +98,7 @@
 
                                         <!-- Display product image -->
                                         <div class="w-full h-60">
-                                            <img src="{{ asset('public/' . $product->foto_produk) }}" alt="{{ $product->nama_produk }}" class="w-full h-full object-cover rounded-t-xl border-b border-gray-200">
+                                            <img src="{{ asset('public/images/' . $product->foto_produk) }}" alt="{{ $product->nama_produk }}" class="w-full h-full object-cover rounded-t-xl border-b border-gray-200">
                                         </div>
 
                                         <div class="p-6">
