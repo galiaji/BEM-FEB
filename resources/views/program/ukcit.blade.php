@@ -147,53 +147,54 @@
     <!-- Tujuan Kegiatan Section End -->
 
     <!-- News Section Start -->
-    <section class="news py-24 bg-gray-50">
-        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj">
-                    Berita Terbaru
+    <section class="news bg-gray-50">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mb-16">
+            <div class="text-center mt-12">
+                <h2
+                    class="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj animate-fade-up animate-delay-[200ms]">
+                    Berita Terkait
                 </h2>
             </div>
 
-            <!-- Related News Section Start -->
             @if ($relatedNews->isNotEmpty())
-                <section class="related-news py-10 bg-gray-50 sm:py-16 lg:py-24">
-                    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                            @foreach ($relatedNews as $news)
-                                @if ($news->program->nama == 'UKCIT')
-                                    <div class="w-full bg-white border border-gray-200 rounded-lg shadow p-5">
-                                        <img src="{{ asset('public/images/' . $news->input_gambar) }}"
-                                            alt="{{ $news->judul }}" class="mb-4 w-full h-48 object-cover rounded-lg">
-
-                                        <!-- Clickable and Hoverable Title -->
-                                        <a href="{{ route('berita.show', $news->slug) }}" class="block mb-2">
-                                            <h5
-                                                class="text-2xl font-bold tracking-tight text-gray-900 truncate hover:text-blue-700">
-                                                {{ Str::limit($news->judul, 50, '...') }}
-                                            </h5>
-                                            <span
-                                                class="hidden hover:block absolute bg-gray-900 text-white text-sm p-2 rounded-lg z-10">
-                                                {{ $news->judul }}
-                                            </span>
-                                        </a>
-
-                                        <p class="mb-3 font-normal text-gray-700 text-justify">
-                                            {!! Str::limit($news->isi_berita, 100, '...') !!}
-                                        </p>
-
-                                        <a href="{{ route('berita.show', $news->slug) }}"
-                                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                                            Baca Berita
-                                        </a>
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                </section>
+                <div class="text-center">
+                    <p class="text-lg text-gray-700">Belum ada berita</p>
+                </div>
+            @else
+                <div id="carousel"
+                    class="flex overflow-x-auto max-w-md mx-auto lg:mt-6 lg:max-w-full scroll-smooth pb-6 pt-6 space-x-6">
+                    @foreach ($relatedNews as $news)
+                        @if ($news->program->nama == 'UKCIT')
+                            <div
+                                class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow overflow-hidden p-4 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:drop-shadow-xl duration-300">
+                                <a href="{{ route('berita.show', $news->slug) }}">
+                                    <img class="w-full h-48 object-cover rounded-lg"
+                                        src="{{ asset('public/images/' . $news->input_gambar) }}"
+                                        alt="{{ $news->judul }}" />
+                                </a>
+                                <div class="mt-2">
+                                    <a href="{{ route('berita.show', $news->slug) }}" class="block mb-2">
+                                        <h5
+                                            class="text-2xl font-bold tracking-tight text-gray-900 truncate hover:text-blue-700">
+                                            {{ Str::limit($news->judul, 50, '...') }}
+                                        </h5>
+                                    </a>
+                                    <p class="font-normal text-gray-700 mb-4">
+                                        {{ $berita->created_at->format('d M Y') }}
+                                    </p>
+                                    <p class="mb-3 font-normal text-gray-700">
+                                        {!! Str::limit($news->isi_berita, 100, '...') !!}
+                                    </p>
+                                    <a href="{{ route('berita.show', $news->slug) }}"
+                                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 transition-transform transform hover:scale-105 duration-200">
+                                        Baca Berita
+                                    </a>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
             @endif
-            <!-- Related News Section End -->
         </div>
     </section>
     <!-- News Section End -->
