@@ -5,7 +5,7 @@
             <a href="https://flowbite.com/" class="flex flex-col items-center mb-4 sm:mb-0 space-y-4 rtl:space-y-reverse">
                 <div class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">RUCITA</span>
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">MUJUR</span>
                 </div>
                 <div class="text-center">
                     <span class="block text-white font-semibold">Desa Kemambang</span>
@@ -28,7 +28,7 @@
             </ul>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; 2024 RUCITA. All Rights
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; 2024 MUJUR. All Rights
             Reserved.</span>
     </div>
 </footer>
