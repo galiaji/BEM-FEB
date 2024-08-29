@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $berita->judul)
+@section('title', 'Semua Berita')
 
 @section('content')
 <section class="program-details py-10 bg-gray-100 sm:py-16 lg:py-24">
