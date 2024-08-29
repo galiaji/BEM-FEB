@@ -91,7 +91,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <div class="info-item bg-gray-50 border border-gray-200 rounded-lg p-6 flex">
                 <div class="col-3 left mr-4 flex items-center justify-center">
-                    <img src="{{ asset('img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
+                    <img src="{{ asset('public/img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
                 </div>
                 <div>
                     <h4 class="text-xl font-semibold text-gray-900">Kegiatan</h4>
@@ -100,7 +100,7 @@
             </div>
             <div class="info-item bg-gray-50 border border-gray-200 rounded-lg p-6 flex">
                 <div class="col-3 left mr-4 flex items-center justify-center">
-                    <img src="{{ asset('img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
+                    <img src="{{ asset('public/img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
                 </div>
                 <div>
                     <h4 class="text-xl font-semibold text-gray-900">Tempat</h4>
@@ -109,7 +109,7 @@
             </div>
             <div class="info-item bg-gray-50 border border-gray-200 rounded-lg p-6 flex">
                 <div class="col-3 left mr-4 flex items-center justify-center">
-                    <img src="{{ asset('img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
+                    <img src="{{ asset('public/img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
                 </div>
                 <div>
                     <h4 class="text-xl font-semibold text-gray-900">Waktu</h4>
@@ -137,7 +137,7 @@
                 </p>
             </div>
             <div class="md:w-1/2 mb-4 md:mb-0 md:pr-6">
-                <img src="{{ asset('img/tujuan-2.png') }}" alt="Gambar Tujuan 2"
+                <img src="{{ asset('public/img/tujuan-2.png') }}" alt="Gambar Tujuan 2"
                     class="w-full h-auto rounded-lg shadow-lg">
             </div>
         </div>
