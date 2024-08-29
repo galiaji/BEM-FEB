@@ -54,7 +54,7 @@
                     {{ $number }}
                 </div>
                 <div class="w-full h-60">
-                    <img src="{{ asset('public/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="w-full h-full object-cover rounded-t-xl">
+                    <img src="{{ asset('public/storage/images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="w-full h-full object-cover rounded-t-xl">
                 </div>
                 <div class="p-6">
                     <h5 class="text-2xl font-bold text-gray-900 mb-4">
