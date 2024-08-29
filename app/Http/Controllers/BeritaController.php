@@ -10,18 +10,28 @@ class BeritaController extends Controller
     // Method to display all news articles
     public function index(Request $request)
     {
-        $beritas = Berita::when($request->program_id, function ($query) use ($request) {
-            return $query->where('program_id', $request->program_id);
-        })
-        ->paginate(9);
-        $programs = Program::all(); // Mendapatkan semua program
         $query = Berita::query();
-        if ($request->has('program_id')) {
-            $query->where('program_id', $request->get('program_id'));
+
+        // Apply program filter if program_id exists
+        if ($request->has('program_id') && !empty($request->input('program_id'))) {
+            $query->where('program_id', $request->input('program_id'));
         }
+
+        // Apply search filter if search term exists
+        if ($request->has('search') && !empty($request->input('search'))) {
+            $search = $request->input('search');
+            $query->where('judul', 'like', "%$search%");
+        }
+
+        // Paginate the results
+        $beritas = $query->paginate(9);
+
+        // Get all programs for the filter buttons
+        $programs = Program::all();
+
         return view('berita.index', compact('beritas', 'programs'));
-        
     }
+
 
     // Method to display a single news article by its slug
     public function show($slug)

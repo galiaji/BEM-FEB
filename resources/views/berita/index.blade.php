@@ -15,11 +15,16 @@
         <div class="flex flex-col lg:flex-row items-center justify-between mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
             <!-- Search Bar and Button -->
             <div class="w-full lg:w-1/2 flex relative">
-                <input type="text" id="searchInput" placeholder="Cari berita..." onkeyup="filterNews()"
-                    class="w-full p-2 pr-12 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />                             
-            </div>            
-
-
+                <input type="text" id="searchInput" placeholder="Cari berita..."
+                    class="w-full p-2 pr-12 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                <button onclick="filterNews()" class="absolute inset-y-0 right-0 flex items-center px-3 bg-blue-500 hover:bg-blue-600 text-white rounded">
+                    <svg class="w-6 h-6 text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                </button>
+            </div>
+            
             {{-- Bagian filter button --}}
             <div class="flex items-center justify-end space-x-2">
                 <button id="allProgramBtn" onclick="filterByProgram('')"
@@ -79,17 +84,14 @@
 <script>
     // Search Functionality
     function filterNews() {
-        const searchInput = document.getElementById('searchInput').value.toLowerCase();
-        const newsItems = document.querySelectorAll('.berita-item');
-
-        newsItems.forEach(item => {
-            const title = item.getAttribute('data-title');
-            if (title.includes(searchInput)) {
-                item.style.display = '';
-            } else {
-                item.style.display = 'none';
-            }
-        });
+        const searchInput = document.getElementById('searchInput').value;
+        const urlParams = new URLSearchParams(window.location.search);
+        if (searchInput) {
+            urlParams.set('search', searchInput);
+        } else {
+            urlParams.delete('search');
+        }
+        window.location.search = urlParams.toString(); // Redirect to updated URL
     }
 
     // Filter by Program Functionality
@@ -118,5 +120,14 @@
 
     // Set active button on page load
     window.onload = setActiveButton;
+
+    // Add event listener for Enter key on search input
+    document.getElementById('searchInput').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent default form submission
+            filterNews(); // Call the search function
+        }
+    });
+
 </script>
 @endsection
