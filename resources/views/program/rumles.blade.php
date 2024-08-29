@@ -102,146 +102,55 @@
 @endif
 
 <!-- Sasaran Kegiatan Section Start -->
-<section id="SasaranKegiatan" class="py-10 bg-gray-100 sm:py-16 lg:py-24">
-    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white mb-8">
-            Kelestarian Desa Munding
-        </h2>
-        <p class="mb-8 text-lg text-gray-600">
-            Sasaran kegiatan program Rumah Lestari adalah masyarakat desa baik dikalangan anak-anak maupun orang tua.
-            Tujuannya adalah :
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
-                <div class="flex items-center mb-4">
-                    <div class="bg-gray-100 p-4 rounded-full">
-                        <span class="text-xl font-bold text-gray-800">01</span>
-                    </div>
-                </div>
-                <p class="text-gray-600">
-                    Memelihara dan melestarikan kekayaan budaya Desa Kemambang, seperti gamelan, tari keprajuritan, dan
-                    berbagai ekspresi seni lainnya.
-                </p>
-            </div>
-            <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
-                <div class="flex items-center mb-4">
-                    <div class="bg-gray-100 p-4 rounded-full">
-                        <span class="text-xl font-bold text-gray-800">02</span>
-                    </div>
-                </div>
-                <p class="text-gray-600">
-                    Mempromosikan dan mendukung keragaman seni dan budaya di setiap dusun Desa Kemambang yang memiliki
-                    ciri khas yang unik.
-                </p>
-            </div>
-            <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
-                <div class="flex items-center mb-4">
-                    <div class="bg-gray-100 p-4 rounded-full">
-                        <span class="text-xl font-bold text-gray-800">03</span>
-                    </div>
-                </div>
-                <p class="text-gray-600">
-                    Mengedukasi dan meningkatkan kesadaran masyarakat tentang pentingnya menjaga dan menghargai warisan
-                    budaya mereka.
-                </p>
-            </div>
-            <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
-                <div class="flex items-center mb-4">
-                    <div class="bg-gray-100 p-4 rounded-full">
-                        <span class="text-xl font-bold text-gray-800">04</span>
-                    </div>
-                </div>
-                <p class="text-gray-600">
-                    Meningkatkan partisipasi masyarakat dalam upaya melestarikan budaya Desa Kemambang.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+
 <!-- Sasaran Kegiatan Section End -->
 
-<!-- New Image Section Start -->
-<section id="RumlesKegiatan" class="py-10 bg-white sm:py-16 lg:py-24">
-    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white mb-8">
-            Gambar Kelestarian Desa Munding
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
-            <img class="rounded-lg shadow-lg w-full h-auto" src="img/rumles.png" alt="Kegiatan Rumah Lestari 1">
-            <img class="rounded-lg shadow-lg w-full h-auto" src="img/rumles.png" alt="Kegiatan Rumah Lestari 2">
-            <img class="rounded-lg shadow-lg w-full h-auto" src="img/rumles.png" alt="Kegiatan Rumah Lestari 3">
-            <img class="rounded-lg shadow-lg w-full h-auto" src="img/rumles.png" alt="Kegiatan Rumah Lestari 4">
-            <img class="rounded-lg shadow-lg w-full h-auto" src="img/rumles.png" alt="Kegiatan Rumah Lestari 5">
-            <img class="rounded-lg shadow-lg w-full h-auto" src="img/rumles.png" alt="Kegiatan Rumah Lestari 6">
-        </div>
-    </div>
-</section>
-<!-- New Image Section End -->
-
-
-<!-- Related Activities Section Start -->
-<section class="news py-24 bg-gray-50 dark:bg-gray-900">
-    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold leading-tight dark:text-white text-gray-900 sm:text-4xl xl:text-5xl font-pj">
-                Berita Terbaru
+<!-- News Section Start -->
+<section class="news bg-gray-50">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mb-16">
+        <div class="text-center mt-12">
+            <h2
+                class="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj animate-fade-up animate-delay-[200ms]">
+                Berita Terkait
             </h2>
         </div>
 
-        <!-- Related News Section Start -->
-        @if ($relatedNews->isNotEmpty())
-        <section class="related-news py-10 bg-gray-50 sm:py-16 lg:py-24">
-            <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white">Berita Rumah Lestari</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                    @foreach ($relatedNews as $news)
-                    @if ($news->program->nama == "RUMLES")
-                    <div
-                        class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-5">
-                        <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
-                            class="mb-4 w-full h-48 object-cover rounded-lg">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {{ $news->judul }}
-                        </h5>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
-                            {!! Str::limit($news->isi_berita, 100, '...') !!}
-                        </p>
-                        <a href="{{ route('berita.show', $news->slug) }}"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Baca Berita
-                        </a>
-                    </div>
-                    @endif
-                    @endforeach
+        @if ($beritas->isEmpty())
+        <div class="text-center">
+            <p class="text-lg text-gray-700">Belum ada berita</p>
+        </div>
+        @else
+        <div id="carousel"
+            class="flex overflow-x-auto max-w-md mx-auto lg:mt-6 lg:max-w-full scroll-smooth pb-6 pt-6 space-x-6">
+            @foreach ($beritas as $berita)
+            @if ($berita->program->nama == 'RUMLES')
+            <div
+                class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow overflow-hidden p-4 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:drop-shadow-xl duration-300">
+                <a href="{{ route('berita.show', $berita->slug) }}">
+                    <img class="w-full h-48 object-cover rounded-lg"
+                        src="{{ asset('public/images/' . $berita->input_gambar) }}"
+                        alt="{{ $berita->judul }}" />
+                </a>
+                <div class="mt-2">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                        {{ $berita->judul }}
+                    </h5>
+                    <p class="font-normal text-gray-700 mb-4">
+                        {{ $berita->created_at->format('d M Y') }}
+                    </p>
+                    <a href="{{ route('berita.show', $berita->slug) }}"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 transition-transform transform hover:scale-105 duration-200">
+                        Baca Berita
+                    </a>
                 </div>
             </div>
-        </section>
-        @endif
-
-        <!-- Related News Section End -->
-        <div id="carousel" class="flex overflow-x-auto max-w-md mx-auto mt-8 lg:mt-16 lg:max-w-full scroll-smooth pb-6 space-x-6">
-            @if($relatedKegiatan->isNotEmpty())
-            <section class="py-10 bg-gray-50 sm:py-16 lg:py-24">
-                <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <h3 class="text-3xl font-bold leading-tight text-gray-900 dark:text-white mb-8 relative inline-block kegiatan-title">Kegiatan Terkait</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        @foreach($relatedKegiatan as $kegiatan)
-                        @if($kegiatan->program->nama == "RUMLES")
-                        <div class="p-6 bg-white rounded-lg shadow-md" style="background-color:rgb(255, 234, 197)">
-                            <img src="{{ asset('images/' . $kegiatan->foto_kegiatan) }}" alt="{{ $kegiatan->nama_kegiatan }}" class="mb-4 w-full h-48 object-cover rounded-lg">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $kegiatan->nama_kegiatan }}</h5>
-                            <p class="text-gray-600 text-justify">{!! Str::limit($kegiatan->deskripsi_kegiatan) !!}</p>
-                        </div>
-                        @endif
-                        @endforeach
-                    </div>
-                </div>
-            </section>
             @endif
+            @endforeach
         </div>
+        @endif
     </div>
 </section>
-<!-- Related News Section End -->
+<!-- News Section End -->
 
 <script>
     const carousel = document.getElementById('carousel');
