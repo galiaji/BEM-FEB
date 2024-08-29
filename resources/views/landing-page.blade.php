@@ -11,7 +11,7 @@
                 <div>
                     <h1
                         class="text-4xl font-bold text-black sm:text-5xl lg:text-5xl animate-fade-up animate-delay-[100ms]">
-                        Explor Desa Kemambang Cerdas dan Berdaya melalui
+                        Explor Desa Munding Cerdas dan Berdaya melalui
                         <div class="relative inline-flex">
                             <span
                                 class="absolute inset-x-0 bottom-0 border-b-[30px] border-[#b785cc] animate-fade-up animate-delay-[200ms]"></span>
@@ -22,7 +22,7 @@
                         </div>
                     </h1>
                     <p class="mt-8 text-base text-black sm:text-xl animate-fade-right animate-delay-[600ms]">Kembangkan,
-                        tumbuhkan, dan kelola berbagai sumber daya yang ada dengan RUCITA dalam pengembangan potensi
+                        tumbuhkan, dan kelola berbagai sumber daya yang ada dengan MUJUR dalam pengembangan potensi
                         Desa
                         Kemambang.</p>
                     <div class="mt-10 sm:flex sm:items-center sm:space-x-2">
@@ -60,8 +60,8 @@
             <div class="2xl:pl-16 lg:col-span-3 animate-fade-right animate-delay-[400ms]">
                 <h2
                     class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl">
-                    About <mark class="px-2 text-white bg-violet-400 rounded">RUCITA</mark></h2>
-                <p class="text-lg leading-relaxed text-black-400 mt-9">Rumah Cerdas Kita (RUCITA) hadir sebagai sebuah
+                    About <mark class="px-2 text-white bg-violet-400 rounded">MUJUR</mark></h2>
+                <p class="text-lg leading-relaxed text-black-400 mt-9">Rumah Cerdas Kita (MUJUR) hadir sebagai sebuah
                     wadah yang bertujuan untuk meningkatkan kualitas sumber daya manusia (SDM) melalui pendidikan formal
                     dan nonformal yang mudah diakses. Website kami mencakup berbagai aspek literasi, mulai dari metode
                     pembelajaran, produk UMKM dari program Srawung Wirausaha, hingga dokumentasi acara budaya dan MoU

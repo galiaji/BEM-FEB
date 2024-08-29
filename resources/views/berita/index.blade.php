@@ -43,7 +43,8 @@
                 <a href="{{ route('berita.show', $berita->slug) }}" class="block">
                     <div class="relative">
                         @if ($berita->input_gambar)
-                        <img class="object-cover w-full h-64" src="{{ url('images/' . $berita->input_gambar) }}" alt="{{ $berita->judul }}" />
+                        <img class="object-cover w-full h-64" src="{{ url('public/images/' . $berita->input_gambar) }}"
+                            alt="{{ $berita->judul }}" />
                         @endif
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-30"></div>
                     </div>

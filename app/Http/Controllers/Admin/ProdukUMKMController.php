@@ -35,8 +35,7 @@ class ProdukUMKMController extends Controller
 
         // Handle file upload
         if ($request->hasFile('foto_produk')) {
-
-
+            // Check if there's an existing image and delete it
             if ($produk->foto_produk && file_exists(public_path('images/' . $produk->foto_produk))) {
                 unlink(public_path('images/' . $produk->foto_produk));
             }
@@ -44,7 +43,7 @@ class ProdukUMKMController extends Controller
             // Upload the new image
             $imageName = time() . '.' . $request->foto_produk->extension();
             $request->foto_produk->move(public_path('images'), $imageName);
-            $produk->foto_produk = $imageName;
+            $produk->foto_produk = $imageName; // Update the image in the produk instance
         }
 
         // Save the new produk to the database

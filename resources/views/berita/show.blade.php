@@ -14,17 +14,17 @@
                 </span>
                 @if (!empty($berita->input_gambar))
                 <div class="relative w-full h-[300px] overflow-hidden rounded-lg shadow-lg mb-6">
-                    <img src="{{ asset('images/' . $berita->input_gambar) }}" alt="{{ $berita->judul }}"
+                    <img src="{{ asset('public/images/' . $berita->input_gambar) }}" alt="{{ $berita->judul }}"
                         class="absolute inset-0 w-full h-full object-contain">
                 </div>
                 @else
                 <div class="relative w-full h-[300px] overflow-hidden rounded-lg shadow-lg mb-6">
-                    <img src="{{ asset('images/placeholder.png') }}" alt="Placeholder Image"
+                    <img src="{{ asset('public/images/placeholder.png') }}" alt="Placeholder Image"
                         class="absolute inset-0 w-full h-full object-contain">
                 </div>
                 @endif
                 <p class="text-lg leading-relaxed text-gray-700 mb-8 text-justify">
-                    {{ $berita->isi_berita }}
+                    {!! $berita->isi_berita !!}
             </div>
             <!-- Sidebar or Additional Content -->
             <div class="lg:w-1/4 lg:pl-8">
@@ -38,7 +38,7 @@
                         class="block bg-white border border-gray-200 rounded-lg shadow overflow-hidden hover:bg-gray-100 transition-colors duration-300 transition-transform transform hover:scale-105 hover:drop-shadow-xl duration-300">
                         <div class="relative w-full h-40 overflow-hidden rounded-md">
                             <img class="absolute inset-0 w-full h-full object-contain"
-                                src="{{ asset('images/' . $beritaItem->input_gambar) }}"
+                                src="{{ asset('public/images/' . $beritaItem->input_gambar) }}"
                                 alt="{{ $beritaItem->judul }}" />
                         </div>
                         <div class="p-4">
