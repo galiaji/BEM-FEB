@@ -11,14 +11,14 @@
 
             <!-- Image Section -->
             <div class="lg:w-2/5 w-full flex justify-center lg:justify-start">
-                <img class="w-full max-w-lg h-auto object-cover rounded-xl" src="img/UKCIT new.png" alt="Ukcit" />
+                <img class="w-full max-w-lg h-auto object-cover rounded-xl" src="public/img/UKCIT new.png" alt="Ukcit" />
             </div>
 
             <!-- Text Section -->
             <div class="flex-1 lg:w-3/5 relative">
                 <!-- Wrapper for text and circle background -->
                 <div class="relative">
-                    <img src="img/Vector.png" alt="Background Vector"
+                    <img src="public/img/Vector.png" alt="Background Vector"
                         class="absolute w-[150%] h-[100%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
 
                     <!-- Heading -->
@@ -34,7 +34,7 @@
                 </div>
 
                 <!-- Additional Image -->
-                <img src="{{ asset('images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
+                <img src="{{ asset('public/images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
                     class="w-full h-48 object-cover rounded-lg mt-6">
             </div>
 
@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="w-full h-60">
-                    <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}"
+                    <img src="{{ asset('public/storage/images/' . $kegiatan->foto_kegiatan) }}"
                         alt="{{ $kegiatan->nama_kegiatan }} - {{ $kegiatan->deskripsi_kegiatan }}"
                         class="w-full h-full object-cover rounded-t-xl border-b border-gray-200">
                 </div>
@@ -162,7 +162,7 @@
                     @foreach ($relatedNews as $news)
                     @if ($news->program->nama == 'UKCIT')
                     <div class="w-full bg-white border border-gray-200 rounded-lg shadow p-5">
-                        <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
+                        <img src="{{ asset('public/images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
                             class="mb-4 w-full h-48 object-cover rounded-lg">
 
                         <!-- Clickable and Hoverable Title -->
