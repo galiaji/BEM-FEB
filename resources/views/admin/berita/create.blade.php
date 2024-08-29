@@ -90,8 +90,7 @@
         .create(document.querySelector('#isi_berita'), {
             toolbar: [
                 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
-                'insertTable', 'tableColumn', 'tableRow', 'mergeTableCells', '|',
-                'undo', 'redo', '|', 'alignment:left', 'alignment:center', 'alignment:right', 'alignment:justify'
+                'insertTable', 'tableColumn', 'tableRow', 'mergeTableCells', '|', 'alignment:left', 'alignment:center', 'alignment:right', 'alignment:justify'
             ],
             alignment: {
                 options: ['left', 'center', 'right', 'justify']
