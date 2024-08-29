@@ -14,11 +14,11 @@
             </div>
             <div class="relative 2xl:pl-16">
                 <div class="relative">
-                    <img src="public/img/Vector.png" alt="Background Vector"
-                        class="absolute w-[200%] h-[150%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
-                    <h2 class="mb-6 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl lg:text-5xl z-50">
-                        About <mark class="px-2 text-white bg-violet-600 rounded"> Adiwangsa Budaya</mark>
-                    </h2>
+                    <div class="bg-violet-600 rounded-full p-8 text-white inline-block">
+                        <h2 class="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-5xl">
+                            About <span class="block">Adiwangsa</span> Budaya
+                        </h2>
+                    </div>
                     <p class="text-lg leading-relaxed text-gray-600 mt-6 z-50">
                         {!! $program->deskripsi !!}
                     </p>
@@ -27,6 +27,7 @@
         </div>
     </div>
 </section>
+
 <!-- About Section End -->
 
 <!-- Related Activities Section Start -->
