@@ -88,53 +88,52 @@
                 <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-4">
                     <div class="relative">
                         <div id="carousel" class="max-w-md mx-auto mt-8 lg:mt-1 lg:max-w-full bg-gray-100 py-12">
+                            <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 mb-6">
+                                    @foreach($products as $product)
+                                    <div class="relative bg-white border border-gray-300 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:bg-gray-100">
 
-                            @foreach($products as $product)
-                            <div id="carousel" class="max-w-md mx-auto mt-8 lg:mt-1 lg:max-w-full bg-gray-100 py-12">
-                                <div class="relative bg-white border border-gray-300 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:bg-gray-100">
+                                        <!-- Display product image -->
+                                        <div class="w-full h-60">
+                                            <img src="{{ asset('public/images/' . $product->foto_produk) }}" alt="{{ $product->nama_produk }}" class="w-full h-full object-cover rounded-t-xl border-b border-gray-200">
+                                        </div>
 
-                                    <!-- Display product image -->
-                                    <div class="w-full h-60">
-                                        <img src="{{ asset('public/images/' . $product->foto_produk) }}" alt="{{ $product->nama_produk }}" class="w-full h-full object-cover rounded-t-xl border-b border-gray-200">
+                                        <div class="p-6">
+                                            <!-- Product name -->
+                                            <h5 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">
+                                                <a href="#" class="hover:underline">{{ $product->nama_produk }}</a>
+                                            </h5>
+
+                                            <!-- Product description -->
+                                            <p class="text-gray-800 text-justify leading-relaxed">
+                                                {!! $product->deskripsi_produk !!}
+                                            </p>
+                                        </div>
                                     </div>
-
-                                    <div class="p-6">
-                                        <!-- Product name -->
-                                        <h5 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">
-                                            <a href="#" class="hover:underline">{{ $product->nama_produk }}</a>
-                                        </h5>
-
-                                        <!-- Product description -->
-                                        <p class="text-gray-800 text-justify leading-relaxed">
-                                            {!! $product->deskripsi_produk !!}
-                                        </p>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
-                            @endforeach
-
                         </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-center mt-8 space-x-3 lg:hidden">
-                    <button id="prevBtnMobile" type="button"
-                        class="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
+                    <div class="flex items-center justify-center mt-8 space-x-3 lg:hidden">
+                        <button id="prevBtnMobile" type="button"
+                            class="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
 
-                    <button id="nextBtnMobile" type="button"
-                        class="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
+                        <button id="nextBtnMobile" type="button"
+                            class="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
-    </div>
     </div>
 </section>
 
