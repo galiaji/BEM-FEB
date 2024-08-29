@@ -9,14 +9,14 @@
 
             <!-- Image Section -->
             <div class="flex-shrink-0 lg:w-1/3 relative lg:mb-12">
-                <img class="w-full h-auto object-cover rounded-xl" src="img/srawung-wirausaha.png" alt="jangwisgit" />
+                <img class="w-full h-auto object-cover rounded-xl" src="public/img/srawung-wirausaha.png" alt="jangwisgit" />
             </div>
 
             <!-- Text Section -->
             <div class="flex-1 lg:w-2/3 relative">
                 <!-- Wrapper for text and circle background -->
                 <div class="relative">
-                    <img src="img/Vector.png" alt="Background Vector"
+                    <img src="public/img/Vector.png" alt="Background Vector"
                         class="absolute w-[150%] h-[100%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
 
                     <!-- Heading -->
@@ -32,7 +32,7 @@
                 </div>
 
                 <!-- Additional Image -->
-                <img src="{{ asset('images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
+                <img src="{{ asset('public/images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
                     class="w-full h-48 object-cover rounded-lg mt-6">
             </div>
 
@@ -92,7 +92,7 @@
 <!-- Container with Background Image -->
 <div style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); margin-bottom: 20px;">
     <!-- Background Image -->
-    <img src="img/curug.jpg" alt="Tirto Wening Waterfall" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.7);">
+    <img src="public/img/curug.jpg" alt="Tirto Wening Waterfall" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.7);">
     
     <!-- Right Side: Google Maps Embed -->
     <div style="width: 30%; float: right; background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 10px;">
@@ -122,7 +122,7 @@
 <!-- Container with Background Image -->
 <div style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); margin-bottom: 20px;">
     <!-- Background Image -->
-    <img src="img/gardu_pandang.jpg" alt="Gardu Pandang" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.7);">
+    <img src="public/img/gardu_pandang.jpg" alt="Gardu Pandang" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.7);">
     
     <!-- Left Side: Google Maps Embed -->
     <div style="width: 30%; float: left; background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 10px;">
@@ -152,7 +152,7 @@
 <!-- Container with Background Image -->
 <div style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); margin-bottom: 20px;">
     <!-- Background Image -->
-    <img src="img/cemanggal_farm.jpg" alt="Wisata Pertanian Cemanggal" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.7);">
+    <img src="public/img/cemanggal_farm.jpg" alt="Wisata Pertanian Cemanggal" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.7);">
     
     <!-- Left Side: Description and Instagram Link -->
     <div style="width: 65%; float: left; color: #fff; padding-right: 20px; padding-top: 20px;">
