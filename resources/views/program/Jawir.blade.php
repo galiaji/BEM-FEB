@@ -92,18 +92,15 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 mb-6">
                                     @foreach($products as $product)
                                     <div class="relative bg-white border border-gray-300 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:bg-gray-100">
-
                                         <!-- Display product image -->
                                         <div class="w-full h-60">
                                             <img src="{{ asset('public/images/' . $product->foto_produk) }}" alt="{{ $product->nama_produk }}" class="w-full h-full object-cover rounded-t-xl border-b border-gray-200">
                                         </div>
-
                                         <div class="p-6">
                                             <!-- Product name -->
                                             <h5 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">
                                                 <a href="#" class="hover:underline">{{ $product->nama_produk }}</a>
                                             </h5>
-
                                             <!-- Product description -->
                                             <p class="text-gray-800 text-justify leading-relaxed">
                                                 {!! $product->deskripsi_produk !!}
