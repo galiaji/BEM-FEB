@@ -154,48 +154,44 @@
         </div>
 
         <!-- News Section Start -->
-<section class="news py-24 bg-gray-50">
-    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj">
-                Berita Terbaru
-            </h2>
-        </div>
-
-        <!-- Related News Section Start -->
-        @if ($relatedNews->isNotEmpty())
-        <section class="related-news overflow-x-auto scroll-smooth pb-6 pt-6 space-x-6">
-            <div class="flex gap-6 max-w-full mx-auto">
-                @foreach ($relatedNews as $news)
-                @if ($news->program->nama == 'UKCIT')
-                <div class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow overflow-hidden p-4 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:drop-shadow-xl duration-300">
-                    <a href="{{ route('berita.show', $news->slug) }}">
-                        <img src="{{ asset('public/images/' . $news->input_gambar) }}" alt="{{ $news->judul }}" class="w-full h-48 object-cover rounded-lg">
-                    </a>
-                    <div class="mt-2">
-                        <a href="{{ route('berita.show', $news->slug) }}" class="block mb-2">
-                            <h5 class="text-2xl font-bold tracking-tight text-gray-900 truncate hover:text-blue-700">
-                                {{ Str::limit($news->judul, 50, '...') }}
-                            </h5>
-                        </a>
-                        <p class="mb-3 font-normal text-gray-700">
-                            {!! Str::limit($news->isi_berita, 100, '...') !!}
-                        </p>
-                        <a href="{{ route('berita.show', $news->slug) }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                            Baca Berita
-                        </a>
-                    </div>
+        <section class="news py-24 bg-gray-50">
+            <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj">
+                        Berita Terbaru
+                    </h2>
                 </div>
+
+                <!-- Related News Section Start -->
+                @if ($relatedNews->isNotEmpty())
+                <section class="related-news overflow-x-auto scroll-smooth pb-6 pt-6 space-x-6">
+                    <div class="flex gap-6 max-w-full mx-auto">
+                        @foreach ($relatedNews as $news)
+                        @if ($news->program->nama == 'UKCIT')
+                        <div class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow overflow-hidden p-4 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:drop-shadow-xl duration-300">
+                            <a href="{{ route('berita.show', $news->slug) }}">
+                                <img src="{{ asset('public/images/' . $news->input_gambar) }}" alt="{{ $news->judul }}" class="w-full h-48 object-cover rounded-lg">
+                            </a>
+                            <div class="mt-2">
+                                <a href="{{ route('berita.show', $news->slug) }}" class="block mb-2">
+                                    <h5 class="text-2xl font-bold tracking-tight text-gray-900 truncate hover:text-blue-700">
+                                        {{ Str::limit($news->judul, 50, '...') }}
+                                    </h5>
+                                </a>
+                                <p class="mb-3 font-normal text-gray-700">
+                                    {!! Str::limit($news->isi_berita, 100, '...') !!}
+                                </p>
+                                <a href="{{ route('berita.show', $news->slug) }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                                    Baca Berita
+                                </a>
+                            </div>
+                        </div>
+                        @endif
+                        @endforeach
+                    </div>
+                </section>
                 @endif
-                @endforeach
+                <!-- Related News Section End -->
             </div>
         </section>
-        @endif
-        <!-- Related News Section End -->
-    </div>
-</section>
-<!-- News Section End -->
-    </div>
-</section>
-<!-- News Section End -->
-@endsection
+        @endsection
