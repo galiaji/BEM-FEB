@@ -88,13 +88,19 @@
 <script>
     ClassicEditor
         .create(document.querySelector('#isi_berita'), {
-            toolbar: [
-                'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
-                'insertTable', 'tableColumn', 'tableRow', 'mergeTableCells', '|', 'alignment:left', 'alignment:center', 'alignment:right', 'alignment:justify'
-            ],
+            toolbar: {
+                items: [
+                    'heading', '|',
+                    'bold', 'italic', 'link', '|',
+                    'bulletedList', 'numberedList', '|',
+                    'alignment:left', 'alignment:center', 'alignment:right', 'alignment:justify', '|',
+                    'undo', 'redo'
+                ]
+            },
             alignment: {
                 options: ['left', 'center', 'right', 'justify']
-            }
+            },
+            language: 'en'
         })
         .catch(error => {
             console.error(error);
