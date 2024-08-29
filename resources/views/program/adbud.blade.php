@@ -3,26 +3,32 @@
 @section('title', 'ADIWANGSA BUDAYA')
 
 @section('content')
-<!-- About Section Start -->
-<section id="About" class="py-16 bg-white lg:py-24 rounded-lg">
+<section id="About" class="py-10 bg-transparent sm:py-16 lg:py-24 pt-24 pb-24 rounded-lg">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-x-12 xl:gap-x-24 gap-y-12">
-            <div class="relative lg:mb-12">
-                <div class="pl-12 pr-12 lg:pl-24">
-                    <img class="relative rounded-xl shadow-lg" src="public/img/srawung-wirausaha.png" alt="Ukcit" />
-                </div>
+        <div class="flex flex-col lg:flex-row lg:gap-x-12 xl:gap-x-24 gap-y-12">
+
+            <!-- Image Section -->
+            <div class="flex-shrink-0 lg:w-1/3 relative lg:mb-12">
+                <img class="w-full h-auto object-cover rounded-xl" src="public/img/srawung-wirausaha.png" alt="Ukcit" />
             </div>
-            <div class="relative 2xl:pl-16">
+
+            <!-- Text Section -->
+            <div class="flex-1 lg:w-2/3 relative">
+                <!-- Wrapper for text and circle background -->
                 <div class="relative">
                     <img src="public/img/Vector.png" alt="Background Vector"
                         class="absolute w-[200%] h-[150%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
-                    <h2 class="mb-6 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl lg:text-5xl z-50">
-                        About <mark class="px-2 text-white bg-violet-600 rounded"> Adiwangsa Budaya</mark>
+                    <h2
+                        class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl z-50 animate-fade-up animate-delay-[100ms]">
+                        About <mark class="px-2 text-white bg-violet-400 rounded">Adiwangsa Budaya</mark>
                     </h2>
-                    <p class="text-lg leading-relaxed text-gray-600 mt-6 z-50">
+
+                    <p class="text-lg leading-relaxed text-gray-400 mt-9 z-50 animate-fade-right animate-delay-[500ms]">
                         {!! $program->deskripsi !!}
                     </p>
                 </div>
+                <img src="{{ asset('public/images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
+                    class="w-full h-48 object-cover rounded-lg mt-6">
             </div>
         </div>
     </div>
