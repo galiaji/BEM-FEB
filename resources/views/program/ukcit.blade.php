@@ -7,24 +7,24 @@
 <!-- About Section Start -->
 <section id="About" class="py-10 bg-transparent sm:py-16 lg:py-24 pt-24 pb-24 rounded-lg">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row lg:gap-x-12 xl:gap-x-24 gap-y-12">
+        <div class="flex flex-col lg:flex-row lg:gap-x-12 xl:gap-x-24 gap-y-12 items-center">
 
             <!-- Image Section -->
-            <div class="flex-shrink-0 lg:w-1/3 relative lg:mb-12">
-                <img class="w-full h-auto object-cover rounded-xl" src="public/img/srawung-wirausaha.png" alt="Ukcit" />
+            <div class="lg:w-2/5 w-full flex justify-center lg:justify-start">
+                <img class="w-full max-w-lg h-auto object-cover rounded-xl" src="img/UKCIT new.png" alt="Ukcit" />
             </div>
 
             <!-- Text Section -->
-            <div class="flex-1 lg:w-2/3 relative">
+            <div class="flex-1 lg:w-3/5 relative">
                 <!-- Wrapper for text and circle background -->
                 <div class="relative">
-                    <img src="public/img/Vector.png" alt="Background Vector"
+                    <img src="img/Vector.png" alt="Background Vector"
                         class="absolute w-[150%] h-[100%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
 
                     <!-- Heading -->
                     <h2
                         class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl z-50 animate-fade-up animate-delay-[100ms]">
-                        About <mark class="px-2 text-white bg-violet-400 rounded">Ukir Cita</mark>
+                        About <mark class="px-2 text-white bg-blue-400 rounded">Ukir Cita</mark>
                     </h2>
 
                     <!-- Description -->
@@ -34,7 +34,7 @@
                 </div>
 
                 <!-- Additional Image -->
-                <img src="{{ asset('public/images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
+                <img src="{{ asset('images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
                     class="w-full h-48 object-cover rounded-lg mt-6">
             </div>
 
@@ -42,6 +42,7 @@
     </div>
 </section>
 <!-- About Section End -->
+
 
 @if ($relatedKegiatan->isNotEmpty())
 <section class="py-12 bg-gray-100 sm:py-16 lg:py-24">
@@ -62,7 +63,7 @@
                 </div>
 
                 <div class="w-full h-60">
-                    <img src="{{ asset('public/storage/images/' . $kegiatan->foto_kegiatan) }}"
+                    <img src="{{ asset('storage/images/' . $kegiatan->foto_kegiatan) }}"
                         alt="{{ $kegiatan->nama_kegiatan }} - {{ $kegiatan->deskripsi_kegiatan }}"
                         class="w-full h-full object-cover rounded-t-xl border-b border-gray-200">
                 </div>
@@ -90,7 +91,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <div class="info-item bg-gray-50 border border-gray-200 rounded-lg p-6 flex">
                 <div class="col-3 left mr-4 flex items-center justify-center">
-                    <img src="{{ asset('public/img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
+                    <img src="{{ asset('img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
                 </div>
                 <div>
                     <h4 class="text-xl font-semibold text-gray-900">Kegiatan</h4>
@@ -99,7 +100,7 @@
             </div>
             <div class="info-item bg-gray-50 border border-gray-200 rounded-lg p-6 flex">
                 <div class="col-3 left mr-4 flex items-center justify-center">
-                    <img src="{{ asset('public/img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
+                    <img src="{{ asset('img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
                 </div>
                 <div>
                     <h4 class="text-xl font-semibold text-gray-900">Tempat</h4>
@@ -108,7 +109,7 @@
             </div>
             <div class="info-item bg-gray-50 border border-gray-200 rounded-lg p-6 flex">
                 <div class="col-3 left mr-4 flex items-center justify-center">
-                    <img src="{{ asset('public/img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
+                    <img src="{{ asset('img/logo rucita.png') }}" class="w-full h-auto object-cover rounded-lg">
                 </div>
                 <div>
                     <h4 class="text-xl font-semibold text-gray-900">Waktu</h4>
@@ -136,7 +137,7 @@
                 </p>
             </div>
             <div class="md:w-1/2 mb-4 md:mb-0 md:pr-6">
-                <img src="{{ asset('public/img/tujuan-2.png') }}" alt="Gambar Tujuan 2"
+                <img src="{{ asset('img/tujuan-2.png') }}" alt="Gambar Tujuan 2"
                     class="w-full h-auto rounded-lg shadow-lg">
             </div>
         </div>
@@ -153,45 +154,46 @@
             </h2>
         </div>
 
-        <!-- News Section Start -->
-        <section class="news py-24 bg-gray-50">
+        <!-- Related News Section Start -->
+        @if ($relatedNews->isNotEmpty())
+        <section class="related-news py-10 bg-gray-50 sm:py-16 lg:py-24">
             <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj">
-                        Berita Terbaru
-                    </h2>
-                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                    @foreach ($relatedNews as $news)
+                    @if ($news->program->nama == 'UKCIT')
+                    <div class="w-full bg-white border border-gray-200 rounded-lg shadow p-5">
+                        <img src="{{ asset('images/' . $news->input_gambar) }}" alt="{{ $news->judul }}"
+                            class="mb-4 w-full h-48 object-cover rounded-lg">
 
-                <!-- Related News Section Start -->
-                @if ($relatedNews->isNotEmpty())
-                <section class="related-news overflow-x-auto scroll-smooth pb-6 pt-6 space-x-6">
-                    <div class="flex gap-6 max-w-full mx-auto">
-                        @foreach ($relatedNews as $news)
-                        @if ($news->program->nama == 'UKCIT')
-                        <div class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow overflow-hidden p-4 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:drop-shadow-xl duration-300">
-                            <a href="{{ route('berita.show', $news->slug) }}">
-                                <img src="{{ asset('public/images/' . $news->input_gambar) }}" alt="{{ $news->judul }}" class="w-full h-48 object-cover rounded-lg">
-                            </a>
-                            <div class="mt-2">
-                                <a href="{{ route('berita.show', $news->slug) }}" class="block mb-2">
-                                    <h5 class="text-2xl font-bold tracking-tight text-gray-900 truncate hover:text-blue-700">
-                                        {{ Str::limit($news->judul, 50, '...') }}
-                                    </h5>
-                                </a>
-                                <p class="mb-3 font-normal text-gray-700">
-                                    {!! Str::limit($news->isi_berita, 100, '...') !!}
-                                </p>
-                                <a href="{{ route('berita.show', $news->slug) }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                                    Baca Berita
-                                </a>
-                            </div>
-                        </div>
-                        @endif
-                        @endforeach
+                        <!-- Clickable and Hoverable Title -->
+                        <a href="{{ route('berita.show', $news->slug) }}" class="block mb-2">
+                            <h5
+                                class="text-2xl font-bold tracking-tight text-gray-900 truncate hover:text-blue-700">
+                                {{ Str::limit($news->judul, 50, '...') }}
+                            </h5>
+                            <span
+                                class="hidden hover:block absolute bg-gray-900 text-white text-sm p-2 rounded-lg z-10">
+                                {{ $news->judul }}
+                            </span>
+                        </a>
+
+                        <p class="mb-3 font-normal text-gray-700 text-justify">
+                            {!! Str::limit($news->isi_berita, 100, '...') !!}
+                        </p>
+
+                        <a href="{{ route('berita.show', $news->slug) }}"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                            Baca Berita
+                        </a>
                     </div>
-                </section>
-                @endif
-                <!-- Related News Section End -->
+                    @endif
+                    @endforeach
+                </div>
             </div>
         </section>
-        @endsection
+        @endif
+        <!-- Related News Section End -->
+    </div>
+</section>
+<!-- News Section End -->
+@endsection
