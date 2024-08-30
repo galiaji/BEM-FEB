@@ -5,7 +5,7 @@
 @section('content')
     <!-- Program Section Start -->
     <section class="programs">
-        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mb-20 mt-20 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="text-center">
                 <h2 class="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj animate-fade-up animate-delay-[200ms]">
                     Program
