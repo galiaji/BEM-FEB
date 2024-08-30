@@ -61,7 +61,7 @@
                 <h2
                     class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl">
                     About <mark class="px-2 text-white bg-violet-400 rounded">MUJUR</mark></h2>
-                <p class="text-lg leading-relaxed text-black-400 mt-9">Munding Juara(MUJUR) hadir sebagai sebuah
+                <p class="text-lg leading-relaxed text-black-400 mt-9">Munding Juara (MUJUR) hadir sebagai sebuah
                     wadah yang bertujuan untuk meningkatkan kualitas sumber daya manusia (SDM) melalui pendidikan formal
                     dan nonformal yang mudah diakses. Website kami mencakup berbagai aspek literasi, mulai dari metode
                     pembelajaran, produk UMKM dari program Srawung Wirausaha, hingga dokumentasi acara budaya dan MoU
