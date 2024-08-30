@@ -12,26 +12,20 @@
                     <!-- <span class="block text-white mt-2 font-semibold">Tim BEM FEB UNDIP</span> -->
                 </div>
             </a>
-            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">About</a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 space-x-6">
+                <li class="flex flex-col items-center">
+                    <a href="#" class="hover:underline mb-2">About</a>
                 </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                <li class="flex flex-col items-center">
+                    <a href="#" class="hover:underline mb-2">Privacy Policy</a>
                 </li>
-                <li>
-                    <a href="https://www.instagram.com/" class="hover:underline me-4 md:me-6">Instagram</a>
-                    <img src="{{ asset('public/img/Undip.png') }}" class="h-8" alt="Logo PPK BEM FEB" />
+                <li class="flex flex-col items-center">
+                    <a href="https://www.instagram.com/" class="hover:underline mb-2">Instagram</a>
+                    <img src="{{ asset('public/img/Undip.png') }}" class="h-8 mt-2" alt="Logo Undip" />
                 </li>
-                <li>
-                    <a href="https://api.whatsapp.com/send/?phone=" class="hover:underline">WhatsApp</a>
-                    <img src="{{ asset('public/img/Undip.png') }}" class="h-8" alt="Logo PPK BEM FEB" />
-                </li>
-                <li>
-                    <img src="{{ asset('public/img/Undip.png') }}" class="h-8" alt="Logo PPK BEM FEB" />
-                </li>
-                <li>
-                    <img src="{{ asset('public/img/Undip.png') }}" class="h-8" alt="Logo PPK BEM FEB" />
+                <li class="flex flex-col items-center">
+                    <a href="https://api.whatsapp.com/send/?phone=" class="hover:underline mb-2">WhatsApp</a>
+                    <img src="{{ asset('public/img/Undip.png') }}" class="h-8 mt-2" alt="Logo Undip" />
                 </li>
             </ul>
         </div>
