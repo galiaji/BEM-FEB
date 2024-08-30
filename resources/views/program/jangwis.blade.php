@@ -173,7 +173,6 @@
         <div style="clear: both;"></div>
     </div>
     <!-- PARIWISATA SECTION END -->
-
     
     @if ($relatedKegiatan->isNotEmpty())
         <section class="py-12 bg-gray-100 sm:py-16 lg:py-24">
@@ -225,36 +224,30 @@
                 </h2>
             </div>
 
-            @if ($relatedNews->isNotEmpty())
+            @if ($beritas->isEmpty())
                 <div class="text-center">
                     <p class="text-lg text-gray-700">Belum ada berita</p>
                 </div>
             @else
                 <div id="carousel"
                     class="flex overflow-x-auto max-w-md mx-auto lg:mt-6 lg:max-w-full scroll-smooth pb-6 pt-6 space-x-6">
-                    @foreach ($relatedNews as $news)
-                        @if ($news->program->nama == 'JANGWIS')
+                    @foreach ($beritas as $berita)
+                        @if ($berita->program->nama == 'JANGwis')
                             <div
                                 class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow overflow-hidden p-4 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:drop-shadow-xl duration-300">
-                                <a href="{{ route('berita.show', $news->slug) }}">
+                                <a href="{{ route('berita.show', $berita->slug) }}">
                                     <img class="w-full h-48 object-cover rounded-lg"
-                                        src="{{ asset('public/images/' . $news->input_gambar) }}"
-                                        alt="{{ $news->judul }}" />
+                                        src="{{ asset('public/images/' . $berita->input_gambar) }}"
+                                        alt="{{ $berita->judul }}" />
                                 </a>
                                 <div class="mt-2">
-                                    <a href="{{ route('berita.show', $news->slug) }}" class="block mb-2">
-                                        <h5
-                                            class="text-2xl font-bold tracking-tight text-gray-900 truncate hover:text-blue-700">
-                                            {{ Str::limit($news->judul, 50, '...') }}
-                                        </h5>
-                                    </a>
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                        {{ $berita->judul }}
+                                    </h5>
                                     <p class="font-normal text-gray-700 mb-4">
                                         {{ $berita->created_at->format('d M Y') }}
                                     </p>
-                                    <p class="mb-3 font-normal text-gray-700">
-                                        {!! Str::limit($news->isi_berita, 100, '...') !!}
-                                    </p>
-                                    <a href="{{ route('berita.show', $news->slug) }}"
+                                    <a href="{{ route('berita.show', $berita->slug) }}"
                                         class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 transition-transform transform hover:scale-105 duration-200">
                                         Baca Berita
                                     </a>
