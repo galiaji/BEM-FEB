@@ -76,6 +76,8 @@
     </div>
 </section>
 <!-- About Section End -->
+
+<!-- Program Section Start -->
 <section class="programs">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="text-center">
@@ -162,7 +164,7 @@
         </div>
     </div>
 </section>
-
+<!-- Program Section End -->
 
 <!-- News Section Start -->
 <section class="news bg-gray-50">
