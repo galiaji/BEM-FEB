@@ -38,7 +38,6 @@ Route::prefix('admin')
         Route::put('/berita/{id}', [AdminBeritaController::class, 'update'])->name('berita.update');
         Route::delete('/berita/{id}', [AdminBeritaController::class, 'destroy'])->name('berita.destroy');
         Route::get('/berita/{slug}', [BeritaController::class, 'show'])->name('berita.show');
-        Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
 
 
         // User Routes
