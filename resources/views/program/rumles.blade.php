@@ -70,7 +70,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @php $number = 1; @endphp
             @foreach ($relatedKegiatan as $kegiatan)
-            @if ($kegiatan->program->nama == 'UKCIT')
+            @if ($kegiatan->program->nama == 'RUMLES')
             <div
                 class="relative bg-white border border-gray-300 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:bg-gray-100 shadow-2xl">
                 <!-- Numbering -->
