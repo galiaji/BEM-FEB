@@ -4,11 +4,11 @@
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="https://flowbite.com/" class="flex flex-col items-center mb-4 sm:mb-0 space-y-4 rtl:space-y-reverse">
                 <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+                    <img src="public/img/LOGO PPK BEM FEB 1.png" class="h-8" alt="Logo PPK BEM FEB" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">MUJUR</span>
                 </div>
                 <div class="text-center">
-                    <span class="block text-white font-semibold">Desa Kemambang</span>
+                    <span class="block text-white font-semibold">Desa Munding</span>
                     <span class="block text-white mt-2 font-semibold">Tim BEM FEB UNDIP</span>
                 </div>
             </a>

@@ -11,14 +11,14 @@
 
                 <!-- Image Section -->
                 <div class="flex-shrink-0 lg:w-1/3 relative lg:mb-12">
-                    <img class="w-full h-auto object-cover rounded-xl" src="img/srawung-wirausaha.png" alt="Ukcit" />
+                    <img class="w-full h-auto object-cover rounded-xl" src="public/img/srawung-wirausaha.png" alt="Ukcit" />
                 </div>
 
                 <!-- Text Section -->
                 <div class="flex-1 lg:w-2/3 relative">
                     <!-- Wrapper for text and circle background -->
                     <div class="relative">
-                        <img src="img/Vector.png" alt="Background Vector"
+                        <img src="public/img/Vector.png" alt="Background Vector"
                             class="absolute w-[150%] h-[100%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
 
                         <!-- Heading -->
@@ -34,7 +34,7 @@
                     </div>
 
                     <!-- Additional Image -->
-                    <img src="{{ asset('images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
+                    <img src="{{ asset('public/images/' . $program->gambar) }}" alt="{{ $program->gambar }}"
                         class="w-full h-48 object-cover rounded-lg mt-6">
                 </div>
 
@@ -50,7 +50,7 @@
             <div class="mt-4 relative"> <!-- Mengurangi jarak margin top di sini -->
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="md:w-1/2 mb-4 md:mb-0 md:order-2">
-                        <img src="{{ asset('img/tujuan-2.png') }}" alt="Gambar Tujuan 2" class="w-full h-auto rounded-lg">
+                        <img src="{{ asset('public/img/tujuan-2.png') }}" alt="Gambar Tujuan 2" class="w-full h-auto rounded-lg">
                     </div>
                     <div class="md:w-1/2 md:pr-6 text-black md:order-1">
                         <p class="text-lg leading-relaxed">{!! $program->tujuan !!}</p>
@@ -81,7 +81,7 @@
                 </div>
 
                                 <div class="w-full h-60">
-                                    <img src="{{ asset('/storage/images/' . $kegiatan->foto_kegiatan) }}"
+                                    <img src="{{ asset('public//storage/images/' . $kegiatan->foto_kegiatan) }}"
                                         alt="{{ $kegiatan->nama_kegiatan }} - {{ $kegiatan->deskripsi_kegiatan }}"
                                         class="w-full h-full object-cover rounded-t-xl border-b border-gray-200">
                                 </div>

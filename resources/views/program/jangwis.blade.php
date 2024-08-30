@@ -41,45 +41,6 @@
         </div>
     </section>
     <!-- About Section End -->
-    @if ($relatedKegiatan->isNotEmpty())
-        <section class="py-12 bg-gray-100 sm:py-16 lg:py-24">
-            <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
-                <h3 class="text-4xl font-extrabold leading-tight text-gray-900 mb-12 text-center">
-                    Kegiatan Terkait
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    @php $number = 1; @endphp
-                    @foreach ($relatedKegiatan as $kegiatan)
-                        @if ($kegiatan->program->nama == 'JANGWIS')
-                            <div
-                                class="relative bg-white border border-gray-300 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:bg-gray-100 shadow-2xl">
-                                <!-- Numbering -->
-                                <div
-                                    class="absolute top-4 left-4 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold shadow-md">
-                                    {{ $number }}
-                                </div>
-
-                                <div class="w-full h-60">
-                                    <img src="{{ asset('public/storage/images/' . $kegiatan->foto_kegiatan) }}"
-                                        alt="{{ $kegiatan->nama_kegiatan }} - {{ $kegiatan->deskripsi_kegiatan }}"
-                                        class="w-full h-full object-cover rounded-t-xl border-b border-gray-200">
-                                </div>
-                                <div class="p-6">
-                                    <h5 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">
-                                        {{ $kegiatan->nama_kegiatan }}
-                                    </h5>
-                                    <p class="text-gray-800 text-justify leading-relaxed">
-                                        {!! $kegiatan->deskripsi_kegiatan !!}
-                                    </p>
-                                </div>
-                            </div>
-                            @php $number++; @endphp
-                        @endif
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
 
     <!-- PARIWISATA SECTION START -->
     <!-- Text Section -->
@@ -212,6 +173,47 @@
         <div style="clear: both;"></div>
     </div>
     <!-- PARIWISATA SECTION END -->
+
+    
+    @if ($relatedKegiatan->isNotEmpty())
+        <section class="py-12 bg-gray-100 sm:py-16 lg:py-24">
+            <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
+                <h3 class="text-4xl font-extrabold leading-tight text-gray-900 mb-12 text-center">
+                    Kegiatan Terkait
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @php $number = 1; @endphp
+                    @foreach ($relatedKegiatan as $kegiatan)
+                        @if ($kegiatan->program->nama == 'JANGWIS')
+                            <div
+                                class="relative bg-white border border-gray-300 rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:bg-gray-100 shadow-2xl">
+                                <!-- Numbering -->
+                                <div
+                                    class="absolute top-4 left-4 bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold shadow-md">
+                                    {{ $number }}
+                                </div>
+
+                                <div class="w-full h-60">
+                                    <img src="{{ asset('public/storage/images/' . $kegiatan->foto_kegiatan) }}"
+                                        alt="{{ $kegiatan->nama_kegiatan }} - {{ $kegiatan->deskripsi_kegiatan }}"
+                                        class="w-full h-full object-cover rounded-t-xl border-b border-gray-200">
+                                </div>
+                                <div class="p-6">
+                                    <h5 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">
+                                        {{ $kegiatan->nama_kegiatan }}
+                                    </h5>
+                                    <p class="text-gray-800 text-justify leading-relaxed">
+                                        {!! $kegiatan->deskripsi_kegiatan !!}
+                                    </p>
+                                </div>
+                            </div>
+                            @php $number++; @endphp
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
 
     <!-- News Section Start -->
     <section class="news bg-gray-50">
