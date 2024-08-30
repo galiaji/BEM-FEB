@@ -29,17 +29,16 @@
                 </div>
 
                 <div class="inline-flex rounded-md shadow-sm" role="group">
-                    <button id="allProgramBtn" onclick="filterByProgram('')"
-                        class="px-4 py-1 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-300 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
+                    <button id="allProgramBtn" onclick="filterByProgram('')" class="px-4 py-1 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
                         Semua Program
                     </button>
                     @foreach ($programs as $program)
-                        <button id="programBtn{{ $program->id }}" onclick="filterByProgram('{{ $program->id }}')"
-                            class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
+                        <button id="programBtn{{ $program->id }}" onclick="filterByProgram('{{ $program->id }}')" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
                             {{ $program->nama }}
                         </button>
                     @endforeach
                 </div>
+                
 
                 {{-- End Bagian filter button --}}
             </div>
@@ -91,7 +90,45 @@
     </section>
 
     <script>
-        // Search Functionality
+        function filterByProgram(programId) {
+            // Update URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            if (programId) {
+                urlParams.set('program_id', programId);
+            } else {
+                urlParams.delete('program_id');
+            }
+            window.location.search = urlParams.toString();
+
+            // Update button styles
+            document.querySelectorAll('.inline-flex button').forEach(button => {
+                button.classList.remove('bg-gray-300', 'text-blue-700', 'border-blue-700');
+                button.classList.add('bg-white', 'text-gray-900', 'border-gray-200');
+            });
+
+            // Add 'active' styles to the clicked button
+            if (programId) {
+                const activeButton = document.getElementById('programBtn' + programId);
+                activeButton.classList.add('bg-gray-200', 'text-blue-700', 'border-blue-700');
+                activeButton.classList.remove('bg-white', 'text-gray-900', 'border-gray-200');
+            } else {
+                const activeButton = document.getElementById('allProgramBtn');
+                activeButton.classList.add('bg-gray-200', 'text-blue-700', 'border-blue-700');
+                activeButton.classList.remove('bg-white', 'text-gray-900', 'border-gray-200');
+            }
+        }
+
+        // Automatically set the active button on page load based on URL params
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const programId = urlParams.get('program_id');
+            if (programId) {
+                document.getElementById('programBtn' + programId).classList.add('bg-gray-200', 'text-blue-700', 'border-blue-700');
+            } else {
+                document.getElementById('allProgramBtn').classList.add('bg-gray-200', 'text-blue-700', 'border-blue-700');
+            }
+        });
+
         function filterNews() {
             const searchInput = document.getElementById('searchInput').value;
             const urlParams = new URLSearchParams(window.location.search);
@@ -104,15 +141,15 @@
         }
 
         // Filter by Program Functionality
-        function filterByProgram(programId) {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (programId) {
-                urlParams.set('program_id', programId);
-            } else {
-                urlParams.delete('program_id');
-            }
-            window.location.search = urlParams.toString();
-        }
+        // function filterByProgram(programId) {
+        //     const urlParams = new URLSearchParams(window.location.search);
+        //     if (programId) {
+        //         urlParams.set('program_id', programId);
+        //     } else {
+        //         urlParams.delete('program_id');
+        //     }
+        //     window.location.search = urlParams.toString();
+        // }
 
         function setActiveButton() {
             const urlParams = new URLSearchParams(window.location.search);
