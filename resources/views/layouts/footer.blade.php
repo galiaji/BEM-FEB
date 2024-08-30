@@ -4,7 +4,7 @@
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="https://flowbite.com/" class="flex flex-col items-center mb-4 sm:mb-0 space-y-4 rtl:space-y-reverse">
                 <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="public/img/LOGO PPK BEM FEB 1.png" class="h-8" alt="Logo PPK BEM FEB" />
+                    <img src="{{ asset('public/img/LOGO PPK BEM FEB 1.png') }}" class="h-8" alt="Logo PPK BEM FEB" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">MUJUR</span>
                 </div>
                 <div class="text-center">
