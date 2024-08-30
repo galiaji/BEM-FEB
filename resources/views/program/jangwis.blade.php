@@ -232,7 +232,7 @@
                 <div id="carousel"
                     class="flex overflow-x-auto max-w-md mx-auto lg:mt-6 lg:max-w-full scroll-smooth pb-6 pt-6 space-x-6">
                     @foreach ($beritas as $berita)
-                        @if ($berita->program->nama == 'JANGwis')
+                        @if ($berita->program->nama == 'JANGWIS')
                             <div
                                 class="flex-shrink-0 w-full lg:w-1/3 bg-white border border-gray-200 rounded-lg shadow overflow-hidden p-4 transition-transform transform hover:scale-105 hover:bg-gray-100 hover:drop-shadow-xl duration-300">
                                 <a href="{{ route('berita.show', $berita->slug) }}">
