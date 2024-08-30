@@ -10,8 +10,8 @@
 
                 <!-- Image Section -->
                 <div class="lg:w-2/5 w-full flex justify-center lg:justify-start">
-                    <img class="w-full max-w-lg h-auto object-cover rounded-xl" src="public/img/UKCIT new.png"
-                        alt="Ukcit" />
+                    <img class="w-full max-w-lg h-auto object-cover rounded-xl" src="public/img/JAWIR.png"
+                        alt="JAWIR" />
                 </div>
 
                 <!-- Text Section -->

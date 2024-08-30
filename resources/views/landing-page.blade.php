@@ -98,9 +98,9 @@
                                 JAWIR
                             </h5>
                         </a>
-                        <p class="mb-3 font-normal text-gray-700">
+                        {{-- <p class="mb-3 font-normal text-gray-700">
                             Ini deskripsi panjang
-                        </p>
+                        </p> --}}
                         <a href="{{ route('program.jawir') }}"
                             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 transition-transform transform hover:scale-105 duration-200">
                             Lihat Program
@@ -123,9 +123,9 @@
                                 UKCIT
                             </h5>
                         </a>
-                        <p class="mb-3 font-normal text-gray-700 text-center">
+                        {{-- <p class="mb-3 font-normal text-gray-700 text-center">
                             Ini deskripsi panjang
-                        </p>
+                        </p> --}}
                         <a href="{{ route('program.ukcit') }}"
                             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 transition-transform transform hover:scale-105 duration-200">
                             Lihat Program
@@ -148,9 +148,9 @@
                                 ADBUD
                             </h5>
                         </a>
-                        <p class="mb-3 font-normal text-gray-700">
+                        {{-- <p class="mb-3 font-normal text-gray-700">
                             Ini deskripsi panjang
-                        </p>
+                        </p> --}}
                         <a href="{{ route('Program.adbud') }}"
                             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 transition-transform transform hover:scale-105 duration-200">
                             Lihat Program
@@ -173,9 +173,9 @@
                                 RUMLES
                             </h5>
                         </a>
-                        <p class="mb-3 font-normal text-gray-700">
+                        {{-- <p class="mb-3 font-normal text-gray-700">
                             Ini deskripsi panjang
-                        </p>
+                        </p> --}}
                         <a href="{{ route('program.rumles') }}"
                             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 transition-transform transform hover:scale-105 duration-200">
                             Lihat Program
@@ -198,9 +198,9 @@
                                 JANGWIS
                             </h5>
                         </a>
-                        <p class="mb-3 font-normal text-gray-700">
+                        {{-- <p class="mb-3 font-normal text-gray-700">
                             Ini deskripsi panjang
-                        </p>
+                        </p> --}}
                         <a href="{{ route('Program.jangwis') }}"
                             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 transition-transform transform hover:scale-105 duration-200">
                             Lihat Program
