@@ -38,47 +38,39 @@ class ProgramController extends Controller
     public function rumles()
     {
         $program = Program::where('nama', 'RUMLES')->firstOrFail();
-        $programs = Program::where('nama', 'RUMLES')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
-        $relatedNews = Berita::all();
         $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('program.rumles', compact('programs', 'program', 'relatedKegiatan', 'relatedNews', 'beritas'));
+        return view('program.rumles', compact('program', 'relatedKegiatan', 'beritas'));
     }
 
     public function Jangwis()
     {
         $program = Program::where('nama', 'JANGWIS')->firstOrFail();
-        $programs = Program::where('nama', 'JANGWIS')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
-        $relatedNews = Berita::all();
-        return view('program.jangwis', compact('programs', 'program', 'relatedKegiatan', 'relatedNews'));
+        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('program.jangwis', compact('program', 'relatedKegiatan', 'beritas'));
     }
     public function Adbud()
     {
         $program = Program::where('nama', 'ADBUD')->firstOrFail();
-        $programs = Program::where('nama', 'ADBUD')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
-        $relatedNews = Berita::all();
-        return view('program.adbud', compact('programs', 'program', 'relatedKegiatan', 'relatedNews'));
+        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('program.adbud', compact('program', 'relatedKegiatan', 'beritas'));
     }
     public function ukcit()
     {
         $program = Program::where('nama', 'UKCIT')->firstOrFail();
-        $programs = Program::where('nama', 'UKCIT')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
-        $relatedNews = Berita::all();
         $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('program.ukcit', compact('programs', 'program', 'relatedKegiatan', 'relatedNews', 'beritas'));
+        return view('program.ukcit', compact('program', 'relatedKegiatan', 'beritas'));
     }
     public function indexjawir()
     {
         $program = Program::where('nama', 'JAWIR')->firstOrFail();
-        $programs = Program::where('nama', 'JAWIR')->firstOrFail();
         $products = ProdukUMKM::all();  // Fetch all products
         $relatedKegiatan = Kegiatan::all();
-        $relatedNews = Berita::all();
         $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
 
-        return view('program.Jawir', compact('products', 'programs', 'program', 'relatedKegiatan', 'relatedNews', 'beritas'));
+        return view('program.Jawir', compact('products', 'program', 'relatedKegiatan', 'beritas'));
     }
 }
