@@ -77,11 +77,11 @@
 </script>
 @endif
 <h1 class="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-400">Program</h1>
-<div class="mb-6 mt-2">
+{{-- <div class="mb-6 mt-2">
     <a href="{{ route('admin.program.create') }}"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
         New Program</a>
-</div>
+</div> --}}
 <table
     class="text-gray-500 text-sm rounded-lg focus:ring-blue-500 dark:bg-transparent dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 w-full p-2.5 mt-3">
     <thead>
