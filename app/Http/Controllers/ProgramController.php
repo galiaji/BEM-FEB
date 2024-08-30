@@ -39,7 +39,7 @@ class ProgramController extends Controller
     {
         $program = Program::where('nama', 'RUMLES')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
-        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
+        $beritas = Berita::all();
         return view('program.rumles', compact('program', 'relatedKegiatan', 'beritas'));
     }
 
@@ -47,21 +47,21 @@ class ProgramController extends Controller
     {
         $program = Program::where('nama', 'JANGWIS')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
-        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
+        $beritas = Berita::all();
         return view('program.jangwis', compact('program', 'relatedKegiatan', 'beritas'));
     }
     public function Adbud()
     {
         $program = Program::where('nama', 'ADBUD')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
-        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
+        $beritas = Berita::all();
         return view('program.adbud', compact('program', 'relatedKegiatan', 'beritas'));
     }
     public function ukcit()
     {
         $program = Program::where('nama', 'UKCIT')->firstOrFail();
         $relatedKegiatan = Kegiatan::all();
-        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
+        $beritas = Berita::all();
         return view('program.ukcit', compact('program', 'relatedKegiatan', 'beritas'));
     }
     public function indexjawir()
@@ -69,7 +69,7 @@ class ProgramController extends Controller
         $program = Program::where('nama', 'JAWIR')->firstOrFail();
         $products = ProdukUMKM::all();  // Fetch all products
         $relatedKegiatan = Kegiatan::all();
-        $beritas = Berita::orderBy('created_at', 'desc')->limit(5)->get();
+        $beritas = Berita::all();
 
         return view('program.Jawir', compact('products', 'program', 'relatedKegiatan', 'beritas'));
     }
