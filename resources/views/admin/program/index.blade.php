@@ -77,11 +77,11 @@
 </script>
 @endif
 <h1 class="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-400">Program</h1>
-<div class="mb-6 mt-2">
+{{-- <div class="mb-6 mt-2">
     <a href="{{ route('admin.program.create') }}"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
         New Program</a>
-</div>
+</div> --}}
 <table
     class="text-gray-500 text-sm rounded-lg focus:ring-blue-500 dark:bg-transparent dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 w-full p-2.5 mt-3">
     <thead>
@@ -177,7 +177,7 @@
                             d="m14.3 4.8 2.9 2.9M7 7H4a1 1 0 0 0-1 1v10c0 .6.4 1 1 1h11c.6 0 1-.4 1-1v-4.5m2.4-10a2 2 0 0 1 0 3l-6.8 6.8L8 14l.7-3.6 6.9-6.8a2 2 0 0 1 2.8 0Z" />
                     </svg>
                 </a>
-                <form action="{{ route('admin.program.destroy', $program->id) }}" method="POST"
+                {{-- <form action="{{ route('admin.program.destroy', $program->id) }}" method="POST"
                     style="display:inline;">
                     @csrf
                     @method('DELETE')
@@ -189,7 +189,7 @@
                                 stroke-width="2"
                                 d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
                         </svg></button>
-                </form>
+                </form> --}}
             </td>
         </tr>
         @endforeach

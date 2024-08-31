@@ -49,9 +49,9 @@
         @method('PUT')
         <div class="form-group">
             <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Program</label>
-            <input type="text" name="nama"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2"
-                value="{{ $program->nama }}" required>
+            <td class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2">
+                <input type="text" value="{{ $program->nama }}" disabled class="bg-transparent border-none text-gray-700 dark:text-gray-400">
+            </td>                
         </div>
         <div class="form-group">
             <label for="deskripsi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi
