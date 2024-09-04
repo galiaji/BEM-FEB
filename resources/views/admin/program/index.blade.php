@@ -79,8 +79,8 @@
 <h1 class="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-400">Program</h1>
 {{-- <div class="mb-6 mt-2">
     <a href="{{ route('admin.program.create') }}"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
-        New Program</a>
+class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
+New Program</a>
 </div> --}}
 <table
     class="text-gray-500 text-sm rounded-lg focus:ring-blue-500 dark:bg-transparent dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 w-full p-2.5 mt-3">
@@ -118,7 +118,7 @@
             </td>
             <td
                 class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
-                {{ $program->nama }}
+                {{ Str::limit($program->nama, 50) }}
             </td>
             <td
                 class="py-6 px-4 mb-2 text-center border-b dark:border-gray-600 border-gray-300 bg-transparent dark:text-gray-400 text-gray-700">
@@ -178,17 +178,17 @@
                     </svg>
                 </a>
                 {{-- <form action="{{ route('admin.program.destroy', $program->id) }}" method="POST"
-                    style="display:inline;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="text-red-500"
-                        onclick="return confirm('Apakah Anda yakin ingin menghapus program ini?')"><svg
-                            class="w-6 h-6 inline align-middle" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
-                        </svg></button>
+                style="display:inline;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="text-red-500"
+                    onclick="return confirm('Apakah Anda yakin ingin menghapus program ini?')"><svg
+                        class="w-6 h-6 inline align-middle" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
+                    </svg></button>
                 </form> --}}
             </td>
         </tr>
