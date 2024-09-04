@@ -30,7 +30,7 @@ class ProgramController extends Controller
     {
         // Validasi input
         $request->validate([
-            'nama' => 'required|string|max:255',
+
             'deskripsi' => 'required|string',
             'jadwal' => 'nullable|date',
             'tujuan' => 'nullable|string',
@@ -39,7 +39,7 @@ class ProgramController extends Controller
 
         // Buat instance baru Program
         $program = new Program;
-        $program->nama = $request->nama;
+
         $program->deskripsi = $request->deskripsi;
         $program->jadwal = $request->jadwal;
         $program->tujuan = $request->tujuan;
@@ -81,7 +81,7 @@ class ProgramController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama' => 'required|string|max:255',
+
             'deskripsi' => 'required|string',
             'jadwal' => 'nullable|date',
             'tujuan' => 'nullable|string-',
@@ -89,7 +89,7 @@ class ProgramController extends Controller
         ]);
 
         $program = Program::findOrFail($id);
-        $program->nama = $request->nama;
+
         $program->deskripsi = $request->deskripsi;
         $program->jadwal = $request->jadwal;
         $program->tujuan = $request->tujuan;
