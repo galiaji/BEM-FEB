@@ -11,7 +11,7 @@
 
             <!-- Image Section -->
             <div class="flex-shrink-0 lg:w-1/3 relative lg:mb-12">
-                <img class="w-full h-auto object-cover rounded-xl" src="{{ asset('public/img/RUMLES.png') }} alt=" Ukcit" />
+                <img class="w-full h-auto object-cover rounded-xl" src="{{ asset('public/img/RUMLES.png') }}" />
             </div>
 
             <!-- Text Section -->
