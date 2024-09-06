@@ -10,8 +10,7 @@
 
                 <!-- Image Section -->
                 <div class="lg:w-2/5 w-full flex justify-center lg:justify-start">
-                    <img class="w-full max-w-lg h-auto object-cover rounded-xl" src="public/img/JAWIR.png"
-                        alt="JAWIR" />
+                    <img class="w-full max-w-lg h-auto object-cover rounded-xl" src="public/img/JAWIR.png" alt="JAWIR" />
                 </div>
 
                 <!-- Text Section -->
@@ -24,7 +23,7 @@
                         <!-- Heading -->
                         <h2
                             class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl z-50 animate-fade-up animate-delay-[100ms]">
-                            About <mark class="px-2 text-white bg-blue-400 rounded">Jalin Wirausaha</mark>
+                            About <mark class="px-2 text-white bg-red-900 rounded">Jalin Wirausaha</mark>
                         </h2>
 
                         <!-- Description -->

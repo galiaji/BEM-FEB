@@ -9,8 +9,7 @@
 
                 <!-- Image Section -->
                 <div class="flex-shrink-0 lg:w-1/3 relative lg:mb-12">
-                    <img class="w-full h-auto object-cover rounded-xl" src="public/img/JANGWIS.png"
-                        alt="jangwisgit" />
+                    <img class="w-full h-auto object-cover rounded-xl" src="public/img/JANGWIS.png" alt="jangwisgit" />
                 </div>
 
                 <!-- Text Section -->
@@ -23,7 +22,7 @@
                         <!-- Heading -->
                         <h2
                             class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl z-50 animate-fade-up animate-delay-[100ms]">
-                            About <mark class="px-2 text-white bg-violet-400 rounded">ANJANGSANA WISATA</mark>
+                            About <mark class="px-2 text-white bg-zinc-400 rounded">ANJANGSANA WISATA</mark>
                         </h2>
 
                         <!-- Description -->
@@ -173,7 +172,7 @@
         <div style="clear: both;"></div>
     </div>
     <!-- PARIWISATA SECTION END -->
-    
+
     @if ($relatedKegiatan->isNotEmpty())
         <section class="py-12 bg-gray-100 sm:py-16 lg:py-24">
             <div class="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
