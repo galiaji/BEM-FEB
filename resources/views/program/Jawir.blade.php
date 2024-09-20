@@ -84,7 +84,7 @@
     <!-- About Section Start -->
     <section id="CategorySection" class="py-10 bg-transparent sm:py-16 lg:py-6 pt-24 pb-24 rounded-lg bg-red-200">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <h3 class="text-4xl font-extrabold leading-tight text-gray-900 mb-12 text-center">Produk MAKANAN</h3>
+            <h3 class="text-4xl font-extrabold leading-tight text-gray-900 mb-12 text-center">Produk Makanan</h3>
             <div class="relative">
                 <div id="carousel" class="max-w-md mx-auto mt-8 lg:mt-1 lg:max-w-full bg-gray-100 py-12">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 mb-6">
@@ -100,7 +100,7 @@
                                 <div class="p-6">
                                     <!-- Product name -->
                                     <h5 class="text-2xl font-bold tracking-tight text-gray-900 mb-4">
-                                        <a href="#" class="hover:underline">{{ $product->nama_produk }}</a>
+                                        <a class="hover:underline">{{ $product->nama_produk }}</a>
                                     </h5>
                                     <!-- Product description -->
                                     <p class="text-gray-800 text-justify leading-relaxed">
