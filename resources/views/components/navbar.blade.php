@@ -13,8 +13,8 @@
                         </path>
                     </svg>
                 </button>
-                <a href="https://flowbite.com" class="flex ms-2 md:me-24">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
+                <a href="{{ route('admin.user.index')}}" class="flex ms-2 md:me-24">
+                    <img src="{{ asset('public/img/LOGO PPK BEM FEB 1.png') }}" class="h-8 me-3" alt="FlowBite Logo" />
                     <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
                         <h1>{{ $title }}</h1>
                     </span>
@@ -86,3 +86,22 @@
         </div>
     </div>
 </nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+<script>
+    var showNavigationBtn = document.getElementById('showNavigationBtn');
+    var drawer = document.getElementById('drawer-navigation');
+
+    showNavigationBtn.addEventListener('click', function() {
+        if (drawer.style.transform === 'translateX(0%)') {
+            drawer.style.transform = 'translateX(-100%)';
+        } else {
+            drawer.style.transform = 'translateX(0%)';
+        }
+    });
+
+    var exitBtn = document.querySelector('#drawer-navigation button[data-drawer-hide="drawer-navigation"]');
+    exitBtn.addEventListener('click', function() {
+        drawer.style.transform = 'translateX(-100%)';
+    });
+</script>

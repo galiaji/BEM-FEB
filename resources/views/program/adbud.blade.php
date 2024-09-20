@@ -17,10 +17,10 @@
                     <!-- Wrapper for text and circle background -->
                     <div class="relative">
                         <img src="public/img/Vector.png" alt="Background Vector"
-                            class="absolute w-[200%] h-[150%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 rounded-full mt-20">
+                            class="absolute w-[200%] h-[150%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full mt-32">
                         <h2
                             class="mb-4 text-4xl font-bold leading-tight leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl z-50 animate-fade-up animate-delay-[100ms]">
-                            About <mark class="px-2 text-white bg-violet-400 rounded">Adiwangsa Budaya</mark>
+                            About <mark class="px-2 text-white bg-amber-900 rounded">Adiwangsa Budaya</mark>
                         </h2>
                         <p class="text-lg leading-relaxed text-gray-400 mt-9 z-50 animate-fade-right animate-delay-[500ms]">
                             {!! $program->deskripsi !!}
