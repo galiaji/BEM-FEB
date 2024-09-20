@@ -43,22 +43,27 @@
     </section>
     <!-- About Section End -->
 
-    <!-- Tujuan Kegiatan Section Start -->
-    <section class="goals-section py-10 bg-gray-100 sm:py-16 lg:py-24">
-        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <h3 class="text-3xl font-bold leading-tight text-gray-900">Tujuan Kegiatan</h3>
-            <div class="mt-4 relative"> <!-- Mengurangi jarak margin top di sini -->
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 mb-4 md:mb-0 md:order-2">
-                        <img src="{{ asset('public/img/tujuan-2.png') }}" alt="Gambar Tujuan 2" class="w-full h-auto rounded-lg">
-                    </div>
-                    <div class="md:w-1/2 md:pr-6 text-black md:order-1">
-                        <p class="text-lg leading-relaxed">{!! $program->tujuan !!}</p>
-                        <!-- Mengurangi margin top di sini -->
-                    </div>
-                </div>
+   <!-- Tujuan Kegiatan Section Start -->
+   <section class="goals-section py-10 bg-gray-100 sm:py-16 lg:py-24">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2">
+                <!-- Heading for Tujuan Kegiatan -->
+                <h3 class="text-3xl font-bold leading-tight text-gray-900 mb-4">
+                    Tujuan Kegiatan
+                </h3>
+
+                <!-- Content for Tujuan -->
+                <p class="text-lg leading-relaxed text-gray-700">
+                    {!! $program->tujuan !!}
+                </p>
+            </div>
+            <div class="md:w-1/2 mb-4 md:mb-0 md:pr-6">
+                <img src="{{ asset('public/img/tujuan-2.png') }}" alt="Gambar Tujuan 2"
+                    class="w-full h-auto rounded-lg shadow-lg">
             </div>
         </div>
+    </div>
     </section>
     <!-- Tujuan Kegiatan Section End -->
 
