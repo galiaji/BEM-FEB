@@ -37,14 +37,14 @@ class BeritaController extends Controller
     public function show($slug)
     {
         $berita = Berita::where('slug', $slug)->firstOrFail();
-        
+
         // Ambil 3 berita terbaru selain yang ditampilkan
         $beritas = Berita::where('slug', '!=', $slug)
-                         ->latest() // Urutkan berita terbaru
-                         ->take(3)  // Batasi hanya 3 berita
-                         ->get();
+            ->latest() // Urutkan berita terbaru
+            ->take(3)  // Batasi hanya 3 berita
+            ->get();
 
         return view('berita.show', compact('berita', 'beritas'));
     }
-    
+
 }

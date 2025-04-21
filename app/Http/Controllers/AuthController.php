@@ -28,11 +28,11 @@ class AuthController extends Controller
             if ($user->role == 'admin') {
                 return redirect()->route('admin.program.index')->with('successLogin', 'Anda Berhasil Login.');
             } else {
-                return redirect('/home'); // Redirect ke halaman user biasa jika bukan admin
+                return redirect()->route('user.dashboard')->with('successLogin', 'Anda Berhasil Login.');
             }
         }
 
-        return redirect()->back()->withErrors(['email' => 'Invalid credentials']);
+        return redirect()->back()->withErrors(['email' => 'Email atau password salah']);
     }
 
     // Menampilkan form register
@@ -63,8 +63,30 @@ class AuthController extends Controller
         if ($user->role == 'admin') {
             return redirect()->route('admin.program.index');
         } else {
-            return redirect('/home'); // Redirect ke halaman user biasa
+            return redirect()->route('user.dashboard'); // Redirect ke halaman user biasa
         }
+    }
+
+    public function createUser(Request $request)
+    {
+        if (Auth::user()->role !== 'admin') {
+            return response()->json(['message' => 'Forbidden'], 403);
+        }
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6',
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => 'user'
+        ]);
+
+        return response()->json(['message' => 'User created successfully']);
     }
 
     // Menangani proses logout
@@ -78,6 +100,6 @@ class AuthController extends Controller
         // Regenerasi token CSRF untuk menghindari serangan CSRF setelah logout
         $request->session()->regenerateToken();
 
-        return redirect('/login'); // Mengarahkan pengguna kembali ke halaman login
+        return redirect('/'); // Mengarahkan pengguna kembali ke halaman login
     }
 }

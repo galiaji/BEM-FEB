@@ -80,7 +80,7 @@
                                     <div class="text-center">
                                         <img src="public/img/BEM FEB.jpeg" alt="Logo" class="mx-auto w-30 h-20" />
                                         <h1 class="mt-4 text-2xl font-bold text-gray-500">
-                                            Website BEM FEB
+                                            GiziFun
                                         </h1>
                                     </div>
 
@@ -131,6 +131,9 @@
                                             class="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md focus:outline-none hover:bg-blue-700 focus:bg-blue-700 mt-4">
                                             Login
                                         </button>
+                                        <p class="mt-4 text-start text-white">Belum punya akun? <a class="text-blue-700"
+                                                href="{{ route('register') }}">Register</a></p>
+
                                     </div>
 
                                     <!-- Footer -->

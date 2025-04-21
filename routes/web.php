@@ -7,6 +7,8 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\Admin\UserController;
 
+use App\Http\Controllers\DashboardController;
+
 use App\Http\Controllers\LandingPageController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Controllers\KegiatanController;
@@ -16,6 +18,18 @@ use App\Http\Controllers\Admin\BeritaController as AdminBeritaController;
 // Rute admin dengan middleware AdminMiddleware
 use App\Http\Controllers\Admin\ProgramController as AdminProgramController;
 use App\Http\Controllers\Admin\KegiatanController as AdminKegiatanController;
+
+// Rute Fitur GiziFun
+use App\Http\Controllers\BmiController;
+use App\Http\Controllers\GuestController;
+use App\Http\Controllers\QuizController;
+use App\Http\Controllers\LeaderboardController;
+use App\Http\Controllers\CategoryController;
+
+
+// use App\Http\Livewire\BmiCalculator;
+
+
 
 Route::prefix('admin')
     ->name('admin.')
@@ -65,7 +79,18 @@ Route::prefix('admin')
         Route::get('/produk_umkm/{id}/edit', [ProdukUMKMController::class, 'edit'])->name('produk_umkm.edit');
         Route::put('/produk_umkm/{id}', [ProdukUMKMController::class, 'update'])->name('produk_umkm.update');
         Route::delete('/produk_umkm/{id}', [ProdukUMKMController::class, 'destroy'])->name('produk_umkm.destroy');
+
+
     });
+
+Route::middleware(['auth',])->group(function () {
+    Route::get('/admin/quizzes', [QuizController::class, 'index'])->name('quizzes.index');
+    Route::get('/admin/quizzes/create', [QuizController::class, 'create'])->name('quizzes.create');
+    Route::post('/admin/quizzes', [QuizController::class, 'store'])->name('quizzes.store');
+    Route::get('/admin/category', [CategoryController::class, 'index'])->name('admin.categories.index');
+});
+
+Route::resource('categories', CategoryController::class)->middleware('auth');
 
 
 // Rute Login dengan middleware RedirectIfAuthenticated
@@ -75,6 +100,23 @@ Route::middleware(RedirectIfAuthenticated::class)->group(function () {
 
     Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
     Route::post('/register', [AuthController::class, 'register']);
+});
+
+// Dashboard User
+Route::middleware(['auth'])->group(function () {
+    Route::get('/user/dashboard', [DashboardController::class, 'userDashboard'])->name('user.dashboard');
+
+    Route::get('/user/bmi', [GuestController::class, 'index'])->name('user.cekBmi');
+    Route::post('/user/bmi/calculate', [GuestController::class, 'calculate'])->name('user.bmi.calculate');
+    Route::get('/user/bmi/history', [GuestController::class, 'getHistory'])->name('bmi.history');
+
+    Route::get('/user/quizzes/{id}', [QuizController::class, 'show'])->name('quizzes.show');
+    Route::post('/user/quizzes/{id}/submit', [QuizController::class, 'submit'])->name('quizzes.submit');
+    Route::get('/user/categories', [CategoryController::class, 'index'])->name('user.categories');
+    Route::get('/user/categories/{id}/quizzes', [QuizController::class, 'quizzesByCategory'])->name('user.quizzes');
+
+
+    Route::get('/user/leaderboard', [LeaderboardController::class, 'index'])->name('leaderboard.index');
 });
 
 // Rute Logout
@@ -97,3 +139,8 @@ Route::get('/jawir', [ProgramController::class, 'indexjawir'])->name('program.ja
 
 Route::get('/Jangwis', [ProgramController::class, 'Jangwis'])->name('Program.jangwis');
 Route::get('/Adbud', [ProgramController::class, 'adbud'])->name('Program.adbud');
+
+// BMI Route
+Route::get('/bmi', [BmiController::class, 'index'])->name('bmi.index');
+Route::post('/bmi/calculate', [BmiController::class, 'calculate'])->name('bmi.calculate');
+Route::get('/bmi/history', [BmiController::class, 'getHistory'])->name('bmi.history');

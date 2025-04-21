@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Landing Page')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="public/favicon.ico">
     <style>
@@ -18,12 +19,13 @@
     </style>
 </head>
 
-<body class="bg-white">
+<body class="bg-gray-100">
     @include('layouts.header')
 
     <!-- Content Section -->
     <main>
         @yield('content')
+        @livewireScripts
     </main>
 
     @include('layouts.footer')
